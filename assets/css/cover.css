@@ -37,7 +37,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   color: black;
-  
+
 /*
   background-image: url(../.././landing-page.png);
   */
@@ -75,14 +75,14 @@ background-color: #fff200;
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
-  color: rgba(255, 255, 255, .5);
+  color: black;
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color:  #0202ff;
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -90,8 +90,8 @@ background-color: #fff200;
 }
 
 .nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: black;
+  border-bottom-color: #0202ff;
 }
 
 @media (min-width: 48em) {
@@ -128,12 +128,12 @@ background-color: #fff200;
 }
 
 .card {
-  border: 1px solid black;
+  border: 0px solid black;
   border-radius: 3px;
   margin-bottom: 5px;
-  
+
 }
 
 .card-body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+
 }
