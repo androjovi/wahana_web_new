@@ -28,25 +28,21 @@
 .col-container{
   display: table;
   width: 100%;
-  height: 70%;
+  height: 100%;
 }
 .col-l{
   display: table-cell;
-  width: 20%;
-  padding: 10px 16px 0 16px;
+  padding: 16px;
   color: white;
   background:#12479b;
-  border-right: 1px solid #fff200;
 }
-.btn-block:hover{
-  background: #ff0200;
-  border: 1px solid #ff0200;
+.form-group{
+  text-align: left;
 }
-
 </style>
   <body class="text-center">
+
     <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
-      <!-- START NAVBAR -->
       <header class="masthead mb-auto sticky-top p-2 color-yellow" id="navbar-example2">
         <div class="inner">
           <h3 class="masthead-brand"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 4px;" src="wahana/images/logo-wahana.png"></h3>
@@ -61,99 +57,88 @@
           </nav>
         </div>
       </header>
-      <!-- END NAVBAR -->
 
-      <!-- START MAIN CONTENT -->
-      <main role="main" class="inner cover pt-1">
-
+      <main role="main" class="inner cover pt-4">
         <div class="card bg-transparent">
         <div class="card-body">
-          <img src="assets/img/cutomers.png"  class="mb-3"style="width:100%;height:50%;" alt="Responsive image">
-          <div class="container">
-  <div class="row">
-<!--
-    <div class="col-sm">
-      <h5>DIKO</h5>
-      <div class="col-md-12 ">
+          <h2 class="mt-2 mb-4">Form Agen</h2>
+          <form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Nama</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">No KTP</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Alamat</label>
+    <input type="text" class="form-control" id="inputAddress" >
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Alamat agen</label>
+    <input type="text" class="form-control" id="inputAddress2" >
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Pilih provinsi</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Kota</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Kecamatan</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Kelurahan</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputZip">Kode Pos</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputZip">No HP</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputZip">Email</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Latitude</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Longtitude</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
 
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <h5>HENDRA</h5>
-      <div class="col-md-12">
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <h5>ANDI REINALD</h5>
-      <div class="col-md-12 " >
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <p>KERJASAMA E-COMMERCE</p>
-      <div class="col-md-12 ">
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <p>KERJASAMA CORPORATE</p>
-      <div class="col-md-12 ">
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
--->
-
-  <div class="col-container">
-    <div class="col-l" style="background:#12479b;">
-      <h5  >Diko</h5>
-      <br><br>
-      <p >081380683397</p>
-    </div>
-    <div class="col-l" >
-      <h5 >Hendra</h5>
-      <br><br>
-      <p >089692585994 (WA) 08121165688</p>
-    </div>
-    <div class="col-l" >
-      <h5>Andi R</h5>
-      <br><br>
-      <p >08111777226</p>
-    </div>
-    <div class="col-l" >
-      <h5 class="" >Kerjasama<br>E-COMMERCE</h5>
-      <br>
-      <p >081380683397</p>
-      <br>
-      <p>ecommerce@wahana.com</p>
-    </div>
-  <div class="col-l">
-    <h5>Kerjasama CORPORATE</h5>
-    <br>
-    <p>089692585994 (WA) 08121165688</p>
-    <p>hendra@wahana.com</p>
-  </div>
-</div>
-
-  </div>
-  <div class="row">
-  <div class="col-md-12 text-left mt-2 mb-2">
-    <span class="text-muted text-left" style="font-size:12px;">* Syarat dan ketentuan berlaku</span>
-  </div>
-</div>
-  <div class="col-md-12 ml-auto mt-3">
-    <a href="daftar_agen.html" role="button" class="btn btn-primary btn-block" style="color: white;">DAFTAR KEAGENAN WAHANA</a>
-  </div>
-</div>
+  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+</form>
 
         </div>
         </div>
+
       </main>
-      <!-- END MAIN CONTENT -->
-
-
-      <!-- START FOOTER  -->
 
       <footer class="mastfoot mt-5 mb-5" style="color: black;">
         <div class="inner">
@@ -193,7 +178,6 @@
           </div>
         </div>
       </footer>
-      <!-- END FOOTER -->
 
       <!-- Bootstrap core JavaScript
       ================================================== -->
