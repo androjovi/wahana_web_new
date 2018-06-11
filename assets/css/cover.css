@@ -41,7 +41,9 @@ body {
 /*
   background-image: url(../.././landing-page.png);
   */
-background-color: #fff200;
+  background: #fff200; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #fff200, #fff200); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #fff200, #fff200); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -66,6 +68,7 @@ background-color: #fff200;
  */
 .masthead {
   margin-bottom: 2rem;
+  transition: 1s;
 }
 
 .masthead-brand {
@@ -73,13 +76,30 @@ background-color: #fff200;
 }
 
 .nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
+  /* padding: .25rem 0;*/
+
   color: black;
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
+  /* border-bottom: .25rem solid transparent; */
+}
+.nav-masthead .nav-mastlink{
+  padding : 10px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
+/*
+.nav-masthead .nav-link:hover {
+  /* padding: .25rem 0;
+  padding : 10px;
+  font-weight: 700;
+  color: white;
+  /* border-bottom: .25rem solid transparent;
+  background-color: blue;
+  transition: 0.5s;
+}
+*/
+
+/*
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
   border-bottom-color:  #0202ff;
@@ -93,6 +113,7 @@ background-color: #fff200;
   color: black;
   border-bottom-color: #0202ff;
 }
+*/
 
 @media (min-width: 48em) {
   .masthead-brand {
@@ -137,3 +158,33 @@ background-color: #fff200;
 .card-body {
 
 }
+
+/**
+  navbar <= 300
+*/
+.dark-nav{
+  background-color: rgba(0,0,0, 0.5);
+  transition: 1s;
+
+}
+.dark-link{
+  color: white;
+
+}
+.color-yellow{
+  background: #fff200;
+}
+
+/*
+  Custom input text
+*/
+.form-control{
+  border-radius: 0px;
+}
+.form-control:focus{
+
+}
+
+/*
+To top butotn
+*/
