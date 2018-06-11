@@ -28,6 +28,9 @@ V : 0.1.3
 .hvr-sweep-to-right::before{
   background: #0202ff;
 }
+.hvr-sweep-to-right:hover{
+  color: white;
+}
 </style>
   <body class="text-center">
 
@@ -57,22 +60,22 @@ V : 0.1.3
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html">Beranda</a><span class="e pt-2">&nbsp;|&nbsp;</span>
+        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html">Beranda</a><span >&nbsp;|&nbsp;</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#tariff">Cek Tarif</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#tariff">Cek Tarif</a><span >&nbsp;|&nbsp;</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#track">Lacak Pengiriman</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#track">Lacak Pengiriman</a><span >&nbsp;|&nbsp;</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#agentloc">Agen Terdekat</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#agentloc">Agen Terdekat</a><span >&nbsp;|&nbsp;</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="peluang_bisnis.html">Peluang Bisnis</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="peluang_bisnis.html">Peluang Bisnis</a><span >&nbsp;|&nbsp;</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="contactus.html">Hubungi CS</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        <a class="nav-link nav-mastlink hvr-sweep-to-right" href="contactus.html">Hubungi CS</a><span >&nbsp;|&nbsp;</span>
       </li>
       <li class="nav-item">
         <a class="nav-link nav-mastlink hvr-sweep-to-right" href="cgi-bin/dw.cgi">Masuk</a>
@@ -317,11 +320,11 @@ V : 0.1.3
       if (scroll >= 300) {
         $("nav").addClass("dark-nav");
         $(".nav-item a").css("color","white");
-        $(".nav-item .nav-link span").css("color","white");
         //$(".nav-item a").removeClass("nav-link");
       } else {
         $("nav").removeClass("dark-nav");
         $(".nav-item a").css("color","black");
+        $(".nav-item a").addClass("trun");
       }
     })
 });
