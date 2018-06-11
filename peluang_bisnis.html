@@ -32,35 +32,59 @@
 }
 .col-l{
   display: table-cell;
-  width: 20%;
-  padding: 10px 16px 0 16px;
+  width: 15%;
+  padding-top: 15px;
   color: white;
   background:#12479b;
   border-right: 1px solid #fff200;
+
 }
-.btn-block:hover{
+.btn-block1, .btn-block1:hover, .btn-block1:active {
+  width: 100%;
   background: #ff0200;
   border: 1px solid #ff0200;
 }
-
+hr{
+  width:100%;
+  border: 1px solid #fff200;
+  padding :none;
+}
 </style>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
       <!-- START NAVBAR -->
-      <header class="masthead mb-auto sticky-top p-2 color-yellow" id="navbar-example2">
-        <div class="inner">
-          <h3 class="masthead-brand"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 4px;" src="wahana/images/logo-wahana.png"></h3>
-          <nav class="nav nav-masthead justify-content-center mt-2">
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html">Beranda</a>
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#tariff">Cek Tarif</a>
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#track">Lacak Pengiriman</a>
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#agentloc">Agen Terdekat</a>
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="peluang_bisnis.html">Peluang Bisnis</a>
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="contactus.html">Hubungi CS</a>
-            <a class="nav-link nav-mastlink hvr-sweep-to-right" href="cgi-bin/dw.cgi">Masuk</a>
-          </nav>
-        </div>
-      </header>
+      <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="#"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 4px;" src="wahana/images/logo-wahana.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html">Beranda</a><span class="e pt-2">&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#tariff">Cek Tarif</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#track">Lacak Pengiriman</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#agentloc">Agen Terdekat</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="peluang_bisnis.html">Peluang Bisnis</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="contactus.html">Hubungi CS</a><span class="pt-2">&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="cgi-bin/dw.cgi">Masuk</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
       <!-- END NAVBAR -->
 
       <!-- START MAIN CONTENT -->
@@ -68,83 +92,48 @@
 
         <div class="card bg-transparent">
         <div class="card-body">
-          <img src="assets/img/cutomers.png"  class="mb-3"style="width:100%;height:50%;" alt="Responsive image">
+          <img src="assets/img/cutomers.png"  class="mb-3" style="width:100%;height:80%;" alt="Responsive image">
           <div class="container">
   <div class="row">
-<!--
-    <div class="col-sm">
-      <h5>DIKO</h5>
-      <div class="col-md-12 ">
-
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <h5>HENDRA</h5>
-      <div class="col-md-12">
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <h5>ANDI REINALD</h5>
-      <div class="col-md-12 " >
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <p>KERJASAMA E-COMMERCE</p>
-      <div class="col-md-12 ">
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
-    <div class="col-sm">
-      <p>KERJASAMA CORPORATE</p>
-      <div class="col-md-12 ">
-        <img src="assets/img/wa2.png" class="float-left" width="20" height="20"> <span class="float-right">081380683397</span>
-      </div>
-    </div>
--->
-
   <div class="col-container">
     <div class="col-l" style="background:#12479b;">
       <h5  >Diko</h5>
-      <br><br>
+      <br>
       <p >081380683397</p>
     </div>
     <div class="col-l" >
       <h5 >Hendra</h5>
-      <br><br>
-      <p >089692585994 (WA) 08121165688</p>
+      <br>
+      <p class="text-truncate">089692585994 (WA)<br>
+        08121165688</p>
     </div>
     <div class="col-l" >
       <h5>Andi R</h5>
-      <br><br>
+      <br>
       <p >08111777226</p>
     </div>
     <div class="col-l" >
-      <h5 class="" >Kerjasama<br>E-COMMERCE</h5>
+      <h5 class="text-truncate" >Kerjasama E-COMMERCE</h5>
       <br>
       <p >081380683397</p>
       <br>
       <p>ecommerce@wahana.com</p>
     </div>
   <div class="col-l">
-    <h5>Kerjasama CORPORATE</h5>
+    <h5 class="text-truncate">Kerjasama CORPORATE</h5>
     <br>
-    <p>089692585994 (WA) 08121165688</p>
+    <p>089692585994 (WA)
+      08121165688</p>
+      <br>
     <p>hendra@wahana.com</p>
   </div>
 </div>
 
+<a href="daftar_agen.html" role="button" class="btn btn-primary btn-block1 mt-4 mb-4" style="color: white;font-weight:bold;">DAFTAR KEAGENAN WAHANA</a>
   </div>
-  <div class="row">
-  <div class="col-md-12 text-left mt-2 mb-2">
-    <span class="text-muted text-left" style="font-size:12px;">* Syarat dan ketentuan berlaku</span>
-  </div>
-</div>
-  <div class="col-md-12 ml-auto mt-3">
-    <a href="daftar_agen.html" role="button" class="btn btn-primary btn-block" style="color: white;">DAFTAR KEAGENAN WAHANA</a>
-  </div>
+
+
+
 </div>
 
         </div>
@@ -156,43 +145,39 @@
       <!-- START FOOTER  -->
 
       <footer class="mastfoot mt-5 mb-5" style="color: black;">
-        <div class="inner">
-          <div class="row ">
-            <div class="col-md-4 text-left">
-              <p>Jl. Rempoa Raya No.88, Rempoa, Ciputat, 15412
-              Tangerang Selatan, Banten, Indonesia</p>
-              <p>Tel : (+62) 21 7341688 <br>
-              Fax : (+62) 21 73886974</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
+       <div class="inner">
 
-            <div class="col-md-4 text-left">
-            © 2018 Wahana Prestasi Logistik
-            </div>
-            <div class="col-md-4">
-              <a href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
-              <img src="assets/img/fb_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
+         <div class="row">
 
-              <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
-              <img src="assets/img/insta_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
+           <div class="col-md-4 text-left">
+           <b><p>Jl. Rempoa Raya No.88, Ciputat,
+             Tangerang Selatan, Banten, 15412<br>
+             Tel : (+62) 21 7341688 <br>
+             Fax : (+62) 21 73886974</p></b>
+           </div>
+           <div class="col-md-4">
+             <a href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
+             <img src="assets/img/fb_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             </a>
 
-              <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
-              <img src="assets/img/likedin_logo.png" class="rounded-circle" width="25" height="25">
-              </a>
-            </div>
+             <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
+             <img src="assets/img/insta_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             </a>
 
-            <div class="col-md-4 text-right" >
-            <a href="faq.html" style="color:black;">FAQ</a> &nbsp;|&nbsp;
-            <a href="syarat_ketentuan.html" style="color:black;">Syarat dan Ketentuan</a>
-            </div>
+             <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
+             <img src="assets/img/likedin_logo.png" class="rounded-circle" width="25" height="25">
+             </a>
+           </div>
 
-          </div>
-        </div>
-      </footer>
+           <div class="col-md-4 text-right" >
+           <b><a href="faq.html" style="color:red;">FAQ</a></b> &nbsp;|&nbsp;
+           <b><a href="syarat_ketentuan.html" style="color:red;">Syarat & Ketentuan</a><b><br>
+           <a style="color:black;">© 2018 PT Wahana Prestasi Logistik</a>
+           </div>
+
+         </div>
+       </div>
+     </footer>
       <!-- END FOOTER -->
 
       <!-- Bootstrap core JavaScript
@@ -220,18 +205,16 @@
       $(window).scroll(function() {
       var scroll = $(window).scrollTop();
       if (scroll >= 300) {
-        $("header").addClass("dark-nav");
-        $(".nav a").addClass("dark-link");
-        $("header").removeClass("color-yellow");
-        $(".nav a").removeClass("nav-link");
+        $("nav").addClass("dark-nav");
+        $(".nav-item a").css("color","white");
+        $(".nav-item .nav-link span").css("color","white");
+        //$(".nav-item a").removeClass("nav-link");
       } else {
-        $("header").removeClass("dark-nav");
-        $(".nav a").addClass("nav-link");
-        $("header").addClass("color-yellow")
-        $(".nav a").removeClass("dark-link");
+        $("nav").removeClass("dark-nav");
+        $(".nav-item a").css("color","black");
       }
     })
-    })
+  });
   </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNzqp67WVt-aidLsHBSGOpvSspaMj4mg8&callback=initMap">
