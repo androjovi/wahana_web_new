@@ -23,9 +23,9 @@
   <!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
 </head>
 <style>
-  .hvr-bounce-to-right::before {
-    background: #0202ff;
-  }
+.hvr-sweep-to-right::before{
+  background: #0202ff;
+}
 
   .col-container {
     display: table;
@@ -41,7 +41,14 @@
   }
 
   .faq-header {
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .faq-subheader{
+    font-size: 18px;
+  }
+  .faq-answer{
+    font-size: 15px;
   }
 </style>
 
@@ -52,7 +59,7 @@
       <div class="inner">
         <h3 class="masthead-brand"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 4px;" src="wahana/images/logo-wahana.png"></h3>
         <nav class="nav nav-masthead justify-content-center mt-2">
-          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html">Beranda</a>
+          <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.htmlindex.html">Beranda</a>
           <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#tariff">Cek Tarif</a>
           <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#track">Lacak Pengiriman</a>
           <a class="nav-link nav-mastlink hvr-sweep-to-right" href="index.html#agentloc">Agen Terdekat</a>
@@ -103,13 +110,46 @@
         	</a>
       </div>
       <div class="card bg-transparent">
-        <div class="card-body">
+        <div class="card-body" style="height: 100%;">
 
-          <div class="row">
-            <div class="col-md-12">
-                sad
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="row faq-header">
+                <div class="col-2 col-md-2 col-sm-4 text-right">
+                  <div class="faq-header"><img src="assets/img/bo_1.png" width="20" height="20"></div>
+                </div>
+                <div class="col-6 col-md-3 text-left">
+                  <div class="faq-header">Lokasi agen</div>
+                </div>
+                <div class="col-3 col-md-3 col-sm-1">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                 selengkapnya
+                </button>
+                </div>
+              </div>
+
+              <div class="row collapse" id="collapseExample">
+                <div class="col-md-2"></div>
+                <div class="col-md-7 text-left">
+                  <div class="faq-subheader">Dimana saja lokasi agen / perwakilan wahana</div>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                 selengkapnya
+                </button>
+                </div>
+              </div>
+              <div class="collapse" id="collapseExample1">
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class ="col-md-9 offset-md-2 text-center" style="color: #0202ff">
+                    <div class="faq-answer">Anda dapat melihat di menu TEMUKAN AGEN. Lokasi agen terdekat akan muncul di peta Anda.</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
 
         </div>
       </div>
@@ -118,27 +158,37 @@
 
     <footer class="mastfoot mt-5 mb-5" style="color: black;">
       <div class="inner">
+        <div class="row ">
+          <div class="col-md-4 text-left">
+            <p>Jl. Rempoa Raya No.88, Rempoa, Ciputat, 15412
+            Tangerang Selatan, Banten, Indonesia</p>
+            <p>Tel : (+62) 21 7341688 <br>
+            Fax : (+62) 21 73886974</p>
+          </div>
+        </div>
+        <hr>
         <div class="row">
-          <div class="col-md-4">
-            © 2018 Wahana Prestasi Logistik
+
+          <div class="col-md-4 text-left">
+          © 2018 Wahana Prestasi Logistik
           </div>
           <div class="col-md-4">
             <a href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
-              <img src="assets/img/fb_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
+            <img src="assets/img/fb_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
 
             <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
-              <img src="assets/img/insta_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </a>
+            <img src="assets/img/insta_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
 
             <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
-              <img src="assets/img/likedin_logo.png" class="rounded-circle" width="25" height="25">
-              </a>
+            <img src="assets/img/likedin_logo.png" class="rounded-circle" width="25" height="25">
+            </a>
           </div>
 
-          <div class="col-md-4">
-            <a href="faq.html" style="color:black;">FAQ</a> &nbsp;|&nbsp;
-            <a href="" style="color:black;">Syarat dan Ketentuan</a>
+          <div class="col-md-4 text-right" >
+          <a href="faq.html" style="color:black;">FAQ</a> &nbsp;|&nbsp;
+          <a href="syarat_ketentuan.html" style="color:black;">Syarat dan Ketentuan</a>
           </div>
 
         </div>
