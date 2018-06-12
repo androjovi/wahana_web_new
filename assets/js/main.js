@@ -9,6 +9,13 @@ $(document).ready(function(){
   } else {
     $("nav").removeClass("dark-nav");
     $(".nav-item a").css("color","black");
+    $(".nav-item a").hover(
+   function () {
+     $(this).addClass("trun");
+   },
+   function () {
+       $(this).removeClass("trun");
+     })
   }
 })
 })
