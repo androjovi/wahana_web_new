@@ -27,16 +27,19 @@ a:hover {
 html {
   height: 100%;
   background-color: #333;
+  width: 100%;
 }
 
 body, .form-control, .btn, .input-group-text {
 	font-size: 0.875rem;
+
 }
 
 body {
   display: -ms-flexbox;
   display: flex;
   color: black;
+  width: 100%;
 
 /*
   background-image: url(../.././landing-page.png);
@@ -66,31 +69,24 @@ body {
 /*
  * Header
  */
-.masthead {
-  margin-bottom: 2rem;
+.navbar {
+
   transition: 1s;
 }
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-item .nav-link {
-  /* padding: .25rem 0;*/
-
-  color: white;
-  /* border-bottom: .25rem solid transparent; */
-}
-
 .navbar{
   background: rgba(0,0,0, 0.0);
 }
-.nav-item .nav-link{
+nav .nav-link{
   font-weight: bold;
   color: black;
 }
 .trun{
   color: white;
+}
+.nav-item a:hover {
+  /* padding: .25rem 0;*/
+  color: white;
+  /* border-bottom: .25rem solid transparent; */
 }
 
 /*
@@ -170,6 +166,7 @@ body {
   navbar <= 300
 */
 .dark-nav{
+  color: white;
   background-color: rgba(0,0,0, 0.5);
   transition: 1s;
 
@@ -197,3 +194,20 @@ To top butotn
 */
 
 /* Custom hover.css */
+
+@media only screen and (max-width: 800px) {
+    .navbar span {
+        display: none;
+    }
+    .col-l{
+      display: inline-block;
+    }
+    nav .navbar-brand{
+      margin-top: 2em;
+    }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/

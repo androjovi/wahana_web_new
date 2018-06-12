@@ -905,6 +905,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+    <script src="assets/js/main.js"></script>
     <script>
       window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')
     </script>
@@ -926,24 +927,6 @@
           map: agentMap
         });
       }
-      $(document).ready(function() {
-
-        $(document).ready(function(){
-
-          $(window).scroll(function() {
-          var scroll = $(window).scrollTop();
-          if (scroll >= 300) {
-            $("nav").addClass("dark-nav");
-            $(".nav-item a").css("color","white");
-            $(".nav-item .nav-link span").css("color","white");
-            //$(".nav-item a").removeClass("nav-link");
-          } else {
-            $("nav").removeClass("dark-nav");
-            $(".nav-item a").css("color","black");
-          }
-        })
-    });
-    })
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNzqp67WVt-aidLsHBSGOpvSspaMj4mg8&callback=initMap">
     </script>

@@ -52,7 +52,7 @@ V : 0.1.3
       </header>
     -->
     <nav class="navbar navbar-expand-lg sticky-top">
-  <a class="navbar-brand" href="#"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 4px;" src="wahana/images/logo-wahana.png"></a>
+  <a class="navbar-brand" href="#"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 1px;" src="wahana/images/logo-wahana.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fa fa-bars" aria-hidden="true"></i>
   </button>
@@ -297,6 +297,7 @@ V : 0.1.3
       <!-- Placed at the end of the document so the pages load faster -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://use.fontawesome.com/2e37f68334.js"></script>
+      <script src="assets/js/main.js"></script>
       <script>window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="assets/js/popper.min.js"></script>
       <script src="assets/js/bootstrap.min.js"></script>
@@ -313,21 +314,6 @@ V : 0.1.3
   			map: agentMap
   		});
   	}
-    $(document).ready(function(){
-
-      $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-      if (scroll >= 300) {
-        $("nav").addClass("dark-nav");
-        $(".nav-item a").css("color","white");
-        //$(".nav-item a").removeClass("nav-link");
-      } else {
-        $("nav").removeClass("dark-nav");
-        $(".nav-item a").css("color","black");
-        $(".nav-item a").addClass("trun");
-      }
-    })
-});
   </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNzqp67WVt-aidLsHBSGOpvSspaMj4mg8&callback=initMap">
