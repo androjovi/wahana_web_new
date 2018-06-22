@@ -1,0 +1,2805 @@
+
+    .font-hasil
+    {
+        color: #000000;
+         font-size: 12.5px;
+        font-weight: bolder;
+        padding-right: 0px;
+    }
+
+     .font-hasil-received
+    {
+        color: #ffffff;
+         font-size: 20px;
+        font-weight: bold;
+        padding-right: 0px;
+    }
+
+    .background-received
+    {
+       background:#12479b;
+        border-radius: 25px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 25px;
+    }
+
+
+    .font-hasil-header
+    {
+        color: #000000;
+        font-size: 14px;
+    }
+
+    .timeline-hasil
+    {
+        overflow-y:auto;
+        height: 290px;
+        padding:20px;
+        margin-top: 10px;
+    }
+    .timeline-hasil-list
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+        .font-hasil-received
+        {
+            color: #ffffff;
+             font-size: 14px;
+            font-weight: bold;
+            padding-right: 0px;
+        }
+    }
+
+    @media (max-width:420px)
+    {
+        .font-hasil-received
+        {
+            color: #ffffff;
+             font-size: 14px;
+            font-weight: bold;
+            padding-right: 0px;
+        }
+    }
+    /*Rate Calculator Section
+    ------------------------------------*/
+    /*Rate Calculator*/
+
+
+    /* DEMO 3 dropdown*/
+
+    .wrapper-dropdown-3 {
+        /* Size and position */
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+
+        /* Styles */
+        background: #fff;
+        border-radius: 25px;
+        border: 1px solid rgba(0,0,0,0.15);
+        box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+        cursor: pointer;
+        outline: none;
+
+        /* Font settings */
+        font-weight: bold;
+        color: #8AA8BD;
+    }
+
+    .wrapper-dropdown-3:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        margin-top: -3px;
+        border-width: 6px 6px 0 6px;
+        border-style: solid;
+        border-color: #8aa8bd transparent;
+    }
+
+    .wrapper-dropdown-3 .dropdown {
+      /* Size & position */
+        position: absolute;
+        top: 140%;
+        left: 0;
+        right: 0;
+
+        /* Styles */
+        background: white;
+        border-radius: inherit;
+        border: 1px solid rgba(0,0,0,0.17);
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        font-weight: normal;
+        -webkit-transition: all 0.5s ease-in;
+        -moz-transition: all 0.5s ease-in;
+        -ms-transition: all 0.5s ease-in;
+        -o-transition: all 0.5s ease-in;
+        transition: all 0.5s ease-in;
+        list-style: none;
+
+        /* Hiding */
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .wrapper-dropdown-3 .dropdown:after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        right: 15px;
+        border-width: 0 6px 6px 6px;
+        border-style: solid;
+        border-color: #fff transparent;
+    }
+
+    .wrapper-dropdown-3 .dropdown:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 100%;
+        right: 13px;
+        border-width: 0 8px 8px 8px;
+        border-style: solid;
+        border-color: rgba(0,0,0,0.1) transparent;
+    }
+
+    .wrapper-dropdown-3 .dropdown li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #8aa8bd;
+        border-bottom: 1px solid #e6e8ea;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        z-index: 2;
+    }
+
+    .wrapper-dropdown-3 .dropdown li i {
+        float: right;
+        color: inherit;
+    }
+
+    .wrapper-dropdown-3 .dropdown li:first-of-type a {
+        border-radius: 25px 25px 0 0;
+    }
+
+    .wrapper-dropdown-3 .dropdown li:last-of-type a {
+        border: none;
+        border-radius: 0 0 25px 25px;
+    }
+
+    /* Hover state */
+
+    .wrapper-dropdown-3 .dropdown li:hover a {
+        background: #f3f8f8;
+    }
+
+    /* Active state */
+
+    .wrapper-dropdown-3.active .dropdown {
+        opacity: 1;
+        z-index: 2;
+        pointer-events: auto;
+    }
+
+    /* No CSS3 support */
+
+    .no-opacity       .wrapper-dropdown-3 .dropdown,
+    .no-pointerevents .wrapper-dropdown-3 .dropdown {
+        display: none;
+        opacity: 1; /* If opacity support but no pointer-events support */
+        pointer-events: auto; /* If pointer-events support but no pointer-events support */
+    }
+
+    .no-opacity       .wrapper-dropdown-3.active .dropdown,
+    .no-pointerevents .wrapper-dropdown-3.active .dropdown {
+        display: block;
+    }
+
+    .wrapper-dropdown-3:focus .dropdown {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+
+    /*Map Section
+    ------------------------------------*/
+    /*Map*/
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-container
+    {
+
+    }
+
+    @media (min-width:920px)
+    {
+         .map-title-label
+        {
+            color:white;
+            font-family: "Segoe UI Light";
+            font-size: 72px;
+            margin-top: 60px;
+            font-weight: lighter;
+        }
+
+        .map-subtitle-label
+        {
+            color:white;
+            font-family: "Segoe UI Light";
+            font-size: 24px;
+            font-weight: lighter;
+        }
+
+    }
+     @media (max-width:420px)
+    {
+             .map-title-label
+        {
+            color:white;
+            font-family: "Segoe UI Light";
+            font-size: 22px;
+            margin-top: 10px;
+            font-weight: lighter;
+        }
+
+        .map-subtitle-label
+        {
+            color:white;
+            font-family: "Segoe UI Light";
+            font-size: 16px;
+            padding: 5px;
+            font-weight: lighter;
+        }
+        #btn-agen
+        {
+            display: block;
+            margin-top:10px;
+        }
+    }
+
+
+    }
+     @media (max-width:920px) and (min-width:420px)
+    {
+         .map-title-label
+        {
+            color:white;
+            font-family: "Segoe UI Light";
+            font-size: 22px;
+            margin-top: 10px;
+            font-weight: lighter;
+        }
+
+        .map-subtitle-label
+        {
+            color:white;
+            font-family: "Segoe UI Light";
+            font-size: 24px;
+            font-weight: lighter;
+        }
+    }
+    .map-section {
+
+      background-image: url("../img/wahana/findagen.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 400px;
+    }
+
+
+
+    .map-section:after {
+
+       width: 100%;
+      height: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .map-container
+    {
+        position: absolute;
+        top: 10px;
+        right: 50px;
+        z-index: 99;
+        padding-top:30px;
+        padding-bottom: 30px;
+         display: inline-block;
+    }
+
+    .map-content
+    {
+
+    }
+
+    .list-alamat
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        text-decoration: none;
+        height: 330px;
+        overflow:hidden; overflow-y:scroll;
+    }
+
+    @media (max-width: 990px) {
+    /*
+        .value-map
+        {
+            height:300px;
+        }
+    */
+
+
+        .map-section {
+
+          /*background-image: url("../img/wahana/map.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;*/
+            height: 300px;
+        }
+
+            .list-alamat
+            {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 10px;
+            text-decoration: none;
+                height: 200px;
+            overflow:hidden; overflow-y:scroll;
+            }
+    }
+
+    @media (max-width:997px)
+    {
+        .map-section {
+
+            /*background-image: url("../img/wahana/map.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;*/
+            height: 500px;
+        }
+        .find-agent
+        {
+
+        }
+
+          .list-alamat
+        {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        text-decoration: none;
+            height: 100px;
+        overflow:hidden; overflow-y:scroll;
+        }
+
+
+    }
+
+    .find-agent
+    {
+        background: #ffffff;
+        z-index: 2;
+
+        padding: 10px;
+    }
+
+    .find-agent-label
+    {
+        text-align: center;
+          font-size: 14.5px;
+    }
+
+    .find-representative-label
+    {
+        text-align: center;
+         font-size: 13.5px;
+    }
+
+    .list-item-alamat
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+       list-style: none;
+    }
+
+    .nama-tempat
+    {
+        font-weight: bolder;
+         font-size: 12.5px;
+    }
+    .email-tempat
+    {
+         font-size: 10px;
+    }
+    .telepon-tempat
+    {
+         font-size: 10px;
+    }
+
+    .alamat-tempat
+    {
+         font-size: 10px;
+    }
+
+    .jarak-tempat
+    {
+         font-size: 10px;
+        color:#12479b;
+        font-weight: bold;
+    }
+
+    .directions-tempat
+    {
+        padding-top:10px;
+        padding-bottom: 5px;
+    }
+
+    .direction-label
+    {
+         font-size: 0.8vw;
+        padding:3px;
+
+    }
+
+    .img-arah
+    {
+        padding:0px;
+        width: 20px;
+        float: left;
+    }
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+      .find-agent-label
+        {
+            text-align: center;
+              font-size: 14.5px;
+        }
+
+        .find-representative-label
+        {
+            text-align: center;
+             font-size: 13.5px;
+        }
+
+        .list-item-alamat
+        {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 10px;
+           list-style: none;
+        }
+
+        .nama-tempat
+        {
+            font-weight: bolder;
+             font-size: 12.5px;
+        }
+        .email-tempat
+        {
+             font-size: 10px;
+        }
+        .telepon-tempat
+        {
+             font-size: 10px;
+        }
+
+        .alamat-tempat
+        {
+             font-size: 10px;
+        }
+          .map-content
+        {
+            width:200px;
+        }
+    }
+
+    @media (max-width:420px)
+    {
+        .map-container{
+          max-width: 100%;
+          height: auto
+          margin: 0;
+        }
+        .map-content
+        {
+          display: block;
+        }
+        .find-agent{
+
+        }
+       .find-agent-label
+        {
+            text-align: center;
+              font-size: 8px;
+        }
+
+        .find-representative-label
+        {
+            text-align: center;
+             font-size: 7px;
+        }
+
+        .list-item-alamat
+        {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 10px;
+           list-style: none;
+        }
+
+        .nama-tempat
+        {
+            font-weight: bolder;
+             font-size: 6px;
+        }
+        .email-tempat
+        {
+             font-size: 5px;
+        }
+        .telepon-tempat
+        {
+             font-size: 5px;
+        }
+
+        .alamat-tempat
+        {
+             font-size: 5px;
+            min-width: 50%;
+        }
+
+        .jarak-tempat
+        {
+             font-size: 5px;
+        }
+    }
+
+    .divBack
+    {
+        font-weight:bolder;
+    }
+    /*1Intro Section
+    ------------------------------------*/
+    /*Intro Section*/
+
+    @media (min-width:920px)
+    {
+         .intro-section {
+          background: #222;
+          margin-top: 135px;
+
+        }
+         .intro-section:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    }
+     @media (max-width:420px)
+    {
+         .intro-section {
+             background: #222;
+          margin-top: 185px;
+        }
+         .intro-section:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+
+    }
+     @media (max-width:920px) and (min-width:420px)
+    {
+     .intro-section {
+        background: #222;
+        margin-top: 185px;
+      }
+     .intro-section:after {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+    }
+
+    .background-image-slider
+    {
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+
+    /*partner Section
+    ------------------------------------*/
+    /*partner Section*/
+    .partber-section {
+      background: #222;
+        margin-top: 145px;
+    }
+
+    .partner-section:after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .container-partner
+    {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .headline-partner
+    {
+        text-align: center;
+    }
+
+    /*footer Section
+    ------------------------------------*/
+    /*footer Section*/
+
+    .footer-section
+    {
+        background: #12479b;
+
+    }
+
+    .list-footer
+    {
+        color: #ffffff;
+    }
+
+
+    .list-footer:hover
+    {
+        color: #FFFF00;
+    }
+
+    .telpon-footer
+    {
+        margin-bottom: 30px;
+
+    }
+
+    .telpon-contact
+    {
+        margin-bottom: 10px;
+        margin-left: 5px;
+
+    }
+
+    address
+    {
+        margin-bottom: 0px;
+    }
+    .underline-none
+    {
+        border-bottom: none;
+    }
+
+    .footer-logo
+    {
+        height: 90px;
+        margin: 27px 0 30px;
+    }
+
+    .subscribe
+    {
+        padding: 5px;
+    }
+
+    .headline.headline-footer
+    {
+      font-size: 22px;
+      color:#ffffff;
+    }
+
+    /*rounded search dimension*/
+
+    .round-footer {
+        width: 100%;
+        margin: auto;
+        border-radius: 25px;
+        border: 2px #b7b7b7 solid;
+        padding: 5px 10px 5px 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        height: 30px;
+          outline: none;
+        color: #000000;
+    }
+
+    .round-footer:focus {
+
+        margin: auto;
+        border-radius: 25px;
+        border: 2px #b7b7b7 solid;
+        padding: 5px 5px 5px 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        height: 30px;
+          outline: none;
+        color: #000000;
+    }
+
+
+    .search-footer {
+         padding: 5px 5px 5px 5px;
+        display: block;
+        outline: none;
+        margin: auto;
+        height: 30px;
+        position: relative;
+        align-content: center;
+        color: #b4b4b4;
+    }
+
+    .search-footer:focus {
+       display: block;
+      outline: none;
+        margin: auto;
+       text-align: center;
+          align-content: center;
+        height: 30px;
+          position: relative;
+        color: #000000;
+    }
+
+    .font-footer
+    {
+        color: #ffffff;
+    }
+
+     .font-footer-cantact
+    {
+        color: #ffffff;
+        font-size:10px;
+    }
+
+    /*rounded button calculate*/
+    #rcorners-footer {
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #fcd700;
+        background: inherit;
+        color: #fcd700;
+        padding: 2px;
+         height: 30px;
+       margin: auto;
+        outline: none;
+
+    }
+
+    #rcorners-footer:hover {
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #FFFFFF;
+        background: inherit;
+        color: #ffffff;
+        padding: 2px;
+         height: 30px;
+        margin:auto;
+
+          outline: none;
+    }
+
+    .text-button.text-footer
+    {
+        color: #fcd700;
+    }
+
+
+    /*Breadcrumb Section
+    ------------------------------------*/
+    /*Breadcrumb Section*/
+    .breadcrumb-section {
+      background: #12479b   ;
+      margin-top: 135px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+    }
+
+
+
+    .breadcrumb li.active, .breadcrumb li a:hover
+    {
+        color: #ffffff;
+    }
+
+    .breadcrumbs
+    {
+        padding: 0px;
+    }
+
+    .breadcrumbs h1
+    {
+        padding: 0px;
+        margin: 5px;
+    }
+
+    .breadcrumb
+    {
+        padding-left: 5px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 5px;
+        top:0px;
+    }
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+         .breadcrumb-section {
+      background: #12479b   ;
+      margin-top: 180px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+        }
+    }
+
+ @media (max-width:420px)
+    {
+        .breadcrumb-section
+        {
+            background: #12479b   ;
+        margin-top: 180px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+        }
+    }
+
+    /*About Section
+    ------------------------------------*/
+    /*About Section*/
+
+        .container-about
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    .about-us-header
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 2vw;
+        color: #000000;
+    }
+
+    .about-us-content
+    {
+        padding: 20px 20px 20px 20px;
+    }
+
+    .about-us-label
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 1vw;
+        color: #000000;
+        font-family: "Roboto Light";
+    }
+
+    .logo-about
+    {
+        width: 40px;
+        float: right;
+        padding-top: 8px;
+    }
+
+    /*Service Section
+    ------------------------------------*/
+    /*Service Section*/
+
+    .container-services
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    .services-header
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 2vw;
+        color: #000000;
+    }
+
+    .services-content
+    {
+        padding: 20px 20px 20px 20px;
+    }
+
+    .services-label
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 1vw;
+        color: #000000;
+        font-family: "Roboto Light";
+    }
+
+    .logo-services
+    {
+        width: 40px;
+        float: right;
+
+    }
+
+    .header-service-section
+    {
+        height: 320px;
+          background-image: url("../img/wahana/service.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+    }
+
+    /*Business Opportunity Section
+    ------------------------------------*/
+    /*Business Opportunity Section*/
+
+    .container-business
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+
+    .business-header
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 2vw;
+
+    }
+
+    .business-header-contact
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 1.8vw;
+
+    }
+
+    .business-contact-header
+    {
+        padding: 2px 10px 5px 5px;
+        font-size: 1.2vw;
+        font-weight: lighter;
+    }
+
+    .business-contact-header-nama
+    {
+        padding: 2px 10px 5px 5px;
+        font-size: 1.2vw;
+        font-weight: normal;
+    }
+
+    .business-contact-header-tempat
+    {
+        padding: 2px 10px 5px 5px;
+        font-size: 1.3vw;
+        font-weight: bolder;
+    }
+
+    .business-content
+    {
+        padding: 5px 10px 5px 5px;
+         color: #000000;
+    }
+
+    .text-button-download
+    {
+        display: block;
+            margin: auto;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bolder;
+/*        color: #ffffff;*/
+    }
+
+    .text-button-download:hover
+    {
+        display: block;
+            margin: auto;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #000000;
+    }
+
+    .button-download:hover
+    {
+        background: yellow;
+        border: none;
+         color: #000000;
+    }
+
+
+    .business-contact
+    {
+        height: 100%;
+    }
+
+    .panah
+    {
+       display: table-cell;
+       vertical-align: middle;
+    }
+    .business-content-contact
+    {
+        padding: 5px 10px 5px 5px;
+        background: #12479b;
+        border-radius: 20px;
+        color: #ffffff;
+    }
+
+    .business-label
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 1vw;
+
+        font-family: "Roboto Light";
+    }
+
+    .logo-business
+    {
+        width: 40px;
+        float: right;
+
+    }
+
+    .logo-business-contact
+    {
+
+        float: right;
+        width: 20px;
+       padding-top: 14px;
+
+
+    }
+
+    .logo-business-contact-wa
+    {
+
+        float: left;
+        width: 18px;
+       padding-top: 0px;
+         margin-top: -2px;
+    }
+
+ /*rounded button calculate*/
+    #rcorners-download {
+
+        border-radius: 25px;
+
+        background: #12479b;
+        color: #ffffff;
+        padding: 2px;
+         height: 30px;
+
+        outline: none;
+
+    }
+
+    #rcorners-download:hover {
+
+        border-radius: 25px;
+
+        background: #ffffff;
+        color: #12479b;
+        padding: 2px;
+         height: 30px;
+
+
+          outline: none;
+    }
+
+    .wa-logo
+    {
+        padding: 5px 5px 5px 5px;
+
+    }
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+      .logo-business-contact
+        {
+
+            float: right;
+            width: 10px;
+           padding-top: 7px;
+
+
+        }
+        .logo-business-contact-wa
+        {
+
+            float: left;
+            width: 10px;
+           padding-top:0px;
+             margin-top: 0px;
+
+        }
+    }
+
+    @media (max-width:420px)
+    {
+      .logo-business-contact
+        {
+
+            float: right;
+            width: 5px;
+           padding-top: 7px;
+
+
+        }
+        .wa-logo
+        {
+            padding: 2px;
+        }
+        .logo-business-contact-wa
+        {
+
+            float: left;
+            width: 5px;
+           padding-top: 0px;
+             margin-top: 0px;
+
+        }
+
+              .list-alamat
+    {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    text-decoration: none;
+        height: 100px;
+    overflow:hidden; overflow-y:scroll;
+    }
+    }
+
+
+}
+
+.find-agent
+{
+    background: #ffffff;
+    z-index: 2;
+
+    padding: 10px;
+}
+
+.find-agent-label
+{
+    text-align: center;
+    font-size: 2vw;
+}
+
+.find-representative-label
+{
+    text-align: center;
+     font-size: 1vw;
+}
+
+
+
+
+
+.list-item-alamat
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+   list-style: none;
+}
+
+.nama-tempat
+{
+     font-size: 0.8vw;
+}
+.email-tempat
+{
+     font-size: 0.8vw;
+}
+.telepon-tempat
+{
+     font-size: 0.8vw;
+}
+
+.alamat-tempat
+{
+     font-size: 0.8vw;
+}
+
+.jarak-tempat
+{
+     font-size: 0.8vw;
+}
+
+.directions-tempat
+{
+    padding-top:10px;
+    padding-bottom: 5px;
+}
+
+.direction-label
+{
+     font-size: 0.8vw;
+    padding:3px;
+
+}
+
+.img-arah
+{
+    padding:0px;
+    width: 20px;
+    float: left;
+}
+/*1Intro Section
+------------------------------------*/
+/*Intro Section*/
+
+.intro-section:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/*partner Section
+------------------------------------*/
+/*partner Section*/
+.partber-section {
+  background: #222;
+    margin-top: 145px;
+}
+
+.partner-section:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.container-partner
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.headline-partner
+{
+    text-align: center;
+}
+
+/*footer Section
+------------------------------------*/
+/*footer Section*/
+
+.footer-section
+{
+    background: #324368;
+
+}
+
+.footer-logo
+{
+    height: 90px;
+    margin: 27px 0 30px;
+}
+
+.subscribe
+{
+    padding: 5px;
+}
+
+.headline.headline-footer
+{
+  font-size: 22px;
+  color:#ffffff;
+}
+
+/*rounded search dimension*/
+
+.round-footer {
+    width: 100%;
+    margin: auto;
+    border-radius: 25px;
+    border: 2px #b7b7b7 solid;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 30px;
+      outline: none;
+    color: #000000;
+}
+
+.round-footer:focus {
+
+    margin: auto;
+    border-radius: 25px;
+    border: 2px #b7b7b7 solid;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 30px;
+      outline: none;
+    color: #000000;
+}
+
+
+.search-footer {
+     padding: 5px 5px 5px 5px;
+    display: block;
+    outline: none;
+    margin: auto;
+    height: 30px;
+    position: relative;
+    align-content: center;
+    color: #b4b4b4;
+}
+
+.search-footer:focus {
+   display: block;
+  outline: none;
+    margin: auto;
+   text-align: center;
+      align-content: center;
+    height: 30px;
+      position: relative;
+    color: #000000;
+}
+
+.font-footer
+{
+    color: #ffffff;
+}
+
+/*rounded button calculate*/
+#rcorners-footer {
+    display: block;
+    border-radius: 25px;
+    border: 2px solid #fcd700;
+    background: inherit;
+    color: #fcd700;
+    padding: 2px;
+     height: 30px;
+   margin: auto;
+    outline: none;
+
+}
+
+#rcorners-footer:hover {
+    display: block;
+    border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    background: inherit;
+    color: #ffffff;
+    padding: 2px;
+     height: 30px;
+    margin:auto;
+
+      outline: none;
+}
+
+.text-button.text-footer
+{
+    color: #fcd700;
+}
+
+
+/*Breadcrumb Section
+------------------------------------*/
+/*Breadcrumb Section*/
+
+.breadcrumb li.active, .breadcrumb li a:hover
+{
+    color: #ffffff;
+}
+
+.breadcrumbs
+{
+    padding: 0px;
+}
+
+.breadcrumbs h1
+{
+    padding: 0px;
+    margin: 5px;
+}
+
+.breadcrumb
+{
+    padding-left: 5px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    top:0px;
+}
+
+/*About Section
+------------------------------------*/
+/*About Section*/
+
+    .container-about
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.about-us-header
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 2vw;
+    color: #000000;
+}
+
+.about-us-content
+{
+    padding: 20px 20px 20px 20px;
+}
+
+.about-us-label
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 1vw;
+    color: #000000;
+    font-family: "Roboto Light";
+}
+
+.logo-about
+{
+    width: 40px;
+    float: right;
+
+}
+
+/*Service Section
+------------------------------------*/
+/*Service Section*/
+
+.container-services
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.services-header
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 2vw;
+    color: #000000;
+}
+
+.services-content
+{
+    padding: 20px 20px 20px 20px;
+}
+
+.services-label
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 1vw;
+    color: #000000;
+    font-family: "Roboto Light";
+}
+
+.logo-services
+{
+    width: 40px;
+    float: right;
+
+}
+
+.header-service-section
+{
+    height: 320px;
+      background-image: url("../img/wahana/service.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+ @media (max-width:997px) and (min-width:420px)
+    {
+        .header-service-section
+        {
+            height: 200px;
+              background-image: url("../img/wahana/service.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+ @media (max-width:420px)
+    {
+        .header-service-section
+        {
+            height: 100px;
+              background-image: url("../img/wahana/service.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+/*Business Opportunity Section
+------------------------------------*/
+/*Business Opportunity Section*/
+
+.container-business
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.business-header
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 2vw;
+
+}
+
+.business-header-contact
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 1.8vw;
+
+}
+
+.business-contact-header
+{
+    padding: 2px 10px 5px 5px;
+    font-size: 1.2vw;
+    font-weight: lighter;
+}
+
+.business-contact-header-nama
+{
+    padding: 2px 10px 5px 5px;
+    font-size: 1.2vw;
+    font-weight: normal;
+}
+
+.business-contact-header-tempat
+{
+    padding: 2px 10px 5px 5px;
+    font-size: 1.3vw;
+    font-weight: bolder;
+}
+
+.business-content
+{
+    padding: 5px 10px 5px 5px;
+     color: #000000;
+}
+
+.business-contact
+{
+    height: 100%;
+}
+
+.panah
+{
+   display: table-cell;
+   vertical-align: middle;
+}
+.business-content-contact
+{
+    padding: 5px 10px 5px 5px;
+    background: #12479b;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.business-label
+{
+    padding: 5px 10px 5px 5px;
+    font-size: 1vw;
+
+    font-family: "Roboto Light";
+}
+
+.logo-business
+{
+    width: 40px;
+    float: right;
+
+}
+
+
+    /*Contact Us Section
+    ------------------------------------*/
+    /*Contact Us Section*/
+
+    .container-contact
+    {
+        padding-top: 50px;
+        padding-bottom: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .logo-wahana-cs
+    {
+        width: 50px;
+        margin: auto;
+        display: block;
+    }
+
+    .content-right-contact
+    {
+       border-radius: 25px;
+        width: 90%;
+        background: #12479b;
+        padding: 10px 25px 10px 25px;
+    }
+
+    .contact-header
+    {
+        padding: 3px 5px 3px 5px;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contact-header-1
+    {
+        padding: 3px 5px 3px 5px;
+        font-size: 12px;
+        color: #ffffff;
+        font-weight: bold;
+
+    }
+
+
+    .contact-header-tempat
+    {
+
+        font-size: 14px;
+        color: #000000;
+        font-weight: bolder;
+    }
+
+    .faq-contact-header-tempat
+    {
+
+        font-size: 14px;
+        color: #000000;
+        font-weight: bolder;
+    }
+
+    .contact-header-label
+    {
+        padding: 5px 0px 5px 0px;
+        font-size: 1vw;
+        color: red;
+        font-weight: lighter;
+
+    }
+
+    .cs-header
+    {
+        font-size: 1.2vw;
+        color: #000000;
+        font-weight: bold;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .metro-header
+    {
+        font-size: 1.2vw;
+        color: #000000;
+
+    }
+
+    .contact-content
+    {
+        padding: 20px 20px 20px 20px;
+    }
+
+    .contact-label
+    {
+        padding: 3px 5px 3px 5px;
+        font-size: 10px;
+        color: #ffffff;
+        font-family: "Roboto Light";
+
+    }
+
+    .content-contact
+    {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .content-metro-nonmetro
+    {
+
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .metro
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .logo-contact
+    {
+       margin: auto;
+        display: block;
+    }
+
+    .logo-customer-service
+    {
+        width:30px;
+        float: left;
+
+    }
+
+    .logo-metro
+    {
+        width: 70%;
+        float: left;
+        padding-top: 4px;
+
+    }
+
+     .logo-contact
+    {
+        padding-top: 6px;
+        width: 10px;
+
+
+    }
+
+    .metro-part
+    {
+        padding-top: 5px;
+         padding-bottom: 5px;
+        display: block;
+    }
+
+    .header-contact-section
+    {
+        height: 320px;
+          background-image: url("../img/wahana/cutomers.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+      .content-contact
+        {
+            margin-top: 100px;
+        }
+
+         .content-right-contact
+        {
+       border-radius: 25px;
+        background: #12479b;
+        padding: 10px 15px 10px 15px;
+        }
+
+        .content-metro-nonmetro
+        {
+            margin-top: 30px;
+        }
+
+         .logo-contact
+        {
+            padding-top: 4px;
+            width: 8px;
+            float:left;
+
+        }
+
+        .logo-customer-service
+        {
+        width:20px;
+        float: left;
+
+        }
+
+         .container-contact
+        {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        }
+
+        .contact-header
+        {
+        padding: 5px 10px 5px 5px;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        }
+
+    .contact-header-1
+    {
+        padding: 5px 10px 5px 5px;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: bold;
+
+    }
+
+         .logo-wahana-cs
+        {
+            width: 50px;
+            margin: auto;
+            display: block;
+        }
+
+         .header-contact-section
+        {
+        height: 200px;
+          background-image: url("../img/wahana/cutomers.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        }
+
+    }
+
+    @media (max-width:420px)
+    {
+     .content-contact
+        {
+            margin-top: 30px;
+        }
+
+        .content-metro-nonmetro
+        {
+            margin-top: 20px;
+        }
+
+        .logo-customer-service
+        {
+        width:10px;
+        float: left;
+
+        }
+
+        .header-contact-section
+        {
+        height: 100px;
+          background-image: url("../img/wahana/cutomers.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        }
+
+         .logo-contact
+        {
+            padding-top: 2px;
+            width: 4px;
+            float:left;
+
+        }
+          .container-contact
+        {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .contact-header
+        {
+        padding: 5px 10px 5px 5px;
+        font-size: 8px;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        }
+
+        .contact-header-1
+        {
+        padding: 5px 10px 5px 5px;
+        font-size: 8px;
+        color: #ffffff;
+        font-weight: bold;
+
+        }
+         .contact-label
+        {
+        padding: 5px 10px 5px 5px;
+        font-size: 6px;
+        color: #ffffff;
+        font-family: "Roboto Light";
+
+        }
+            .logo-wahana-cs
+        {
+            width: 30px;
+            margin: auto;
+            display: block;
+        }
+
+         .content-right-contact
+        {
+       border-radius: 25px;
+        background: #12479b;
+        padding: 5px 5px 5px 5px;
+        }
+    }
+
+ /*FAQ Section
+    ------------------------------------*/
+    /*FAQ Section*/
+
+    .faq-section
+    {
+        background-image: url("../img/wahana/background_all.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+    }
+
+    .container-faq
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .faq-span
+    {
+        color:#12479b;
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .faq1-span
+    {
+        color:#12479b;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .contact-header-tempat
+    {
+
+        font-size: 1.2vw;
+        color: #000000;
+        font-weight: bolder;
+    }
+
+    .contact-header-label
+    {
+        padding: 5px 0px 5px 0px;
+        font-size: 1vw;
+        color: #000000;
+        font-weight: lighter;
+
+    }
+
+     .faq-contact-header-label
+    {
+        padding: 5px 0px 5px 0px;
+        font-size: 1vw;
+        color: #12479b;
+        font-weight: bolder;
+
+    }
+
+    .cs-header
+    {
+        font-size: 1.2vw;
+        color: #000000;
+        font-weight: bold;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .metro-header
+    {
+        font-size: 1.2vw;
+        color: #000000;
+        font-weight: bold;
+
+    }
+
+    .contact-content
+    {
+        padding: 20px 20px 20px 20px;
+    }
+
+   .contact-label
+    {
+        padding: 3px 5px 3px 5px;
+        font-size: 10px;
+        color: #ffffff;
+        font-family: "Roboto Light";
+
+    }
+    .content-contact
+    {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .logo-contact
+    {
+       margin: auto;
+        display: block;
+    }
+
+    .logo-faq
+    {
+        width:25px;
+        float: left;
+
+    }
+
+
+    .metro-part
+    {
+      padding-top: 5px;
+         padding-bottom: 5px;
+
+        display: block;
+    }
+
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+      .content-contact
+        {
+            margin-top: 100px;
+        }
+
+         .content-right-contact
+        {
+       border-radius: 25px;
+        background: #12479b;
+        padding: 10px 15px 10px 15px;
+        }
+
+        .content-metro-nonmetro
+        {
+            margin-top: 30px;
+        }
+
+         .logo-contact
+        {
+            padding-top: 20px;
+            width: 8px;
+            float:left;
+
+        }
+
+        .logo-faq
+        {
+        width:20px;
+        float: left;
+
+        }
+
+         .container-contact
+        {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        }
+
+
+
+         .logo-wahana-cs
+        {
+            width: 50px;
+            margin: auto;
+            display: block;
+        }
+
+    }
+
+    @media (max-width:420px)
+    {
+     .content-contact
+        {
+            margin-top: 30px;
+        }
+
+        .content-metro-nonmetro
+        {
+            margin-top: 20px;
+        }
+
+        .logo-faq
+        {
+        width:10px;
+        float: left;
+
+        }
+
+         .logo-contact
+        {
+            padding-top: 4px;
+            width: 4px;
+            float:left;
+
+        }
+          .container-contact
+        {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+           .logo-wahana-cs
+        {
+            width: 30px;
+            margin: auto;
+            display: block;
+        }
+
+         .content-right-contact
+        {
+       border-radius: 25px;
+        background: #12479b;
+        padding: 5px 5px 5px 5px;
+        }
+    }
+
+    .contact-header-label-faq
+    {
+        padding: 5px 0px 5px 0px;
+        font-size: 1vw;
+        color: red;
+        font-weight: bold;
+
+    }
+
+
+
+ /*Term and Condition Section
+    ------------------------------------*/
+    /*Term and Condition Section*/
+
+.list-term li
+{
+    color: #000000;
+}
+
+.condition-content
+{
+    margin-top: 20px;
+}
+
+.list-term-2
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+ .cond-header
+    {
+        font-size: 1.2vw;
+        color: #000000;
+        font-weight: bold;
+
+    }
+
+
+/*Career Section
+    ------------------------------------*/
+    /*Career Section*/
+
+    .career-detail-section
+    {
+         background-image: url("../img/wahana/background_all_2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+
+
+    }
+
+    .btn-cv
+    {
+        border-radius:15px;
+        background: #12479b;
+        color: #ffffff;
+    }
+
+     .btn-cv:hover
+    {
+        border-radius:15px;
+         background: #FFFF00;
+        color: #12479b;
+    }
+
+    .judul-form
+    {
+        display: block;
+        margin: auto;
+        text-align: center;
+        background: #ffffff;
+        border-radius:25px;
+        width: 200px;
+}
+    .container-career
+    {
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+
+    .career-header
+    {
+        padding: 5px 10px 25px 10px;
+        font-size: 24px;
+        color: #000000;
+        text-align: center;
+    }
+
+    .career-header-detail
+    {
+        padding: 5px 10px 5px 10px;
+        font-size: 32px;
+        color: #000000;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    .career-subheader
+    {
+        padding: 15px 10px 15px 10px;
+        font-size: 20px;
+        color: #000000;
+        font-weight: bolder;
+    }
+
+    .career-subheader-form
+    {
+        padding: 15px 10px 15px 10px;
+        font-size: 22px;
+        color: #000000;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .career-label
+    {
+        padding: 5px 10px 5px 10px;
+        font-size: 14px;
+        color: #12479b;
+         font-family: "Roboto Light";
+        text-align: right;
+
+    }
+
+    .list-label-detail
+    {
+        color: #000000;
+    }
+
+     .career-label-detail
+    {
+        padding: 5px 10px 5px 10px;
+        font-size: 14px;
+        color: #000000;
+         font-family: "Roboto Light";
+
+    }
+
+     .career-label-odd
+    {
+        padding: 5px 10px 5px 0px;
+        font-size: 14px;
+        color: #12479b;
+         font-family: "Roboto Light";
+
+    }
+
+    .career-content
+    {
+        padding: 5px 20px 5px 20px;
+    }
+
+
+
+    .logo-career
+    {
+        width: 40px;
+        float: right;
+
+    }
+
+    .header-career-section
+    {
+        height: 320px;
+          background-image: url("../img/wahana/career_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+    }
+
+    .dropdown-career
+    {
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        background: #ffffff;
+        border: solid 1px #12479b;
+        color:#12479b;
+        outline: none;
+        font-size: 1.2vw;
+    }
+
+    .dropdown-menu
+    {
+       width: 100%;
+    }
+
+    .caret
+    {
+        float: right;
+         background-image: url("../img/wahana/dropp.png");
+        margin-top: 10px;
+
+    }
+
+    .isi-content
+    {
+       padding:10px 0px 20px 5px;
+    }
+
+    .isi-form
+    {
+        padding:10px 30px 10px 30px;
+    }
+
+    .isi-form-keluhan
+    {
+        padding:10px 0px 10px 0px;
+    }
+
+    .sky-form
+    {
+        border: 1px solid #12479b;
+    }
+
+    .btn-u-form
+    {
+        color: white;
+        background: #12479b;
+        display: block;
+        margin: auto;
+        outline: none;
+        width: 200px;
+        height: 50px;
+        border-radius:15px;
+    }
+
+    .btn-u-form:hover
+    {
+         background: #FFFF00;
+        color: #12479b;
+        display: block;
+        margin: auto;
+        outline: none;
+        width: 200px;
+        height: 50px;
+    }
+
+      .btn-u-form-map:hover
+    {
+        background: #FFFF00;
+        color: #12479b;
+        display: block;
+        margin: 30px 0px 10px 0px;
+        outline: none;
+        height: 50px;
+        border-radius:15px;
+    }
+
+    .middle
+    {
+        display: block;
+        margin: auto;
+    }
+
+    .btn-u-form-map
+        {
+            color: white;
+            background: #12479b;
+            display: block;
+           margin: 30px 0px 10px 0px;
+            outline: none;
+            width: 100%;
+            height: 50px;
+             border-radius:15px;
+        }
+
+    .form-dropdown
+    {
+
+    }
+
+    @media (max-width:997px) and (min-width:420px)
+    {
+      .btn-u-form
+        {
+            color: white;
+            background: #12479b;
+            display: block;
+            margin: auto;
+            outline: none;
+            width: 220px;
+            height: 50px;
+        }
+
+        .btn-u-form:hover
+        {
+            color:  #12479b;
+            background: #FFFF00;
+            display: block;
+            margin: auto;
+            outline: none;
+            width: 220px;
+            height: 50px;
+        }
+        .btn-u-form-map
+        {
+            color: white;
+            background: #12479b;
+            display: block;
+            margin: auto;
+            outline: none;
+            width: 100%;
+            height: 50px;
+        }
+
+          .header-career-section
+        {
+        height: 200px;
+          background-image: url("../img/wahana/career_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        }
+    }
+
+    @media (max-width:420px)
+    {
+        .btn-u-form
+        {
+            color: white;
+            background: #12479b;
+            display: block;
+            margin: auto;
+            outline: none;
+            width: 120px;
+            height: 50px;
+        }
+
+        .btn-u-form:hover
+        {
+            color: #12479b;
+            background: #FFFF00;
+            display: block;
+            margin: auto;
+            outline: none;
+            width: 120px;
+            height: 50px;
+        }
+
+        .btn-u-form-map
+        {
+            color: white;
+            background: #12479b;
+            display: block;
+            margin: auto;
+            outline: none;
+            width: 100%;
+            height: 50px;
+        }
+
+        .career-label
+        {
+        padding: 5px 0px 5px 0px;
+        font-size: 14px;
+        color: #12479b;
+         font-family: "Roboto Light";
+        text-align: right;
+
+        }
+
+
+        .career-subheader
+        {
+            padding: 15px 0px 15px 0px;
+            font-size: 20px;
+            color: #000000;
+            font-weight: bolder;
+        }
+
+         .header-career-section
+        {
+        height: 100px;
+          background-image: url("../img/wahana/career_bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        }
+    }
+
+    .map-section-form {
+
+        /*background-image: url("../img/wahana/map.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;*/
+        position: relative;
+        margin-top: 20px;
+        height: 300px;
+    }
+
+     .isi-foto-form {
+
+        border:1px solid #000000;
+        height: 300px;
+         border-radius: 15px;
+         margin-bottom: 10px;
+    }
+
+    .bottom-20
+    {
+        margin-bottom: 40px;
+    }
+
+    .bottom-40
+    {
+        margin-bottom: 43px;
+    }
+
+/*///SLIDESHOW//*/
+    .diy-slideshow
+    {
+        position: relative;
+        display: block;
+        overflow: hidden;
+    }
+    figure
+    {
+        position: absolute;
+        opacity: 0;
+        transition: 1s opacity;
+    }
+    figcaption
+    {
+        position: absolute;
+        font-family: sans-serif;
+        font-size: .8em;
+        bottom: .75em;
+        right: .35em;
+        padding: .25em;
+        color: #fff;
+        background: rgba(0,0,0, .25);
+        border-radius: 2px;
+    }
+    figcaption a
+    {
+        color: #fff;
+    }
+    figure.show
+    {
+        opacity: 1;
+        position: static;
+        transition: 1s opacity;
+    }
+    .next, .prev
+    {
+        color: #fff;
+        position: absolute;
+        background: rgba(0,0,0, .6);
+        top: 50%;
+        z-index: 1;
+        font-size: 2em;
+        margin-top: -.75em;
+        opacity: .3;
+        user-select: none;
+    }
+    .next:hover, .prev:hover
+    {
+        cursor: pointer;
+        opacity: 1;
+    }
+    .next
+    {
+        right: 0;
+        padding: 10px 5px 15px 10px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    .prev
+    {
+        left: 0;
+        padding: 10px 10px 15px 5px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    figure
+    {
+        position: absolute;
+        opacity: 0;
+        transition: 1s opacity;
+    }
+    figure.show
+    {
+        opacity: 1;
+        position: static;
+        transition: 1s opacity;
+    }
+
+
+.no-scrolling
+{
+    height: 300px; /*or any other size*/
+           overflow: scroll ;
+}
+
+.intrinsic-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.intrinsic-container {
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+
+ @media (max-width:997px) and (min-width:420px)
+    {
+        .modial {
+            position: relative;
+            width: @modal-md;
+            height: ;
+        }
+    }
+ @media (max-width:420px)
+    {
+        .modial {
+            position: relative;
+            width: @modal-sm;
+            height: ;
+        }
+    }
+
+@media (min-width:998px)
+    {
+        .modial {
+            position: relative;
+            width: 70%;
+            height: ;
+        }
+    }
+
+
+.mobo {
+    position: relative;
+    height: 600px ;
+}
+
+#unduhFormAgen:hover
+{
+    background: yellow;
+}
+
+/*HOVER */
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}

@@ -10,7 +10,7 @@
     <link rel="icon" href="lib/3rdParty/bootstrap/favicon.ico">
     <title>Cover Template for Bootstrap</title>
 -->
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <title>Wahana Prestasi Logistik</title>
 
     <!-- Bootstrap core CSS -->
@@ -22,37 +22,19 @@
 <!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
   </head>
 <style>
-.hvr-sweep-to-right::before{
-  background: #0202ff;
-}
-.col-container{
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-.col-l{
-  display: table-cell;
-  padding: 16px;
-  color: white;
-  background:#12479b;
-}
 .form-group{
   text-align: left;
 }
-.btn-lg{
-  background: #ff0200;
-  border: 1px solid #ff0200;
-}
+
 </style>
   <body class="text-center">
 
     <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
       <nav class="navbar navbar-expand-lg sticky-top">
-    <a class="navbar-brand" href="#"><img class="rounded" style="height: 2em; background-color: #fff200; padding: 4px;" src="wahana/images/logo-wahana.png"></a>
+    <a class="navbar-brand" href="#"><img class="rounded" src="wahana/images/logo-wahana.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -79,94 +61,95 @@
       </ul>
     </div>
   </nav>
-
-      <main role="main" class="inner cover pt-4 ">
+  <style>
+  .form-group label{
+    font-weight: bold;
+  }
+  </style>
+      <main role="main" class="inner cover pt-4 main-container mx-auto ">
         <div class="card bg-transparent">
         <div class="card-body">
           <h2 class="mt-2 mb-4">Form Agen</h2>
-          <form class="mx-5">
+          <form class="">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Nama <span class="required">*</span></label>
+      <label for="inputEmail4">Nama <span class="text-red">*</span></label>
       <input type="email" class="form-control" id="inputEmail4">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">No KTP <span class="required">*</span></label>
+      <label for="inputPassword4">No KTP <span class="text-red">*</span></label>
       <input type="number" class="form-control" id="inputPassword4">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Alamat <span class="required">*</span></label>
+    <label for="inputAddress">Alamat <span class="text-red">*</span></label>
     <input type="text" class="form-control" id="inputAddress" >
   </div>
   <div class="form-group">
-    <label for="inputAddress2">Alamat agen <span class="required">*</span></label>
+    <label for="inputAddress2">Alamat agen <span class="text-red">*</span></label>
     <input type="text" class="form-control" id="inputAddress2" >
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">Pilih provinsi <span class="required">*</span></label>
+      <label for="inputCity">Pilih provinsi <span class="text-red">*</span></label>
       <select id="inputState" class="form-control">
         <option selected>Pilih...</option>
         <option>...</option>
       </select>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputState">Kota <span class="required">*</span></label>
+      <label for="inputState">Kota <span class="text-red">*</span></label>
       <select id="inputState" class="form-control">
         <option selected>Pilih...</option>
         <option>...</option>
       </select>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputZip">Kecamatan <span class="required">*</span></label>
+      <label for="inputZip">Kecamatan <span class="text-red">*</span></label>
       <select id="inputState" class="form-control">
         <option selected>Pilih...</option>
         <option>...</option>
       </select>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputZip">Kelurahan <span class="required">*</span></label>
+      <label for="inputZip">Kelurahan <span class="text-red">*</span></label>
       <select id="inputState" class="form-control">
         <option selected>Pilih...</option>
         <option>...</option>
       </select>
     </div>
     <div class="form-group col-md-12">
-      <label for="inputZip">Kode Pos <span class="required">*</span></label>
+      <label for="inputZip">Kode Pos <span class="text-red">*</span></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     <div class="form-group col-md-12">
-      <label for="inputZip">No HP <span class="required">*</span></label>
+      <label for="inputZip">No HP <span class="text-red">*</span></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     <div class="form-group col-md-12">
-      <label for="inputZip">Email <span class="required">*</span></label>
+      <label for="inputZip">Email <span class="text-red">*</span></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputZip">Latitude <span class="required">*</span></label>
+      <label for="inputZip">Latitude <span class="text-red">*</span></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputZip">Longtitude <span class="required">*</span></label>
+      <label for="inputZip">Longtitude <span class="text-red">*</span></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg" style="background:#ff0200" onclick="alert('test')">Submit</button>
+  <button type="submit" class="btn btn-primary btn-submit bg-red" onclick="alert('test')">SUBMIT</button>
 </form>
 
         </div>
         </div>
 
-      </main>
 
-      <footer class="mastfoot mt-5 mb-5 mx-3" style="color: black;">
+      <footer class="mastfoot mt-5 mb-5 mx-3">
        <div class="inner">
-
          <div class="row">
-
            <div class="col-md-4 text-left">
            <b><p>Jl. Rempoa Raya No.88, Ciputat,
              Tangerang Selatan, Banten, 15412<br>
@@ -177,25 +160,22 @@
              <a href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
              <img src="assets/img/fb_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              </a>
-
              <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
              <img src="assets/img/insta_logo.png" class="rounded-circle" width="25" height="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              </a>
-
              <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
              <img src="assets/img/likedin_logo.png" class="rounded-circle" width="25" height="25">
              </a>
            </div>
-
            <div class="col-md-4 text-right" >
-           <b><a href="faq.html" style="color:red;">FAQ</a></b> &nbsp;|&nbsp;
-           <b><a href="syarat_ketentuan.html" style="color:red;">Syarat & Ketentuan</a><b><br>
-           <a style="color:black;">© 2018 PT Wahana Prestasi Logistik</a>
+           <b><a href="faq.html" class="text-red">FAQ</a></b> &nbsp;|&nbsp;
+           <b><a href="syarat_ketentuan.html" class="text-red">Syarat & Ketentuan</a><b><br>
+           <a class="text-black">© 2018 PT Wahana Prestasi Logistik</a>
            </div>
-
          </div>
        </div>
      </footer>
+   </main>
 
       <!-- Bootstrap core JavaScript
       ================================================== -->

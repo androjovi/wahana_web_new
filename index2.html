@@ -48,7 +48,7 @@
 </style>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top index2-navbar">
   <a class="navbar-brand" href="#"><img class="rounded" src="wahana/images/logo-wahana.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fa fa-bars" aria-hidden="true"></i>
@@ -246,8 +246,9 @@
 </div>
 </div>
 </div>
+      </main>
 
-      <div class="finx" >
+      <div class="finx" style="background-color: white;" >
       <footer class=" mt-5 mb-5 mx-3">
        <div class="inner">
          <div class="row">
@@ -277,7 +278,6 @@
        </div>
      </footer>
     </div>
-  </main>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -377,7 +377,14 @@ function setMarker(location , lat, lng){
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
     center: new google.maps.LatLng(lat,lng),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: true,
+         mapTypeControlOptions: {
+             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+             position: google.maps.ControlPosition.TOP_CENTER
+         },
+
+
   });
 
   var markerPusat = {
@@ -499,7 +506,8 @@ function getDirection(t){
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 7,
-      center: {lat: -6.282506, lng: 106.760984}
+      center: {lat: -6.282506, lng: 106.760984},
+
     });
     directionsDisplay.setMap(map);
 
