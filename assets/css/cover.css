@@ -288,691 +288,40 @@ nav .nav-link{
 /*Rate Calculator Section
     ------------------------------------*/
     /*Rate Calculator*/
-    .from-rate-result{
-      padding-top:100px;
+    #search-form{
+      box-sizing: border-box;
     }
-    .rate-calculator-section:after {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-
-    }
-
-    .container-rate-calculator
-    {
-
-        padding-top:30px;
-        padding-bottom: 30px;
-    }
-
-    .rate-calculate
-    {
-        padding-left: 30%;
-        padding-right: 30%;
-    }
-
-    .header-rate
-    {
-        font-size: 28px;
-        text-align: center;
-        padding: 5px;
-        color:#ffffff;
-    }
-
-    .subheader-rate
-    {
-        font-size: 16px;
-        text-align: center;
-        padding: 5px;
-         color:#000;
-    }
-
-    .from-rate
-    {
-     margin-top: 30px;
-    /*
-            display: inline-block;
-            margin: auto 0;
-            text-align: center;
-    */
-    }
-
-    @media (min-width: 420px) {
-        .from-rate
-        {
-             margin-top: 30px;
-
-        }
-    }
-
-    .from-rate .label-form
-    {
-         color: black;
-         font-size: 18px;
-
-
-    }
-
-    .to-rate
-    {
-
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .dimension-rate
-    {
-
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-
-    .to-rate .label-to
-    {
-        color: black;
-        font-size: 18px;
-
-         margin-bottom: 5px;
-    }
-
-    .label-weight
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-       padding: 5px;
-    }
-
-    .label-height
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-           padding: 5px;
-    }
-    .label-length
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-           padding: 5px;
-    }
-
-    .satuan-dimension
-    {
-        padding: 5px;
-        font-size: 14px;
-        color: black;
-    }
-
-    .searching-rate
-    {
-        padding: 10px;
-    }
-
-    .calculate-button
-    {
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-
-    /*rounded search tracking*/
-    .round-rate {
-
-        border-radius: 25px;
-        border: 2px #12479b solid;
-         padding: 5px 10px 5px 10px;
-        position: relative;
-        top: 0;
-        left: 0;
-        outline: none;
-
-        resize: none;
-        color: #000000;
-    }
-
-    .round-rate:focus {
-
-        border-radius: 25px;
-        border: 2px #12479b solid;
-        padding: 5px 10px 5px 10px;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        outline: none;
-
-        resize: none;
-        color: #000000;
-    }
-
-
-    .search-rate {
-
-        position: relative;
-        height: 30px;
-        align-content: center;
-        color: #b4b4b4;
-        outline: none;
-        display: block;
-        margin: auto;
-    }
-
-    .search-rate:focus {
-
-
-        text-align: center;
-        position: relative;
-        align-content: center;
-
-        height: 30px;
-        color: #000000;
-        outline: none;
-
-    }
-
-    .search-from{
-             display: inline-block;
-            margin: auto;
-    }
-
-    /*rounded search dimension*/
-
-    .round-dimension {
-       width: 100%;
-        margin: auto;
-        border-radius: 25px;
-        border: 2px #12479b solid;
-        padding: 5px 10px 5px 10px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-          outline: none;
-        color: #000000;
-    }
-
-    .round-dimension:focus {
-
-        margin: auto;
-        border-radius: 25px;
-        border: 2px #12479b solid;
-        padding: 5px 10px 5px 10px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-          outline: none;
-        color: #000000;
-    }
-
-    .corner-dimension {
-        position: relative;
-        top: 0px;
-        right: 0px;
-        height: 30px;
-         width: 30px;
-        z-index: 10;
-        border-top-right-radius: 25px;
-         border-bottom-right-radius: 25px;
-        float: right;
-        border: none;
-        background:#12479b;
-          outline: none;
-    }
-
-    .corner-dimension:focus {
-        position: relative;
-        top: 0px;
-        right: 1px;
-        height: 30px;
-        width: 30px;
-        z-index: 10;
-        border-top-right-radius: 25px;
-         border-bottom-right-radius: 25px;
-        float: right;
-        border: none;
-        background:#12479b;
-          outline: none;
-    }
-
-    .search-dimension {
-        display: block;
-        outline: none;
-        margin: auto;
-        height: 30px;
-        position: relative;
-        align-content: center;
-        color: #b4b4b4;
-    }
-
-    .search-dimension:focus {
-       display: block;
-      outline: none;
-        margin: auto;
-       text-align: center;
-          align-content: center;
-        height: 30px;
-          position: relative;
-        color: #000000;
-    }
-
-    /*rounded button calculate*/
-    #rcorners-calculate {
-        display: block;
-        border-radius: 25px;
-        border: 2px solid #12479b;
-        background: #FFFFFF;
-        color: #12479b;
-        padding: 2px;
-         height: 40px;
-       margin: auto;
-        outline: none;
-
-    }
-
-    #rcorners-calculate:hover {
-        display: block;
-        border-radius: 25px;
-        border: 2px solid #12479b;
-        background: #FFFF00;
-        color: #12479b;
-        padding: 2px;
-         height: 40px;
-        margin:auto;
-
-          outline: none;
+    .header-rate-result{
+      font-size: 22px;
     }
-
-    /* Result Track*/
-    .header-rate-result
-    {
-        font-size: 28px;
-        text-align: center;
-        padding: 5px;
-        color:black;
-        left: -30%;
-    }
-
-    .subheader-rate-result
-    {
-        font-size: 16px;
-        text-align: center;
-        padding: 5px;
-         color:#ffffff;
-    }
-
-    .from-rate-result
-    {
-     margin-top: 30px;
-    /*
-            display: inline-block;
-            margin: auto 0;
-            text-align: center;
-    */
-    }
-
-    @media (min-width: 420px) {
-        .from-rate-result
-        {
-             margin-top: 30px;
-
-        }
-    }
-
-    .from-rate-result .label-form
-    {
-         color: black;
-         font-size: 18px;
-
-
-    }
-
-    .to-rate-result
-    {
-
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .dimension-rate-result
-    {
-
-
-        margin-bottom: 10px;
-    }
-
-
-    .to-rate-result .label-to
-    {
-        color: black;
-        font-size: 18px;
-        margin-top: 12px;
-         margin-bottom: 5px;
-    }
-
-    .label-weight-result
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-       padding-top: 80px;
-    }
-
-    .label-cost-result
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-           padding: 5px;
-    }
-
-    .label-total-result
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-           padding: 5px;
-    }
-
-    .label-time-result
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-           padding: 1px;
-    }
-    .label-length
-    {
-        color: black;
-        font-size: 14px;
-        width: 100%;
-           padding: 5px;
-    }
-
-    .satuan-dimension-result
-    {
-        padding: 5px;
-        font-size: 14px;
-        color: black;
-    }
-
-    .satuan-dimension-result-days
-    {
-        padding: 5px;
-        font-size: 12px;
-        color: black;
-    }
-
-    .searching-rate-result
-    {
-        padding: 10px;
-    }
-
-    .calculate-button-result
-    {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .round-rate-textarea
-    {
-         border-radius: 25px;
-        border: 2px #12479b solid;
-        padding: 25px;
-         position: relative;
-        top: 0;
-        left: 0;
-        outline: none;
-        color: #000000;
-    }
-
-    .round-rate-calculate
-    {
-         border-radius: 25px;
-        border: 2px #12479b solid;
-        padding-left: 25px;
-         position: relative;
-        top: 0;
-        left: 0;
-        outline: none;
-        color: #000000;
-        height: 30px;
-    }
-
-    /*rounded search tracking*/
-    .round-rate-result {
-
-        border-radius: 25px;
-        border: 2px #12479b solid;
-         padding: 5px 10px 5px 10px;
-        position: relative;
-        top: 0;
-        left: 0;
-        height: 30px;
-        outline: none;
-        color: #000000;
-    }
-
-    .round-rate-result:focus {
-
-        border-radius: 25px;
-        border: 2px #12479b solid;
-         padding: 5px 10px 5px 10px;
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-        outline: none;
-        color: #000000;
-    }
-
-
-    .search-rate-result {
-
-        position: relative;
-        height: 30px;
-        align-content: center;
-        color: #b4b4b4;
-        outline: none;
-        display: block;
-        margin: auto;
-    }
-
-    .search-rate-result:focus {
-
-
-        text-align: center;
-        position: relative;
-        align-content: center;
-
-        height: 30px;
-        color: #000000;
-        outline: none;
-
-    }
-
-    .search-from-result{
-             display: inline-block;
-            margin: auto;
-    }
-
-    /*rounded search dimension*/
-
-    .round-dimension-result {
-       width: 100%;
-        margin: auto;
-        border-radius: 25px;
-        border: 2px #12479b solid;
-         padding: 5px 10px 5px 10px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-          outline: none;
-        color: #000000;
-    }
-
-    .round-dimension-result:focus {
-
-        margin: auto;
-        border-radius: 25px;
-        border: 2px #12479b solid;
-         padding: 5px 10px 5px 10px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-          outline: none;
-        color: #000000;
-    }
-
-    .round-dimension-result-even {
-       /*width: 100%;*/
-        margin: auto;
-        border-radius: 25px;
-        border: 2px #12479b solid;
-        padding: 5px 10px 5px 30px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-          outline: none;
-        color: #000000;
-    }
-
-    .round-dimension-result-even:focus {
-
-        margin: auto;
-        border-radius: 25px;
-        border: 2px #12479b solid;
-        padding: 5px 10px 5px 30px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        height: 30px;
-          outline: none;
-        color: #000000;
-    }
-
-    .corner-dimension-result {
-        position: relative;
-        top: 0px;
-        right: 1px;
-        height: 30px;
-         width: 30px;
-        z-index: 10;
-        border-top-right-radius: 25px;
-         border-bottom-right-radius: 25px;
-        float: right;
-        border: none;
-        background:#12479b;
-          outline: none;
-    }
-
-    .corner-dimension-result:focus {
-        position: relative;
-        top: 0px;
-        right: 1px;
-        height: 30px;
-        width: 30px;
-        z-index: 10;
-        border-top-right-radius: 25px;
-         border-bottom-right-radius: 25px;
-        float: right;
-        border: none;
-        background:#12479b;
-          outline: none;
+    label{
+      display: inline-block;
     }
-
-    .corner-dimension-result-even {
-        position: relative;
-        top: 0px;
-        right: 1px;
-        height: 30px;
-         width: 30px;
-        z-index: 10;
-        border-top-left-radius: 25px;
-         border-bottom-left-radius: 25px;
-        float: left;
-        border: none;
-        background:#12479b;
-          outline: none;
+    .round-rate-calculate, .round-dimension-result, .round-dimension-result-even, textarea{
+      border: 1px solid blue;
+      border-radius: 5px 0 0 5px;
+      padding: 5px;
     }
 
-    .corner-dimension-result-even:focus {
-        position: relative;
-        top: 0px;
-        right: 1px;
-        height: 30px;
-        width: 30px;
-        z-index: 10;
-        border-top-left-radius: 25px;
-         border-bottom-left-radius: 25px;
-        float: left;
-        border: none;
-        background:#12479b;
-          outline: none;
+    .col-md-6{
+      display: inline;
     }
+    .search-dimension-result{
+      display: inline-flex;
+      position: relative;
 
-    .search-dimension-result {
-        display: block;
-        outline: none;
-        margin: auto;
-        height: 30px;
-        position: relative;
-        align-content: center;
-        color: #b4b4b4;
     }
-
-    .search-dimension-result:focus {
-       display: block;
-      outline: none;
-        margin: auto;
-       text-align: center;
-          align-content: center;
-        height: 30px;
-          position: relative;
-        color: #000000;
+    .satuan-dimension-result-days, .satuan-dimension-result, .satuan-dimension{
+      padding: 6px;
+      color: #fff;
+      background-color: #0202FF;
+      border-radius: 0 5px 5px 0;
     }
 
-    /*rounded button calculate*/
-    #rcorners-calculate-result {
-        display: block;
-        border-radius: 25px;
-        border: 2px solid #12479b;
-        background: #FFFFFF;
-        color: #12479b;
-        padding: 2px;
-         height: 40px;
-       margin: auto;
-        outline: none;
-
+    #rcorners-calculate-result{
+      display: none;
     }
 
-    #rcorners-calculate-result:hover {
-        display: block;
-        border-radius: 25px;
-        border: 2px solid #12479b;
-        background: #FFFF00;
-        color: #12479b;
-        padding: 2px;
-         height: 40px;
-        margin:auto;
-
-          outline: none;
-    }
-#first-visible .row{
-  width:1366px;
-}
 
 /* Ajax trackshiping */
 /*Track Shipping Section
@@ -1228,13 +577,13 @@ nav .nav-link{
 
     .icon-ribbon
     {
-/*
+    /*
         vertical-align:middle;
         display: table-cell;
         width: 100px;
         display: block;
         margin: auto;
-*/
+    */
         display:flex;justify-content:center;align-items:center;
         margin-top: 15px;
         margin-bottom: 15px;
@@ -1325,10 +674,30 @@ nav .nav-link{
             font-weight: bold;
             padding-right: 0px;
         }
+        .tab-content{
+          background-color: blue;
+        }
+        .metro{
+          display: contents;
+        }
+        .main-info-tracking{
+          width: 20%;
+        }
+        .background-received{
+          width: 100%;
+          color:black;
+        }
     }
 
-    @media (max-width:420px)
+    @media only screen and (max-width: 600px)
     {
+      .tab-content{
+        left: 0 !important;
+      }
+      .metro{
+        color:black !important;
+        background-color: none !important;
+      }
         .font-hasil-received
         {
             color: #ffffff;
@@ -1336,10 +705,24 @@ nav .nav-link{
             font-weight: bold;
             padding-right: 0px;
         }
+
+        .metro{
+          display: contents;
+        }
+        .main-info-tracking{
+          width: 20%;
+        }
+        .background-received{
+          width: 100%;
+          color:black;
+        }
     }
 
 /* Index2
 */
 .index2-navbar{
   background-color: white;
+}
+.nav-tabs{
+  background-color: white !important;
 }

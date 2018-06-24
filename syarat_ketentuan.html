@@ -36,7 +36,24 @@
   .faq-answer{
     font-size: 15px;
   }
+  [data-toggle="collapse"]::after {
+display: inline-block;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  transform: rotate(-90deg) ;
+  transition: all linear 0.25s;
+  color:black;
+  }
+[data-toggle="collapse"].collapsed:after {
+  transform: rotate(90deg) ;
+}
 </style>
+
   <body class="text-center">
 
     <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
@@ -91,7 +108,7 @@
                 </div>
                 <div class="col-3 col-md-3 col-sm-1">
                   <button class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                 <b>Selengkapnya</b>
+                 <b></b>
                 </button>
                 </div>
               </div>
@@ -172,7 +189,7 @@
                 </div>
                 <div class="col-3 col-md-3 col-sm-1">
                   <button class="btn btn-link text-red" type="button"   data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                 <b>Selengkapnya</b>
+                 <b></b>
                 </button>
                 </div>
               </div>
@@ -202,7 +219,7 @@
                 </div>
                 <div class="col-3 col-md-3 col-sm-1">
                   <button class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample1a" aria-expanded="false" aria-controls="collapseExample">
-                 <b>Selengkapnya</b>
+                 <b></b>
                 </button>
                 </div>
               </div>
@@ -315,7 +332,7 @@
                 </div>
                 <div class="col-3 col-md-3 col-sm-1">
                   <button class="btn btn-link text-red" type="button" data-toggle="collapse" data-target="#collapseExample1d" aria-expanded="false" aria-controls="collapseExample">
-                 <b>Selengkapnya</b>
+                 <b></b>
                 </button>
                 </div>
               </div>
@@ -403,7 +420,7 @@
                 </div>
                 <div class="col-3 col-md-3 col-sm-1">
                   <button class="btn btn-link text-red" type="button"   data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                 <b>Selengkapnya</b>
+                 <b></b>
                 </button>
                 </div>
               </div>
@@ -481,7 +498,13 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-
+    <script>
+    $(document).ready(function(){
+      //$("[data-toggle=collapse]").toggle(
+        //$(" [data-toggle=collapse]").addClass("collapsed")
+      //)
+    })
+    </script>
 <script>
  function initMap() {
   var sidup = {lat: -6.2824251969584335, lng: 106.7608966747968};

@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!--
     <link rel="icon" href="lib/3rdParty/bootstrap/favicon.ico">
@@ -17,7 +16,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <!-- Custom styles for this template -->
   <link href="assets/css/cover.css" rel="stylesheet">
   <link href="assets/css/hover-min.css" rel="stylesheet">
@@ -78,7 +77,7 @@
         <div class="faq-header">Lokasi Agen</div>
       </div>
       <div class="col-3 col-md-3 col-sm-1">
-        <button id="kl" class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><span class="fa fa-arrow-up fa-2x"></span></button>
+        <button id="header" class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><span class="fa fa-arrow-up fa-2x"></span></button>
       </div>
     </div>
     <div class="collapse" id="collapseExample">
@@ -88,8 +87,7 @@
         <div class="faq-subheader">Dimana saja lokasi agen / perwakilan wahana?</div>
       </div>
       <div class="col-md-3">
-        <button class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-       <b>Selengkapnya</b>
+        <button class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">Selengkapnya
       </button>
       </div>
     </div>
@@ -104,6 +102,15 @@
 </div>
 </div>
 </div>
+<script>
+$(document).ready(function(){
+$('#header').click(function(){ //you can give id or class name here for $('button')
+              $(this).html(function(i,old){
+                  return old=='+' ? '-' : '+';
+              });
+          });
+          })
+</script>
 
 <!-- MULAI PERTANYAAN 2 -->
 <div class="row mt-4">
@@ -116,16 +123,17 @@
         <div class="faq-header">Pengiriman</div>
       </div>
       <div class="col-3 col-md-3 col-sm-1">
-        <button id="kl1" class="btn btn-link text-red" type="button"   data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample"><span class="fa fa-arrow-up fa-2x"></span></button>
+        <button class="btn btn-link text-red" type="button"   data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+       <b>Selengkapnya</b>
+      </button>
       </div>
     </div>
     <div class="collapse" id="collapseExample2">
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-8 text-left">
-        <button class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
         <div class="faq-subheader">Bagaimana cara melihat biaya pengiriman?</div>
-      </div></button>
+      </div>
       <div class="col-md-3">
         <button class="btn btn-link text-red" type="button"  data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
        <b>Selengkapnya</b>
@@ -832,7 +840,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
     <script src="https://use.fontawesome.com/2e37f68334.js"></script>
     <script src="assets/js/main.js"></script>
@@ -841,41 +848,6 @@
     </script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-
-    <script>
-      function initMap() {
-        var sidup = {
-          lat: -6.2824251969584335,
-          lng: 106.7608966747968
-        };
-        var agentMap = new google.maps.Map(document.getElementById('agentloc-map-container'), {
-          zoom: 17,
-          center: sidup
-        });
-        var agentMarker = new google.maps.Marker({
-          position: sidup,
-          map: agentMap
-        });
-      }
-      $(document).ready(function(){
-      $('#kl').click(function(){ //you can give id or class name here for $('button')
-                    $(this).html(function(i,old){
-                        return old=='<span class="fa fa-arrow-up fa-2x"></span>' ? '<span class="fa fa-arrow-down fa-2x"></span>' : '<span class="fa fa-arrow-up fa-2x"></span>';
-                    });
-                });
-                })
-    </script>
-    <script>
-    $(document).ready(function(){
-    $('#kl1').click(function(){ //you can give id or class name here for $('button')
-                  $(this).html(function(i,old){
-                      return old=='<span class="fa fa-arrow-up fa-2x"></span>' ? '<span class="fa fa-arrow-down fa-2x"></span>' : '<span class="fa fa-arrow-up fa-2x"></span>';
-                  });
-              });
-              })
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNzqp67WVt-aidLsHBSGOpvSspaMj4mg8&callback=initMap">
-    </script>
 
 </body>
 

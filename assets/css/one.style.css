@@ -524,13 +524,18 @@
     @media (max-width:420px)
     {
         .map-container{
-          max-width: 100%;
-          height: auto
-          margin: 0;
+          width:100%;
+          display: block;
+
         }
         .map-content
         {
+
+          border: 1px solid blue;
           display: block;
+          position:absolute;
+          margin-top:200px;
+
         }
         .find-agent{
 
@@ -538,13 +543,13 @@
        .find-agent-label
         {
             text-align: center;
-              font-size: 8px;
+              font-size: 12px;
         }
 
         .find-representative-label
         {
             text-align: center;
-             font-size: 7px;
+             font-size: 12px;
         }
 
         .list-item-alamat
