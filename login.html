@@ -1,0 +1,75 @@
+<script>
+$(function() {
+	if (window.top != window) {
+		window.top.location = window.location;
+	}; 
+});
+
+	</script> <tmpl_if name=auth>
+<script>
+	var w = window;
+	w.location = '<tmpl_var name=apburl>/cgi-bin/dw.cgi';
+	</script> <tmpl_else>
+<style>
+html,
+body,
+.main {
+height: 100%;
+margin: 0;
+}
+body {
+background-color: black;
+background-image: url(/apps/pickordrop/wahana/images/landing-page.png);
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+/*
+background-color: brown;
+*/
+}
+#logo {
+padding: 1em;
+position: absolute;
+}
+#loginblock {
+max-width: 330px;
+padding: 15px;
+}
+.main {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+h2 {
+	color: #fff;
+}
+</style>
+
+<div id="logo">
+<a href="/apps/pickordrop/index.html">
+<img class="" style="border-radius: 5px; background-color: #fff200; padding: 4px;" src="<tmpl_var name=logo>">
+</a>
+</div>
+
+<div class="main">
+<div id="loginblock" class="card w-40 shadow text-dark bg-transparent text-center">
+					<div class="card-body">
+					<h2 class="card-title">Sign in</h2> 
+<form id=flogin name=flogin method=post>
+	<tmpl_var name=query> 
+					<tmpl_if name=mesg>
+				<div class="alert alert-danger" role="alert"><tmpl_var name=mesg></div></tmpl_if>
+					<div class="form-group">
+						<label for="user" class="sr-only"> Login </label> <tmpl_var name=user>
+					</div>
+					<div class="form-group">
+						<label for="pass" class="sr-only"> Password </label> <tmpl_var name=pass>
+					</div>
+				<input type=hidden name=b value=login>
+				<button type=submit name=act value="Login" class="btn btn-primary btn-block">Submit</button>
+				</td>
+</form>
+					</div>
+</div>
+</div> </tmpl_if>

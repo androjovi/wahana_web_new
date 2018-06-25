@@ -1,5 +1,6 @@
 /*
  * Globals
+ #fff200
  */
 
 /* Links */
@@ -91,7 +92,7 @@ a:hover {
 /* Image navbar wahana */
 .navbar-brand img{
   height: 2em;
-  background-color: #fff200;
+  /*background-color: #fff200;*/
   padding: 1px;
 }
 
@@ -280,6 +281,12 @@ nav .nav-link{
 .direction-label{
   text-decoration: underline;
   color: #0202FF;
+  cursor: pointer;
+}
+.divBack{
+  cursor: pointer;
+  border: 1px solid black;
+  margin: 0 auto;
 }
 
 
@@ -725,4 +732,19 @@ nav .nav-link{
 }
 .nav-tabs{
   background-color: white !important;
+}
+
+/* Contact us page */
+tbody {
+    display:block;
+    height:500px;
+    overflow:auto;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+thead {
+    width: calc( 100% - 1em )
 }

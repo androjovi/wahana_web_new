@@ -1,0 +1,537 @@
+<tmpl_if name=authenticated><script>
+function logout() {
+	if (window.confirm('Are you sure to log out?')) {
+		window.location = "<tmpl_var name=apburl>/cgi-bin/dw.cgi?logout=1";
+		};
+	};
+function gohome(wn) {
+	var w = window.top.frames[wn];
+	if (w == undefined) {
+		w = window;
+	};
+	var f = window.document.forms['nav'];
+	var c = f.elements['c']
+	c.value = "_home";
+	f.submit();
+	};
+function chpass(wn) {
+	var w = window.top.frames[wn];
+	if (w == undefined) {
+		w = window;
+	};
+	var f = window.document.forms['nav'];
+	var b = f.elements['b']
+	b.value = "chpass";
+	f.submit();
+	};
+function help(wn) {
+	var w = window.top.frames[wn];
+	if (w == undefined) {
+		w = window;
+	};
+	var f = window.document.forms['nav'];
+	var c = f.elements['c']
+	c.value = "_help";
+	f.submit();
+	};
+	</script>
+<tmpl_include name=apps/navbar-style.html>
+<script src="https://unpkg.com/feather-icons"></script>
+
+<form id=nav name=nav method=post action="<tmpl_var name=apburl>/cgi-bin/dw.cgi">
+<input type=hidden name=b value=0>
+<input type=hidden name=c value=0>
+</form>
+<div id="" class="navbar navbar-expand-md navbar-dark bg-dark text-light" style="">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <button type="button" style="z-index: 1000;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i data-feather="menu"></i>
+      </button>
+			<a class="navbar-brand" href="javascript:gohome();">
+				<img class=logo src="<tmpl_var name=logo>">
+			</a>
+		<div class="navbar-text">
+		<tmpl_if name=isagen>
+			<a class="navbar-link" href="#" onclick="javascript:gohome();">
+			  <i data-feather="home"></i>
+			</a>
+		<tmpl_else>
+			<tmpl_if name=showtools>
+				<a class="navbar-link" href=# onclick="javascript:$('#modtindakan').modal('show');">
+					Tools
+				</a>
+			</tmpl_if>
+		</tmpl_if>
+		</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="dw-navbar-collapse">
+			<ul class="navbar-nav">
+	 			<li class="nav-item">
+<tmpl_if name=isrootuser>
+					<tmpl_var name=_menubar/pid.4000>
+</tmpl_if>
+
+<!--
+<tmpl_if name=isapplication>
+					Xtmpl_var name=_menubar/pid.4000X
+<tmpl_else>
+					Xtmpl_var name=_menubar/pid.-1X
+</tmpl_if>
+-->
+				</li>
+				<li class="nav-item">
+			<a class="nav-link" href="#" onclick="javascript:gohome();">
+			<tmpl_var name=ct>
+			</a>
+				</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#" onclick="javascript:chpass();">
+		<tmpl_if name=isagen>
+			<tmpl_var name=user>@<tmpl_var name=kotaasalkd>
+		<tmpl_else>
+			<tmpl_var name=user>@<tmpl_var name=kdkantor>
+		</tmpl_if>
+		</a>
+	</li>
+<tmpl_unless name=isagen>
+				<li>
+			<form id=header name=header class="navbar-form" role="search">
+<div class="container-fluid">
+				<input type="hidden" id=b name=b value="seek/fnm.whnTrackingList">
+					<div class="input-group">
+						<input type="text" class="form-control" id=btno name=btno placeholder="masukkan nomor TTK/MS/SM/MA">
+						<div class="input-group-btn">
+							<button type=button class="btn btn-default" href="#" onclick="$('#header').submit();" alt="Track">
+								Track
+							</button>
+						</div>
+					</div>
+</div>
+			</form>
+				</li>
+</tmpl_unless>
+				<li>
+							<a href="#" onclick="javascript:logout();">
+								<span class="glyphicon glyphicon-log-out">
+							</a>
+				</li>
+			</ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</div>
+
+<div id="modtindakan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modtindakanlabel">
+<form id=tindakanf name=tindakanf class="form-horizontal" role="form" method=post>
+<div class="modal-dialog">
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title" id="modtindakanlabel">Tindakan</h4>
+	</div>
+	<div class="modal-body">
+	<div class="container-fluid">
+	<input type=hidden id=b name=b>
+	<input type=hidden id=apburl name=apburl value='<tmpl_var name=apburl>'>
+	<input type=hidden id=vhost name=vhost value='<tmpl_var name=vhost>'>
+	<div id=tindakand name=tindakand class="form-group">
+		<label for=tindakan class="control-label col-sm-4">Tindakan</label>
+		<div class="col-sm-8">
+		<select id=tindakan name=tindakan class="form-control">
+<tmpl_unless name=isvendor>
+			<option value=0 disabled> 1. Input TTK </option>
+</tmpl_unless>
+			<option value=1 > 2. Pickup TTK agen/account </option>
+<tmpl_unless name=isvendor>
+			<option value=2 > 3. Serah terima manifest agen/account </option>
+			<option value=3 > 4. Membuat Manifest hasil sortir </option>
+			<option value=4 disabled> 5. Membuat Surat Muatan </option>
+			<option value=5 disabled> 6. Membuat Moda Angkutan </option>
+</tmpl_unless>
+			<option value=6 disabled> 7. Serah terima Surat Muatan pada Moda Angkutan </option>
+			<option value=7> 8. Serah terima Manifest pada Surat Muatan  </option>
+			<option value=8 disabled> 9. Membuat Surat Jalan Kurir </option>
+			<option value=9 disabled> 10. Membuat Surat Jalan Penerus </option>
+			<option value=10 disabled> 11. Update TTK Terkirim </option>
+			<option value=11 disabled> 12. Update TTK Belum Terkirim </option>
+			<option value=12 disabled> 13. Serah terima TTK Belum Terkirim </option>
+			<option value=13 disabled> 14. Tandai TTK Retur </option>
+<!--
+			<option value=14> 15. Terima TTK Salah Kirim </option>
+-->
+			<option value=14 disabled> 15. Update Status Ganti TTK </option>
+<tmpl_unless name=isvendor>
+			<option value=15> 16. Input TTK Pengganti </option>
+			<option value=16 disabled> 17. Update Penemuan TTK Salah Tujuan </option>
+			<option value=17 disabled> 18. Input Deposit Agen </option>
+			<option value=18 disabled> 19. Input TTK Bukti Terima Kembali </option>
+			<option value=19 disabled> 20. Laporan Biaya </option>
+			<option value=20 disabled> 21. Update TTK Sudah SJ Salah Status </option>
+			<option value=21 disabled> 22. Update TTK Siap SJ Salah Status </option>
+</tmpl_unless>
+		</select> 
+		</div>
+	</div>
+	<div id=kdagend name=kdagend class="form-group" style="display: none;">
+		<label for=kdagen class="control-label col-sm-4">Agen</label>
+		<div class="col-sm-8">
+		<input type=textfield id=kdagen name=kdagen placeholder="Masukkan kode agen/account" class="form-control">
+		</div>
+	</div>
+	<div id=kdkantord name=kdkantord class="form-group" style="display: none;">
+		<label for=kdkantor class="control-label col-sm-4">Kantor</label>
+		<div class="col-sm-8">
+		<input type=textfield id=kdkantor name=kdkantor value="<tmpl_var name=kdkantor>" placeholder="Masukkan kode kantor" class="form-control">
+		</div>
+	</div>
+	<div id=kdkurird name=kdkurird class="form-group" style="display: none;">
+		<label for=kdkurir class="control-label col-sm-4">Kurir</label>
+		<div class="col-sm-8">
+		<input type=textfield id=kdkurir name=kdkurir placeholder="Masukkan NIK kurir" class="form-control">
+		</div>
+	</div>
+	<div id=nottkd name=nottkd class="form-group" style="display: none;">
+		<div id=nottkdf>
+			<label for=nottk class="control-label col-sm-4">TTK</label>
+		<div class="col-sm-8">
+			<input type=textfield id=nottk name=nottk placeholder="masukkan nomor TTK" class="form-control">
+		</div>
+		</div>
+		<input type=hidden id=ATRBTID name=ATRBTID>
+		<div id=nottkdpb> </div>
+	</div>
+	<div id=idkendaraand name=idkendaraand class="form-group" style="display: none;">
+		<div id=idkendaraandf>
+			<label for=idkendaraan class="control-label col-sm-4">Kendaraan</label>
+		<div class="col-sm-8">
+			<select id=idkendaraan name=idkendaraan class="form-control">
+				<option value=0>Pilih...</option>
+				<option value=101>Jalan Kaki</option>
+				<option value=102>Motor</option>
+				<option value=103>Mobil</option>
+			</select>
+		</div>
+		</div>
+		<div id=idkendaraandpb> </div>
+	</div>
+	<div id=idttktyd name=idttktyd class="form-group" style="display: none;">
+		<div id=idttktydf>
+			<label for=idttkty class="control-label col-sm-4">Jenis TTK</label>
+		<div class="col-sm-8">
+			<select id=idttkty name=idttkty class="form-control">
+				<option value=103>Campuran</option>
+				<option value=101>Single Koli</option>
+				<option value=102>Multi Koli</option>
+			</select>
+		</div>
+		</div>
+		<div id=idttktydpb> </div>
+	</div>
+	<div id=idkurird name=idkurird class="form-group" style="display: none;">
+		<div id=idkurirdf>
+			<label for=idkurir class="control-label col-sm-4">Kurir</label>
+		<div class="col-sm-8">
+			<input type=textfield id=idkurir name=idkurir placeholder="Masukkan NIK kurir" class="form-control">
+		</div>
+		</div>
+		<input type=hidden id=baid name=baid>
+		<div id=idkurirdpb> </div>
+	</div>
+	<div id=nomad name=nomad class="form-group" style="display: none;">
+		<label for=noma class="control-label col-sm-4">Moda Angkutan</label>
+		<div class="col-sm-8">
+		<input type=textfield id=noma name=noma placeholder="Masukkan nomor MA" class="form-control">
+		</div>
+	</div>
+</div>
+</div>
+	<div class="modal-footer">
+		<input type=button id=tindakana name=tindakana value="Lakukan" onclick='$("#tindakanf").submit()' class="btn btn-primary btn-block">
+	</div>
+</div>
+</div>
+</form>
+</div>
+
+<script>
+	var scTop = 0;
+	var scLeft = 0;
+	var vscwid = 15;
+	$(function() {
+		feather.replace()
+		var htindakan = [
+			'form_crud/fnm.50180000ENTBT_m_TTK', // 0
+			// 'seek/fnm.whnPrepMan', // 1
+			'whnVerPUKurir/sesty.creq', // 1
+			'seek/fnm.whnPrepSTMan', // 2
+			'seek/fnm.whnPrepManProc', // 3
+			'seek/fnm.whnPrepSM', // 4
+			'seek/fnm.whnPrepMA', // 5
+			'seek/fnm.whnPrepSTSM', // 6
+			'seek/fnm.whnPrepSTManSM', // 7
+			'seek/fnm.whnPrepSKR', // 8
+			'seek/fnm.whnPrepSJP', // 9
+			'form_crud/fnm.50470000ENTTS_TTKT', // 10
+			'form_crud/fnm.50470000ENTTS_TTKG', // 11
+			'seek/fnm.whnTTKListToSTK', // 12
+			'form_crud/fnm.50470000ENTTS_TTKR', // 13
+// 			'seek/fnm.whnTTKListToSSK', // 14
+			'form_crud/fnm.50470000ENTTS_TTKU', // 14
+			'form_crud/fnm.50180000ENTBT_m_TTKP', // 15
+			'form_crud/fnm.50470000ENTTS_TTKM', // 16
+			'form_crud/fnm.50180000ENTBT_DEC', // 17
+			'form_crud/fnm.50180000ENTBT_m_TTKB', // 18
+			'form_crud/fnm.50180000ENTBT_m_CRP', // 19
+			'form_crud/fnm.50470000ENTTS_TTKS', // 20
+			'form_crud/fnm.50470000ENTTS_TTKS_ToSJ', // 21
+			'form_crud/fnm.50470000ENTTS_TTKH', // 22
+		];
+		$("#tindakanf #tindakan").change(function() {
+			$("#tindakanf #kdagend").hide();
+			$("#tindakanf #kdkurird").hide();
+			$("#tindakanf #kdkantord").hide();
+			$("#tindakanf #nomad").hide();
+			$("#tindakanf #nottkd").hide();
+			$("#tindakanf #idkurird").hide();
+			var vtid = parseInt($("#tindakanf #tindakan").val());
+			$("#tindakanf #b").val(htindakan[vtid]);
+			$("#tindakanf #tindakana").show();
+			$("#tindakanf #nottkdpb").hide();
+			$("#tindakanf #idkurirdpb").hide();
+			switch (vtid) {
+				case 0:
+				case 14:
+				case 15:
+				case 16:
+				case 17:
+				case 18:
+				case 19:
+				case 20:
+				case 21:
+				case 22:
+					$("#tindakanf").submit();
+					break;
+				case 1:
+					$("#tindakanf #kdagend").show();
+					$("#tindakanf #kdagen").focus();
+					break;
+				case 12:
+					$("#tindakanf #idkurird").show();
+					$("#tindakanf #tindakana").hide();
+					$("#tindakanf #idkurir").focus();
+					break;
+				case 2:
+					$("#tindakanf #kdkurird").show();
+					$("#tindakanf #kdkurir").focus();
+					break;
+				case 5:
+					$("#tindakanf #kdkantord").show();
+					$("#tindakanf #kdkantor").focus();
+					break;
+				case 6:
+					$("#tindakanf #nomad").show();
+					$("#tindakanf #noma").focus();
+					break;
+				case 8:
+					$("#tindakanf #kdkantord").show();
+					$("#tindakanf #idkurird").show();
+					$("#tindakanf #idkendaraand").show();
+					$("#tindakanf #idttktyd").show();
+					$("#tindakanf #tindakana").hide();
+					// $("#tindakanf #idkurir").focus();
+					$("#tindakanf #idkendaraan").focus();
+					break;
+				case 10:
+				case 11:
+				case 13:
+					$("#tindakanf #nottkd").show();
+					$("#tindakanf #tindakana").hide();
+					$("#tindakanf #nottk").focus();
+					break;
+				default:
+					$("#tindakanf #kdkantord").show();
+					$("#tindakanf #kdkantor").focus();
+					break;
+			};
+			return true;
+		});
+
+		$("#tindakanf #nottkd").change(getTTKInfo);
+		$("#tindakanf #idkurird").change(getBAInfo);
+
+		// hide fields
+		$("#tindakanf #kdagend").hide();
+		$("#tindakanf #kdkurird").hide();
+		$("#tindakanf #kdkendaraand").hide();
+		$("#tindakanf #kdttktyd").hide();
+		$("#tindakanf #kdkantord").hide();
+		$("#tindakanf #nomad").hide();
+		$("#tindakanf #nottkd").hide();
+		$("#tindakanf #b").val(htindakan[0]);
+		$("#tindakanf #tindakan").val(0);
+		$("#tindakanf #nottkdpb").hide();
+	});
+
+	function getTTKInfo () {
+		var parameter = {
+			ATRBTNO: $("#tindakanf #nottk").val(),
+			b:'view/vnm.whnGetTTKKurirByNo+lo.xml',
+			t:'xml'
+		};
+		var apburl = $("#tindakanf #apburl").val();
+		var vhost = $("#tindakanf #vhost").val();
+		$("#tindakanf #nottkdf").hide();
+		$("#tindakanf #nottkdpb").show();
+		$("#nottkdpb").empty().append('<div class="progress" style=""><div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"><span>Searching...</span></div></div>');
+		var posting = $.post(apburl+"/cgi-bin/dw.cgi", parameter);
+		var xmlDoc = "";
+		posting.fail(function(xhr, textStatus){
+			// $("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Gagal mengambil data: '+xhr.responseText+' </div>');
+			$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Gagal mengambil data: '+textStatus+' </div>');
+			$("#nottkdf").show();
+			$("#tindakanf #nottk").val('');
+		});
+		posting.done(function(data){
+			// $("#nottkdpb").empty();
+			$xml = $(data);
+// console.log(data);
+			var btid = $xml.find("ATRBTID").text();
+			if (btid) {
+				var btss = $xml.find("ATRBTSS").text();
+				var btbs = $xml.find("ATRBTBS").text();
+				switch (btss) {
+					case '2':
+						switch (btbs) {
+							case '17':
+								$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> TTK sudah ditandai Retur </div>');
+								$("#nottkdf").show();
+								break;
+							default:
+								$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Status TTK tidak bisa dirubah. Hubungi pengawas anda.</div>');
+								$("#nottkdf").show();
+						};
+						break;
+					case '3':
+						switch (btbs) {
+							case '14':
+								$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> TTK sudah ditandai terkirim </div>');
+								$("#nottkdf").show();
+								break;
+							case '15':
+								$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> TTK sudah ditandai gagal kirim </div>');
+								$("#nottkdf").show();
+								break;
+							case '16':
+								var vtid = parseInt($("#tindakanf #tindakan").val());
+								if (vtid == 13) {
+									$("#tindakanf #ATRBTID").val(btid);
+									$("#tindakanf").submit();
+								} else {
+									$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Status TTK tidak bisa dirubah.</div>');
+									$("#nottkdf").show();
+								};
+								break;
+							case '13':
+								if (vtid != 13) {
+									$("#tindakanf #ATRBTID").val(btid);
+									$("#tindakanf").submit();
+								} else {
+									$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Status TTK tidak bisa dirubah.</div>');
+									$("#nottkdf").show();
+								};
+								$("#tindakanf #ATRBTID").val(btid);
+								$("#tindakanf").submit();
+								break;
+							case '18':
+								if (vtid != 13) {
+									$("#tindakanf #ATRBTID").val(btid);
+									$("#tindakanf").submit();
+								} else {
+									$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Status TTK tidak bisa dirubah.</div>');
+									$("#nottkdf").show();
+								};
+								$("#tindakanf #ATRBTID").val(btid);
+								$("#tindakanf").submit();
+								break;
+							default:
+								$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Status TTK tidak bisa dirubah. Hubungi pengawas anda.</div>');
+								$("#nottkdf").show();
+						};
+						break;
+					case '4':
+						$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Status TTK sudah terkirim</div>');
+						$("#nottkdf").show();
+						break;
+					default:
+						$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> TTK bermasalah. Hubungi pengawas anda.</div>');
+						$("#nottkdf").show();
+						break;
+				}
+			} else {
+				$("#nottkdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> TTK Tidak ditemukan</div>');
+				$("#nottkdf").show();
+			};
+			$("#tindakanf #nottk").focus();
+			$("#tindakanf #nottk").val('');
+		});
+	};
+
+	function getBAInfo () {
+		var parameter = {
+			ATRBACD: $("#tindakanf #idkurir").val(),
+			b:'view/vnm.whnGetBAKurirByNo+lo.xml',
+			t:'xml'
+		};
+		var apburl = $("#tindakanf #apburl").val();
+		var vhost = $("#tindakanf #vhost").val();
+		$("#tindakanf #idkurirdf").hide();
+		$("#tindakanf #idkurirdpb").show();
+		$("#idkurirdpb").empty().append('<div class="progress" style=""><div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"><span>Searching...</span></div></div>');
+		var posting = $.post(apburl+"/cgi-bin/dw.cgi", parameter);
+		var xmlDoc = "";
+		posting.fail(function(xhr, textStatus){
+			// $("#idkurirdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"> Gagal mengambil data: '+xhr.responseText+' </div>');
+			$("#idkurirdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"/> Gagal mengambil data: '+textStatus+' </div>');
+			$("#idkurirdf").show();
+			$("#tindakanf #idkurir").val('');
+		});
+		posting.done(function(data){
+			// $("#idkurirdpb").empty();
+// console.log(data);
+			$xml = $(data);
+			var baid = $xml.find("ATRBAID").text();
+// alert(baid+'='+JSON.stringify(data));
+			if (baid) {
+				var bast = parseInt($xml.find("ATRBAST").text());
+				if (bast != 2) {
+					$("#idkurirdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"/> Kurir sudah tidak Aktif</div>');
+					$("#idkurirdf").show();
+				} else {
+					var vtid = parseInt($("#tindakanf #tindakan").val());
+					if (vtid == 8) { // surat jalan kurir
+						var ctproc = $xml.find("ctproc").text();
+						var ctbt = $xml.find("ctbt").text();
+						if (ctproc>0 || ctbt>0) {
+							$("#idkurirdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"/> Kurir ini memiliki TTK yang belum terupdate statusnya: '+ctproc+' dalam proses pengiriman dan '+ctbt+' belum serah terima BT</div>');
+							$("#idkurirdf").show();
+						} else {
+							$("#tindakanf #baid").val(baid);
+							$("#tindakanf").submit();
+						};
+					} else {
+						$("#tindakanf #baid").val(baid);
+						$("#tindakanf").submit();
+					};
+				};
+			} else {
+				$("#idkurirdpb").empty().append('<div class="alert alert-danger"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"/> Data kurir tidak ditemukan</div>');
+				$("#idkurirdf").show();
+			};
+			$("#tindakanf #idkurir").val('');
+			$("#tindakanf #idkurir").focus();
+		});
+	};
+</script>
+</tmpl_if>
