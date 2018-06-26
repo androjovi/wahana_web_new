@@ -2,6 +2,9 @@
  * Globals
  #fff200
  */
+ .fa-bars{
+   color: white !important;
+ }
  .hvr-sweep-to-right2 {
    display: inline-block;
    vertical-align: middle;
@@ -36,6 +39,7 @@
  }
  .hvr-sweep-to-right2:hover, .hvr-sweep-to-right2:focus, .hvr-sweep-to-right2:active {
    color: black;
+   border-radius: 1em !important;
  }
  .hvr-sweep-to-right2:hover:before, .hvr-sweep-to-right2:focus:before, .hvr-sweep-to-right2:active:before {
    -webkit-transform: scaleX(1);
@@ -98,6 +102,7 @@ a:hover {
   color: white;
   background:#0003fc;
   border-right: 1px solid #fff200;
+  border-radius: 20px 0 20px 0;
 }
 
 /* Custom faq page */
@@ -151,20 +156,24 @@ body, .form-control, .btn, .input-group-text {
 
 body {
   display: -ms-flexbox;
-  display: flex;
+  display: inline-table;
   color: black;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  height: 100% !important;
 }
-
+.auto-margin{
+  margin-top: auto !important;
+}
 .cover-container {
   max-width: 100%;
 }
 .main-container{
   max-width: 70em;
+  position: relative;
 }
 .finx{
 
@@ -720,7 +729,7 @@ nav .nav-link{
             padding-right: 0px;
         }
         .tab-content{
-          background-color: blue;
+
         }
         .metro{
           display: contents;
@@ -785,4 +794,35 @@ thead, tbody tr {
 }
 thead {
     width: calc( 100% - 1em )
+}
+/* Custom MAPS POSITION */
+@media only screen and (max-width: 600px){
+  .map-container{
+    display: none;
+  }
+  .find-agent{
+    height: 100%;
+    width: 100%;
+
+  }
+}
+
+/*
+footer{
+  position:fixed;
+   width:100%;
+   display: block;
+   background-color: #0202ff;
+}
+*/
+
+/*
+Social media icons for mobile
+*/
+
+@media only screen and (max-width: 600px){
+  .mbl-medsos{
+    width: 40px;
+    height: 40px;
+  }
 }
