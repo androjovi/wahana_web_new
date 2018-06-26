@@ -25,7 +25,9 @@
 .hvr-sweep-to-right::before{
   background: #0202ff;
 }
-
+thead tr, tbody tr{
+  border-bottom: 1px solid white;
+}
 </style>
   <body class="text-center">
 
@@ -73,7 +75,7 @@
       </style>
   <div class="nav nav-tabs" id="nav-tab" role="tablist" style="background-color: rgba(0,0,0,0.0);">
     <a class="nav-item nav-link active text-black" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Hubungi Customer Service</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Daftar Nomor CS</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Daftar Nomor Customer Service</a>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
@@ -124,7 +126,7 @@
 
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div class="col-md-12 col-sm-12 col-lg-12">
-      <table class="table table-blue table-fixed">
+      <table class="table table-borderless table-fixed">
         <thead>
           <tr>
           <th class="bg-blue text-white">#</th>
@@ -150,10 +152,10 @@
       <tr> <th scope="row">13</th> <td> Bogor Kab</td> <td>089651141127</td>  <td>081311969336</td> </tr>
       <tr> <th scope="row">14</th>  <td> Sukabumi</td> <td>089651141127</td>  <td>081311969336</td> </tr>
       <tr> <th scope="row">15</th> <td> Cirebon</td> <td>081387012676</td>  <td>081387012675</td> </tr>
-      <tr> <th scope="row">16</th> <td> Tasikmalaya</td> <td>081387012676</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">17</th> <td> Indramayu</td> <td>081387012676</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">18</th> <td> Majalengka</td> <td>081387012676</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">19</th> <td> Kuningan</td> <td>081387012676</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">16</th> <td> Tasikmalaya</td> <td>081387012676</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">17</th> <td> Indramayu</td> <td>081387012676</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">18</th> <td> Majalengka</td> <td>081387012676</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">19</th> <td> Kuningan</td> <td>081387012676</td> </th> <td> 081387012675</td> </tr>
       <tr> <th scope="row">20</th> <td> Bekasi Kota</td> <td>0895333607726</td>  <td>089636769377</td> </tr>
       <tr> <th scope="row">21</th> <td> Bekasi Kab</td> <td>0895333607726</td>  <td>089636769377</td> </tr>
       <tr> <th scope="row">22</th> <td> Karawang</td> <td>0895333607726</td>  <td>089636769377</td> </tr>
@@ -165,55 +167,55 @@
       <tr> <th scope="row">28</th> <td> Cianjur</td> <td>087880851688</td>  <td>081387012675</td> </tr>
       <tr> <th scope="row">29</th> <td> Cimahi</td> <td>087880851688</td>  <td>081387012675</td> </tr>
       <tr> <th scope="row">30</th> <td> Semarang</td> <td>085100106488</td>  <td>081311969336</td> </tr>
-      <tr> <th scope="row">31</th> <td> Kudus</td> <td>085100106488</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">32</th> <td> Demak</td> <td>085100106488</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">33</th> <td> Ambarawa</td> <td>085100106488</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">34</th> <td> Salatiga</td> <td>085100106488</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">35</th> <td> Kendal</td> <td>085100106488</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">31</th> <td> Kudus</td> <td>085100106488</td> </th> <td> 081311969336</td> </tr>
+      <tr> <th scope="row">32</th> <td> Demak</td> <td>085100106488</td> </th> <td> 081311969336</td> </tr>
+      <tr> <th scope="row">33</th> <td> Ambarawa</td> <td>085100106488</td> </th> <td> 081311969336</td> </tr>
+      <tr> <th scope="row">34</th> <td> Salatiga</td> <td>085100106488</td> </th> <td> 081311969336</td> </tr>
+      <tr> <th scope="row">35</th> <td> Kendal</td> <td>085100106488</td> </th> <td> 081311969336</td> </tr>
       <tr> <th scope="row">36</th> <td> Ungaran</td> <td>085100106488</td> </th> <td> 081311969336</td> </tr>
-      <tr> <th scope="row">37</th> <td> Pekalongan</td> <td>0895371366492</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">38</th> <td> Tegal</td> <td>0895371366492</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">39</th> <td> Brebes</td> <td>0895371366492</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">40</th> <td> Batang</td> <td>0895371366492</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">41</th> <td> Pemalang</td> <td>0895371366492</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">37</th> <td> Pekalongan</td> <td>0895371366492</td> </th> <td> 0895371366492</td> </tr>
+      <tr> <th scope="row">38</th> <td> Tegal</td> <td>0895371366492</td> </th> <td> 0895371366492</td> </tr>
+      <tr> <th scope="row">39</th> <td> Brebes</td> <td>0895371366492</td> </th> <td> 0895371366492</td> </tr>
+      <tr> <th scope="row">40</th> <td> Batang</td> <td>0895371366492</td> </th> <td> 0895371366492</td> </tr>
+      <tr> <th scope="row">41</th> <td> Pemalang</td> <td>0895371366492</td> </th> <td> 0895371366492</td> </tr>
       <tr> <th scope="row">42</th> <td> Yogyakarta Raya</td> <td>081586508603</td>  <td>082110111700</td> </tr>
       <tr> <th scope="row">43</th> <td> Sleman</td> <td>081586508603 </td> </th> <td> 082110111700</td> </tr>
-      <tr> <th scope="row">44</th> <td> Magelang</td> <td>081586508603</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">45</th> <td> Klaten</td> <td>081586508603</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">44</th> <td> Magelang</td> <td>081586508603</td> </th> <td> 082110111700</td> </tr>
+      <tr> <th scope="row">45</th> <td> Klaten</td> <td>081586508603</td> </th> <td> 082110111700</td> </tr>
       <tr> <th scope="row">46</th> <td> Solo</td> <td>085887796480</td>  <td>082110111700</td> </t>
       <tr> <th scope="row">47</th> <td> Sukoharjo</td> <td>085887796480</td>  <td>082110111700</td> </tr>
-      <tr> <th scope="row">48</th> <td> Boyolali</td> <td>085887796480</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">48</th> <td> Boyolali</td> <td>085887796480</td> </th> <td> 82110111700</td> </tr>
       <tr> <th scope="row">49</th> <td> Karanganyar</td> <td>085887796480</td>  <td>082110111700</td> </tr>
       <tr> <th scope="row">50</th> <td> Sragen</td> <td>085887796480</td>  <td>082110111700</td> </tr>
       <tr> <th scope="row">51</th> <td> Purwokerto</td> <td>081317569142</td>  <td>081387012675</td> </tr>
-      <tr> <th scope="row">52</th> <td> Kebumen</td> <td>081317569142</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">53</th> <td> Purworejo</td> <td>081317569142</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">54</th> <td> Purbalingga</td> <td>081317569142</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">55</th> <td> Cilacap</td> <td>081317569142</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">56</th> <td> Banjarnegara</td> <td>081317569142</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">52</th> <td> Kebumen</td> <td>081317569142</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">53</th> <td> Purworejo</td> <td>081317569142</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">54</th> <td> Purbalingga</td> <td>081317569142</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">55</th> <td> Cilacap</td> <td>081317569142</td> </th> <td> 081387012675</td> </tr>
+      <tr> <th scope="row">56</th> <td> Banjarnegara</td> <td>081317569142</td> </th> <td> 081387012675</td> </tr>
       <tr> <th scope="row">57</th> <td> Surabaya</td> <td>087781320688</td>  <td>081311969335</td> </tr>
-      <tr> <th scope="row">58</th> <td> Sidoarjo</td> <td>087781320688</td> </th> <td> 087781320688</td> </tr>
-      <tr> <th scope="row">59</th> <td> Gresik</td> <td>087781320688</td> </th> <td> 087781320688</td> </tr>
-      <tr> <th scope="row">60</th> <td> Mojokerto</td> <td>087781320688</td> </th> <td> 087781320688</td> </tr>
-      <tr> <th scope="row">61</th> <td> Lamongan</td> <td>087781320688</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">62</th> <td> Madura</td> <td>087781320688</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">63</th> <td> Nganjuk</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">64</th> <td> Kediri</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">65</th> <td> Jombang</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">66</th> <td> Tulung Agung</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">67</th> <td> Trenggalek</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">68</th> <td> Blitar</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">69</th> <td> Madiun</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">70</th> <td> Ponorogo</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">71</th> <td> Probolinggo</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">72</th> <td> Jember</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">73</th> <td> Banyuwangi</td> <td>082110111600</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">74</th> <td> Situbondo</td> <td>082110111600</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">58</th> <td> Sidoarjo</td> <td>087781320688</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">59</th> <td> Gresik</td> <td>087781320688</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">60</th> <td> Mojokerto</td> <td>087781320688</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">61</th> <td> Lamongan</td> <td>087781320688</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">62</th> <td> Madura</td> <td>087781320688</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">63</th> <td> Nganjuk</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">64</th> <td> Kediri</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">65</th> <td> Jombang</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">66</th> <td> Tulung Agung</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">67</th> <td> Trenggalek</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">68</th> <td> Blitar</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">69</th> <td> Madiun</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">70</th> <td> Ponorogo</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">71</th> <td> Probolinggo</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">72</th> <td> Jember</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">73</th> <td> Banyuwangi</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">74</th> <td> Situbondo</td> <td>082110111600</td> </th> <td> 081311969335</td> </tr>
       <tr> <th scope="row">75</th> <td> Malang</td> <td>082110111600</td>  <td>081311969335</td> </tr>
       <tr> <th scope="row">76</th> <td> Pasuruan</td> <td>082110111600</td>  <td>081311969335</td> </tr>
       <tr> <th scope="row">77</th> <td> Bali</td> <td>081586508605</td>  <td>081311969335</td> </tr>
-      <tr> <th scope="row">78</th> <td> NTT</td> <td>081586508605</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">79</th> <td> NTB</td> <td>081586508605</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">78</th> <td> NTT</td> <td>081586508605</td> </th> <td> 081311969335</td> </tr>
+      <tr> <th scope="row">79</th> <td> NTB</td> <td>081586508605</td> </th> <td> 081311969335</td> </tr>
       <tr> <th scope="row">80</th> <td> Medan</td> <td>089658657626</td>  <td>08978343018</td> </tr>
       <tr> <th scope="row">81</th> <td> Pekanbaru</td> <td>089658657626</td>  <td>08978343018</td> </tr>
       <tr> <th scope="row">82</th> <td> Aceh</td> <td>089658657626</td>  <td>08978343018</td> </tr>
@@ -232,10 +234,10 @@
       <tr> <th scope="row">95</th> <td> Banjarmasin</td> <td>081586633293</td>  <td>08978343018</td> </tr>
       <tr> <th scope="row">96</th> <td> Palangkaraya</td> <td>081586633293</td>  <td>08978343018</td> </tr>
       <tr> <th scope="row">97</th> <td> Sulawesi</td> <td>081586633293</td>  <td>08978343018</td> </tr>
-      <tr> <th scope="row">98</th> <td> Gorontalo</td> <td>081586633293</td> </th> <td> -</td> </tr>
-      <tr> <th scope="row">99</th> <td> Maluku</td> <td>081586633293</td> </th> <td> -</td> </tr>
+      <tr> <th scope="row">98</th> <td> Gorontalo</td> <td>081586633293</td> </th> <td> 08978343018</td> </tr>
+      <tr> <th scope="row">99</th> <td> Maluku</td> <td>081586633293</td> </th> <td> 08978343018</td> </tr>
       <tr> <th scope="row">100</th> <td> Papua</td> <td>081586633293 </td>  <td>08978343018</td> </tr>
-      <tr> <th scope="row">101</th> <td> Singapore</td> <td>089691291289</td> </th><td> -</td> </tr>
+      <tr> <th scope="row">101</th> <td> Singapore</td> <td>089691291289</td> </th><td> 089691291289</td> </tr>
         </tbody>
       </table>
     </div>

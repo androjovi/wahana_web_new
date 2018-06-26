@@ -298,13 +298,13 @@
            </div>
            <div class="col-md-4" >
              <a href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
-             <img src="assets/img/fb_logo.png" class="rounded-circle" width="60" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <img src="assets/img/fb_logo.png"  width="60" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              </a>
              <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
-             <img src="assets/img/insta_logo.png" class="rounded-circle" width="60" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <img src="assets/img/insta_logo.png"  width="60" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              </a>
              <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
-             <img src="assets/img/likedin_logo.png" class="rounded-circle" width="60" height="60">
+             <img src="assets/img/likedin_logo.png" width="60" height="60">
              </a>
            </div>
            <div class="col-md-4 text-right" >
@@ -409,6 +409,7 @@
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyBIRnkXzJ07J0atmmDK9gqUv45_Fxq0ZEQ&language=id" type="text/javascript"></script>
+
 <script type="text/javascript" id="scriptMaps">
 var myLat;
 var myLng;
@@ -638,7 +639,8 @@ startGeolocation();
 
 
         function getDataOrigin(callback){
-            $.post("https://wahana.com/Ajaxx/getTariffNodeOriginNew", {}, function(data){
+          $.support.cors = true;
+            $.post("https://www.wahana.com/Ajaxx/getTariffNodeOriginNew", {}, function(data){
                 // console.log(data);
                 callback(data);
             });
@@ -763,6 +765,7 @@ startGeolocation();
     alert("Data anda belum lengkap")
     return false;
   }
+  $.support.cors = true;
   $.post( "https://wahana.com/Ajaxx/getTarifHomeNew",
       {'from':from, 'to':to,'height':height,'weight':weight,'length':length,'dataAsal':dataAsal,'dataTujuan':dataTujuan, 'wide':wide,'service':service },
           function() {}).done(function(data){
