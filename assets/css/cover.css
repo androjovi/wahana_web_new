@@ -836,7 +836,7 @@ Social media icons for mobile
   height: 100%;
 }
 .map-container{
-  margin-top: 50px;
+  
 }
 .map-content{
 }
@@ -936,5 +936,6 @@ ul{
   .map-container{
     width: auto;
     height: 500px;
+    margin-top: 30px;
   }
 }
