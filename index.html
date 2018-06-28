@@ -787,19 +787,26 @@ if(ttk.length == 0){
  return false;
 }
 t = ttk
-res = t.split(' ').join('')
-regexnya = new RegExp('^[a-zA-Z0-9 ,]+$')
-if (!regexnya.test(res)){
+regexnya = new RegExp('^[a-zA-Z0-9 ,.-]+$')
+if (!regexnya.test(t)){
   alert("Masukkan Nomer Resi yang valid dengan dipisah koma")
   return false
 }
 var chara_split
-chara_split = res.split(',')
+chara_split = t.split(/\.|-|,/)
 var i;
 var data;
 var a = 0
 var b = a++
+
+
 for (i=0; i < chara_split.length; i++){
+
+
+if (chara_split.length > 10){
+  alert("Nomor Resi Tidak Boleh Lebih Dari 10")
+  return false;
+}
 
  $.post( "https://wahana.com/index.php/Ajaxx/getTtkNew",
      {'ttk':chara_split[i] },
@@ -819,6 +826,7 @@ for (i=0; i < chara_split.length; i++){
             alert("Data tidak ada")
             $("#nav-tab").remove()
             $("#nav-tabContent").remove()
+            return false
            }
  })
 }
