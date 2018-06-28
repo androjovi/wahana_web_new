@@ -12,6 +12,7 @@
 -->
     <link rel="icon" href="favicon.ico">
     <title>Wahana Prestasi Logistik</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +23,6 @@
     <link href="assets/css/hover-min.css" rel="stylesheet">
     <link href="assets/css/shortcode_timeline2.css" rel="stylesheet">
     <script src="assets/js/html2canvas.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
 
 <!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
   </head>
@@ -34,9 +34,7 @@
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
 .autocomplete-group { padding: 2px 5px; }
 .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
-canvas{
-  display: none;
-}
+
 /*
 .hvr-sweep-to-right::before{
   background: #0202ff;
@@ -50,8 +48,41 @@ canvas{
 }
 */
 </style>
+<script type="text/javascript">
+       $(document).ready(function () {
+           $.ajaxSetup({
+               cache: true
+           });
+           $.getScript('https://connect.facebook.net/en_UK/all.js', function () {
+               // Load the APP / SDK
+               FB.init({
+                   appId: '288585397909199', // App ID from the App Dashboard
+                   cookie: true, // set sessions cookies to allow your server to access the session?
+                   xfbml: true, // parse XFBML tags on this page?
+                   frictionlessRequests: true,
+                   oauth: true
+               });
+
+               FB.login(function (response) {
+                   if (response.authResponse) {
+                       window.authToken = response.authResponse.accessToken;
+                   } else {
+
+                   }
+               }, {
+                   scope: 'publish_actions,publish_stream'
+               });
+
+           });
+
+           // Populate the canvas
+
+
+       });
+   </script>
 
   <body class="text-center">
+    <div id="fb-root"></div>
 
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -203,8 +234,7 @@ canvas{
   </div>
   <div class="modal-footer">
     <!-- Sharingbutton Facebook -->
-    <button id="img-screenshot"></button>
-    <button class="button" data-sharer="facebook" data-url="" >Share on Facebook</button>
+    <button id="img-screenshot">Share</button>
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   </div>
 </div>
@@ -215,7 +245,7 @@ canvas{
       <!-- Bootstrap core JavaScript
       ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
       <script src="https://use.fontawesome.com/2e37f68334.js"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
 
@@ -226,6 +256,8 @@ canvas{
       <script src="assets/js/bootstrap.min.js"></script>
       <script src="https://maps.google.com/maps/api/js?key=AIzaSyBIRnkXzJ07J0atmmDK9gqUv45_Fxq0ZEQ&language=id" type="text/javascript"></script>
       <script>
+
+      /*
       dataURItoBlob = function(dataURI) {
       var array, binary, i;
       binary = atob(dataURI.split(",")[1]);
@@ -239,16 +271,69 @@ canvas{
         type: "image/jpeg"
       });
     };
+    */
       $(document).ready(function(){
       $("#img-screenshot").click(function(){
         html2canvas(document.querySelector("#nav-tabContent")).then(canvas => {
       document.body.appendChild(canvas)
-      var tz = canvas.toDataURL("image/png")
-      $("[data-sharer='facebook']").attr("data-url",tz)
-      console.log(dataURItoBlob(tz))
+      //var tz = canvas.toDataURL("image/png")
+      //console.log(tz)
+      //var op = window.location.href= '../wahana_web/sharing.html?data='
+      //window.open(op+tz, '_blank')
+      PostImageToFacebook()
+
+      //$("[data-sharer='facebook']").attr("data-url",tz)
+      //console.log(dataURItoBlob(tz))
       });
     })
     })
+    function PostImageToFacebook(authToken)
+{
+  var canvas = jQuery("canvas");
+  var imageData  = canvas.toDataURL("image/png");
+  try {
+      blob = dataURItoBlob(imageData);
+  }
+  catch(e) {
+      console.log(e);
+  }
+  var fd = new FormData();
+  fd.append("access_token",authToken);
+  fd.append("source", blob);
+  fd.append("message","Photo Text");
+  try {
+      $.ajax({
+          url:"https://graph.facebook.com/me/photos?access_token=" + authToken,
+          type:"POST",
+          data:fd,
+          processData:false,
+          contentType:false,
+          cache:false,
+          success:function(data){
+              console.log("success " + data);
+          },
+          error:function(shr,status,data){
+              console.log("error " + data + " Status " + shr.status);
+          },
+          complete:function(){
+              console.log("Posted to facebook");
+          }
+      });
+  }
+  catch(e) {
+      console.log(e);
+  }
+}
+
+function dataURItoBlob(dataURI) {
+  var byteString = atob(dataURI.split(',')[1]);
+  var ab = new ArrayBuffer(byteString.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+  return new Blob([ab], { type: 'image/png' });
+}
       </script>
 
 

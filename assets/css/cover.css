@@ -326,9 +326,9 @@ nav .nav-link{
   border: none;
 }
 .direction-label{
-  text-decoration: underline;
-  color: #0202FF;
+  color: #ff0000;
   cursor: pointer;
+  font-size: 12px !important;
 }
 .divBack{
   cursor: pointer;
@@ -825,7 +825,18 @@ Social media icons for mobile
     width: 40px;
     height: 40px;
   }
+  .direction-label{
+    font-size: 12px !important;
+  }
 }
+@media only screen and (max-width: 1024px){
+  .mbl-medsos{
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
 
 /*Map Section
 ------------------------------------*/
@@ -836,7 +847,7 @@ Social media icons for mobile
   height: 100%;
 }
 .map-container{
-  
+
 }
 .map-content{
 }

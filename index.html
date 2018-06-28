@@ -150,7 +150,7 @@
 				<div class="form-group col-sm-2">
 					<label class="sr-only">Weight</label>
 					<div class="input-group">
-						<input id="calculateWeight" placeholder="Berat" class="form-control form-control-sm" type="text">
+						<input id="calculateWeight" placeholder="Berat" class="form-control form-control-sm" type="text" value="1">
 						<div class="input-group-append">
 							<span class="input-group-text">KG</span>
 						</div>
@@ -159,7 +159,7 @@
 					<div class="form-group col-sm-2">
 						<label class="sr-only">Length</label>
 						<div class="input-group">
-							<input id="calculateLength" placeholder="Panjang" class="form-control form-control-sm" type="text">
+							<input id="calculateLength" placeholder="Panjang" class="form-control form-control-sm" type="text" value="1">
 							<div class="input-group-append">
 								<span class="input-group-text">CM</span>
 							</div>
@@ -168,7 +168,7 @@
 					<div class="form-group col-sm-2">
 						<label class="sr-only">Width</label>
 						<div class="input-group">
-							<input id="calculateWide" placeholder="Lebar" class="form-control form-control-sm" type="text">
+							<input id="calculateWide" placeholder="Lebar" class="form-control form-control-sm" type="text" value="1">
 							<div class="input-group-append">
 								<span class="input-group-text">CM</span>
 							</div>
@@ -177,7 +177,7 @@
 					<div class="form-group col-sm-2">
 						<label class="sr-only">Height</label>
 						<div class="input-group">
-							<input id="calculateHeight" placeholder="Tinggi" class="form-control form-control-sm" type="text">
+							<input id="calculateHeight" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="1">
 							<div class="input-group-append">
 								<span class="input-group-text">CM</span>
 							</div>
@@ -204,7 +204,7 @@
 			<h4 class="text-center">Lacak Pengiriman</h4>
 			<form class="" action="javascript:void(0)">
 <div class="input-group mb-3">
-	<input type="text" id="ttk" class="form-control form-control-sm" placeholder="Masukkan Nomor Resi" aria-label="Waybill Numbers" aria-describedby="basic-addon2">
+	<input type="text" id="ttk" class="form-control form-control-sm" placeholder="Masukkan Nomor Resi dipisahkan oleh koma, contoh : xxx12345,xxx12346" aria-label="Waybill Numbers" aria-describedby="basic-addon2">
 	<div class="input-group-append">
 	<button onClick="trackShiping()" class="btn btn-block btn-index">Lacak</button>
 	</div>
@@ -227,8 +227,8 @@
 
               <div class=" find-agent" style="height: 100%;width:100%;">
 
-                <div>Temukan Agen</div>
-                <div class="find-representative-label ">Temukan Agen Wahana Terdekat Di Lokasi Anda</div>
+                <div><b>Agen terdekat</b></div>
+                <!-- <div class="find-representative-label ">Temukan Agen Wahana Terdekat Di Lokasi Anda</div> -->
                 <div class="no-padding-side">
                     <ul class="list-alamat" style="height: 480px;">
                     </ul>
@@ -311,7 +311,6 @@
     <style>
     .modal-content .row{
       position: relative;
-      left: 20%;
       width: 100%
     }
     .modal-content .col-md-12, .modal-content  .col-md-4{
@@ -334,7 +333,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body text-center" style="max-width:80%;">
+        <div class="modal-body text-center" style="max-width:auto;">
           <span id="first-visible" class="text-center"></span>
         </div>
         <div class="modal-footer">
@@ -812,35 +811,16 @@ for (i=0; i < chara_split.length; i++){
              console.log(data)
            }
            else {
-             $('#resultTtk').html('');
-             $('#alertModal .modal-body').html('data tidak ada!');
-             $('#alertModal').modal('show');
+            alert("Data tidak ada")
+            $("#nav-tab").remove()
+            $("#nav-tabContent").remove()
            }
- });
+ })
 }
 $("#nav-tab").empty()
 $("#nav-tabContent").empty()
-
-/*
-$.post( "https://wahana.com/index.php/Ajaxx/getTtkNew",
-   {'ttk':t },
-       function() {}).done(function(data){
-         if (data != 0) {
-             $('#collectTtk').html(data);
-
-             // $('#collapseOne').collapse();
-               // $("#collapseOne").collapse('toggle');
-               $("#modalTracking").modal('show');
-               // $("#collapseOne").collapse('shown');
-         }
-         else {
-           $('#resultTtk').html('');
-           $('#alertModal .modal-body').html('data tidak ada!');
-           $('#alertModal').modal('show');
-         }
-});
-*/
 }
+
 $(document).ready(function(){
   $(".nav-mastlink").click(function(){
     r = $(this).attr("data-title")

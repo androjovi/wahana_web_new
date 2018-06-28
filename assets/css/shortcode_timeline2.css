@@ -4,7 +4,8 @@
 	padding: 0;
 	list-style: none;
 	position: relative;
-} 
+	overflow: auto;
+}
 
 /* The line */
 .timeline-v2 > li{
@@ -78,7 +79,7 @@
 }
 */
 
-.timeline-v2 > li .cbp_tmlabel h2 { 
+.timeline-v2 > li .cbp_tmlabel h2 {
 	margin-top: 0px;
 	font-size: 21px;
 	padding: 0 0 5px;
@@ -160,7 +161,7 @@
 		float: right;
 		position: relative;
 		margin: -55px 5px 0 0px;
-	}	
+	}
 }
 
 /*timeline-v2 within tab-v2 issue issue fix*/
