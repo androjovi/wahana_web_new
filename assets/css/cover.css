@@ -39,7 +39,7 @@
  }
  .hvr-sweep-to-right2:hover, .hvr-sweep-to-right2:focus, .hvr-sweep-to-right2:active {
    color: black;
-   border-radius: 1em !important;
+   border-radius: 20px 0px 20px 0px;
  }
  .hvr-sweep-to-right2:hover:before, .hvr-sweep-to-right2:focus:before, .hvr-sweep-to-right2:active:before {
    -webkit-transform: scaleX(1);
@@ -325,11 +325,7 @@ nav .nav-link{
 .noScrolling{
   border: none;
 }
-.direction-label{
-  color: #ff0000;
-  cursor: pointer;
-  font-size: 12px !important;
-}
+
 .divBack{
   cursor: pointer;
   border: 1px solid black;
@@ -353,7 +349,7 @@ nav .nav-link{
     }
     .round-rate-calculate, .round-dimension-result, .round-dimension-result-even, textarea{
       border: 1px solid blue;
-      border-radius: 5px 0 0 5px;
+
       padding: 5px;
     }
 
@@ -761,7 +757,7 @@ nav .nav-link{
         }
 
         .metro{
-          display: contents;
+          display: flex;
         }
         .main-info-tracking{
           width: 20%;
@@ -829,12 +825,11 @@ Social media icons for mobile
     font-size: 12px !important;
   }
 }
-@media only screen and (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1024px){
   .mbl-medsos{
     width: 40px;
     height: 40px;
   }
-
 }
 
 
@@ -852,7 +847,6 @@ Social media icons for mobile
 .map-content{
 }
 .find-agent{
-  height: 500px;
   overflow: auto;
 }
 .find-representative-label{
@@ -931,9 +925,12 @@ ul{
 
        .direction-label
        {
-            font-size: 0.8vw;
+          font-size: 12px;
            padding:3px;
-
+           font-weight: bold;
+           color: #ff0000;
+           cursor: pointer;
+           font-size: 12px !important;
        }
 
        .img-arah

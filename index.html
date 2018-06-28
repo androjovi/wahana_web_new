@@ -41,7 +41,7 @@
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
       <nav class="navbar navbar-expand-lg sticky-top index2-navbar bg-blue">
-    <a class="navbar-brand" href="#"><img class="rounded" src="wahana/images/logo-wahana.png"></a>
+    <a class="navbar-brand" href=""><img class="rounded" src="wahana/images/logo-wahana.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
@@ -122,7 +122,7 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div>
-<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" >
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="70" >
 <div id="tariff" class="card bg-transparent mt-2">
 <div class="card-body">
 			<h4 class="text-center">Cek Tarif</h4>
@@ -138,8 +138,8 @@
 					</select>
 				</div>
 				<div class="form-group col-sm-3">
-					<label class="sr-only">Kota asal</label>
-					<input id="calculateFrom" placeholder="Kota asal" class="form-control form-control-sm" type="text">
+					<label class="sr-only">Kota Asal</label>
+					<input id="calculateFrom" placeholder="Kota Asal" class="form-control form-control-sm" type="text">
 				</div>
 				<div class="form-group col-sm-6">
 					<label class="sr-only">Kota tujuan</label>
@@ -190,7 +190,7 @@
 							<input type="hidden" id="dataTujuanId" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="1106051010">
 
 				<div class="form-group col-sm-4">
-					<button  onClick="calculate()" class="btn btn-block btn-index">Hitung !</button>
+					<button  onClick="calculate()" class="btn btn-block btn-index"><b>Hitung !</b></button>
 				</div>
 			</div>
 
@@ -206,7 +206,7 @@
 <div class="input-group mb-3">
 	<input type="text" id="ttk" class="form-control form-control-sm" placeholder="Masukkan Nomor Resi dipisahkan oleh koma, contoh : xxx12345,xxx12346" aria-label="Waybill Numbers" aria-describedby="basic-addon2">
 	<div class="input-group-append">
-	<button onClick="trackShiping()" class="btn btn-block btn-index">Lacak</button>
+	<button onClick="trackShiping()" class="btn btn-block btn-index"><b>Lacak</b></button>
 	</div>
 </div>
 			</form>
@@ -218,19 +218,19 @@
 	<h4 class="text-center">Agen Terdekat</h4>
   <section class="map-section" style="height:575px;">
     <div class="row" style="height: 100%;">
-      <div class="col-12 col-md-8 " style="height:575px;">
+      <div class="col-12 col-md-8 " style="height:100%;">
         <div  id="map"></div>
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4" style="height:100%;">
         <div class="map-container">
           <div class="map-content">
 
               <div class=" find-agent" style="height: 100%;width:100%;">
 
-                <div><b>Agen terdekat</b></div>
+                <div><b>AGEN TERDEKAT</b></div>
                 <!-- <div class="find-representative-label ">Temukan Agen Wahana Terdekat Di Lokasi Anda</div> -->
                 <div class="no-padding-side">
-                    <ul class="list-alamat" style="height: 480px;">
+                    <ul class="list-alamat" style="height: 520px;">
                     </ul>
                 </div>
               </div>
@@ -269,29 +269,29 @@
        <div class="inner">
          <div class="row">
            <div class="col-md-4 text-left" >
-           <b><p>Jl. Rempoa Raya No.88, Ciputat,
+           <b><p>Jl. Rempoa Raya No.88, Ciputat <br>
              Tangerang Selatan, Banten, 15412<br>
              Tel : (+62) 21 7341688 <br>
              Fax : (+62) 21 73886974</p></b>
            </div>
            <div class="col-md-4 mt-3">
              <div class="row">
-               <div class="col">
+               <div class="col-3 col-sm-3 col-md-3 col-xl-3">
              <a  href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
              <img class="mbl-medsos" src="assets/img/fb_logo.png"  width="60" height="60"><span class="mr-5"></span>
              </a>
               </div>
-              <div class="col">
+              <div class="col-3 col-sm-3 col-md-3 col-xl-3">
              <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
              <img class="mbl-medsos" src="assets/img/insta_logo.png"  width="60" height="60"><span class="mr-5"></span>
              </a>
            </div>
-           <div class="col">
+           <div class="col-3 col-sm-3 col-md-3 col-xl-3">
              <a href="https://www.youtube.com/channel/UCwm0TH_XgMbhDr3L67iTiIg?view_as=subscriber" target="_blank">
                <img class="mbl-medsos" src="assets/img/yt_logo.png" width="60" height="60">
              </a>
            </div>
-             <div class="col">
+             <div class="col-3 col-sm-3 col-md-3 col-xl-3">
              <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
              <img class="mbl-medsos" src="assets/img/likedin_logo.png" width="60" height="60"><span class="mr-5"></span>
              </a>
@@ -356,7 +356,7 @@
     max-width: none;
   }
   .metro{
-    display: -webkit-box;
+    display: flex;
   }
   </style>
   <div class="modal fade bd-example-modal-lg" id="modalTracking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -786,9 +786,15 @@ if(ttk.length == 0){
  alert('data anda belum lengkap!');
  return false;
 }
-t = ttk;
+t = ttk
+res = t.split(' ').join('')
+regexnya = new RegExp('^[a-zA-Z0-9 ,]+$')
+if (!regexnya.test(res)){
+  alert("Masukkan Nomer Resi yang valid dengan dipisah koma")
+  return false
+}
 var chara_split
-chara_split = t.split(',')
+chara_split = res.split(',')
 var i;
 var data;
 var a = 0
@@ -808,7 +814,6 @@ for (i=0; i < chara_split.length; i++){
              $('a[href="#nav0"]').addClass('active show');
              $('div[id="nav0"]').addClass('active show');
              b++
-             console.log(data)
            }
            else {
             alert("Data tidak ada")
@@ -819,6 +824,7 @@ for (i=0; i < chara_split.length; i++){
 }
 $("#nav-tab").empty()
 $("#nav-tabContent").empty()
+
 }
 
 $(document).ready(function(){
