@@ -139,11 +139,11 @@
 				</div>
 				<div class="form-group col-sm-3">
 					<label class="sr-only">Kota Asal</label>
-					<input id="calculateFrom" placeholder="Kota Asal" class="form-control form-control-sm" type="text">
+					<input id="calculateFrom" placeholder="Masukkan Nama Kota" class="form-control form-control-sm" type="text">
 				</div>
 				<div class="form-group col-sm-6">
 					<label class="sr-only">Kota tujuan</label>
-					<input id="calculateTo" placeholder="Kota Tujuan" class="form-control form-control-sm" type="text">
+					<input id="calculateTo" placeholder="Masukkan Nama Kota Atau Kode Pos" class="form-control form-control-sm" type="text">
 				</div>
 			</div>
 			<div class="form-row">
@@ -793,7 +793,7 @@ if (!regexnya.test(t)){
   return false
 }
 var chara_split
-chara_split = t.split(/\.|-|,/)
+chara_split = t.split(/\.|-|,|=|~|\s/)
 var i;
 var data;
 var a = 0
@@ -801,7 +801,8 @@ var b = a++
 
 
 for (i=0; i < chara_split.length; i++){
-
+  console.log(chara_split.length)
+  console.log(chara_split[i])
 
 if (chara_split.length > 10){
   alert("Nomor Resi Tidak Boleh Lebih Dari 10")
@@ -824,9 +825,6 @@ if (chara_split.length > 10){
            }
            else {
             alert("Data tidak ada")
-            $("#nav-tab").remove()
-            $("#nav-tabContent").remove()
-            return false
            }
  })
 }
