@@ -22,6 +22,7 @@
     <link href="assets/css/hover-min.css" rel="stylesheet">
     <link href="assets/css/shortcode_timeline2.css" rel="stylesheet">
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
 <!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
   </head>
@@ -148,7 +149,9 @@
 				</div>
 				<div class="form-group col-sm-3">
 					<label class="sr-only">Kota asal</label>
-					<input id="calculateFrom" placeholder="Kota asal" class="form-control form-control-sm" type="text">
+          <select id="calculateFrom" class="form-control">
+            <option>Cari Kota Asal</option>
+    </select>
 				</div>
         <div class="form-group col-sm-3">
 					<label class="sr-only">Provinsi</label>
@@ -261,6 +264,7 @@ label .from-rate-result{
       <!-- Placed at the end of the document so the pages load faster -->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script src="https://use.fontawesome.com/2e37f68334.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
       <script src="assets/js/jquery.autocomplete.min.js"></script>
       <script src="assets/js/main.js"></script>
       <script>window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
@@ -269,6 +273,30 @@ label .from-rate-result{
 
 
       <script type="text/javascript">
+
+      $(document).ready(function(){
+  $("#calculateFrom").select2({
+
+    ajax: {
+      dataType: 'json',
+             url: 'https://wahana.com/Ajaxx/getTariffNodeOriginNew',
+             delay: 800,
+             data: function(params) {
+               console.log(params)
+               return {
+                  searchTerm: params.term
+                }
+             },
+             processResults: function (data, params) {
+               console.log(data)
+               return {
+                  results: data
+                };
+           },
+   },
+  })
+      })
+
       function remove_duplicates_safe(arr) {
     var seen = {};
     var ret_arr = [];
@@ -368,7 +396,7 @@ label .from-rate-result{
                       return {
                           suggestions: $.map(response, function(value, key) {
                             tt = value.split(",")
-                            
+
                             return {
                               value: tt[0],
                               value2 : value,
