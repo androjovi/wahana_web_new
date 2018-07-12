@@ -2,14 +2,11 @@
 $(function() {
 	if (window.top != window) {
 		window.top.location = window.location;
-	}; 
+	};
 });
 
 	</script> <tmpl_if name=auth>
-<script>
-	var w = window;
-	w.location = '<tmpl_var name=apburl>/cgi-bin/dw.cgi';
-	</script> <tmpl_else>
+
 <style>
 html,
 body,
@@ -55,9 +52,9 @@ h2 {
 <div class="main">
 <div id="loginblock" class="card w-40 shadow text-dark bg-transparent text-center">
 					<div class="card-body">
-					<h2 class="card-title">Sign in</h2> 
+					<h2 class="card-title">Sign in</h2>
 <form id=flogin name=flogin method=post>
-	<tmpl_var name=query> 
+	<tmpl_var name=query>
 					<tmpl_if name=mesg>
 				<div class="alert alert-danger" role="alert"><tmpl_var name=mesg></div></tmpl_if>
 					<div class="form-group">

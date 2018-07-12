@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'swanse';
+    src: url(../.././wahana/fonts/swans.ttf);
+}
 /*
  * Globals
  #fff200
@@ -86,7 +90,7 @@ a:hover {
 /* Custom Banner */
 .img-banner{
   width:100%;
-  height:80%;
+  height:-moz-calc(100% - 50%);
 }
 
 /* Custom peluang_bisnis  */
@@ -220,7 +224,7 @@ nav .nav-link{
 }
 
 /* Background color */
-.bg-blue{         /* secondary color */
+  .bg-blue{         /* secondary color */
   background-color: #0202FF !important;
 }
 .bg-red{         /* alternative color */
@@ -338,6 +342,7 @@ nav .nav-link{
   cursor: pointer;
   border: 1px solid black;
   margin: 0 auto;
+  color: red;
 }
 
 
@@ -374,10 +379,41 @@ nav .nav-link{
       color: #fff;
       background-color: #0202FF;
       border-radius: 0 5px 5px 0;
+      width : 50px;
     }
 
     #rcorners-calculate-result{
       display: none;
+    }
+    .dimension-rate-result{
+      display: inline-block;
+
+    }
+    @media (min-width: 420px) {
+      .dimension-rate-result{
+        display:block;
+        width: 200px;
+      }
+    }
+
+    .label-time-result, .label-weight-result, .label-cost-result, .label-total-result{
+      width: 200px;
+      float: left;
+    }
+     .label-time-result, .label-weight-result, .label-cost-result, .label-total-result{
+      width: 200px;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+
+    .dimension-rate-result + .dimension-rate-result{
+      margin-left: 15px;
+    }
+    @media only screen and(min-width: 420px) {
+      .dimension-rate-result + .dimension-rate-result{
+        margin-left: none;
+      }
     }
 
 
@@ -714,8 +750,8 @@ nav .nav-link{
 
     .timeline-hasil
     {
-        overflow-y:auto;
-        height: 290px;
+        overflow-y:visible;
+         height: 290px;
         padding:20px;
         margin-top: 10px;
     }
@@ -856,9 +892,11 @@ Social media icons for mobile
 
 }
 .map-content{
+  height: 400px;
+
 }
 .find-agent{
-  overflow: auto;
+  height: 400px;
 }
 .find-representative-label{
 
@@ -873,7 +911,7 @@ ul{
         padding-top: 10px;
         text-decoration: none;
         height: 330px;
-        overflow:hidden; overflow-y:scroll;
+        overflow:hidden; overflow-y:auto;
     }
 
     .find-agent
@@ -909,21 +947,21 @@ ul{
        }
        .email-tempat
        {
-            font-size: 10px;
+            font-size: 12.5px;
        }
        .telepon-tempat
        {
-            font-size: 10px;
+            font-size: 12.5px;
        }
 
        .alamat-tempat
        {
-            font-size: 10px;
+            font-size: 12.5px;
        }
 
        .jarak-tempat
        {
-            font-size: 10px;
+            font-size: 12.5px;
            color:#12479b;
            font-weight: bold;
        }
@@ -957,7 +995,22 @@ ul{
     height: 500px;
     margin-top: 30px;
   }
+  .map-content{
+    height: 600px;
+  }
+  .list-alamat{
+    height: 500px !important;
+  }
 }
+@media only screen and (max-width: 600px){
+  .bmaps{
+    margin-left: 1.5rem !important;
+  }
+  .no-padding{
+    width: 95% !important;
+  }
+}
+
 
 /* make keyframes that tell the start state and the end state of our object */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -983,4 +1036,68 @@ ul{
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
+}
+
+@media only screen and (max-width: 600px){
+  .map-container{
+    width: auto;
+    height: 500px;
+    margin-top: 30px;
+  }
+}
+.clip {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+@media only screen and (max-width: 800px){
+  .path{
+    width: 50px;
+    height: 50vmin;
+    margin-top: 5px;
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 400px){
+  .path h4{
+    width: 200px;
+    font-size: 19px;
+  }
+}
+.path{
+  position: absolute;
+  width: 100vmin;
+  height: 10vmin;
+  background: white;
+  -webkit-clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+}
+
+.hidden{
+  display: none !important;
+}
+.html2canvas-container { width: 3000px !important; height: 3000px !important; }
+.header-isi-tracking{
+  margin-top:5px;
+  display: none;
+}
+.header-rate-result{
+  display: none;
+}
+.my-logo{
+  background-image: url('wahana/images/Logo-WahanaRGB(transparant)-01.png')
+  width: 100px;
+  height: 50px;
+}
+.no-padding{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }

@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<!--
+    <link rel="icon" href="lib/3rdParty/bootstrap/favicon.ico">
+    <title>Cover Template for Bootstrap</title>
+-->
+    <link rel="icon" href="favicon.ico">
+    <title>Pengajuan Agen Wahana</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/cover.css" rel="stylesheet">
+    <link href="assets/css/hover-min.css" rel="stylesheet">
+<!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
+  </head>
+<style>
+thead tr, tbody tr{
+  border-bottom: 1px solid white;
+}
+td a{
+  color: black;
+  cursor: pointer;
+}
+td a:hover{
+  color: blue;
+  cursor: pointer;
+}
+</style>
+
+
+<!-- ===================================MAPS========================================= -->
+
+ <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBIRnkXzJ07J0atmmDK9gqUv45_Fxq0ZEQ&language=id"></script>
+
+    <script type="text/javascript">
+        var geocoder, map, address;
+        var marker;
+        var mapOptions = {
+            center: new google.maps.LatLng(-6.282506,106.760984),
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        function initialize() {
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      document.getElementById("lat").value = '22.2587';
+                        document.getElementById("lng").value = '71.1924';
+        }
+        function codeAddress() {
+            var address = document.getElementById("address").value;
+            // Google maps map object
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            //find location cords using geocoder
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    map.setZoom(16);
+                    document.getElementById('current');
+                    document.getElementById("lat").value = results[0].geometry.location.lat();
+                    document.getElementById("lng").value = results[0].geometry.location.lng();
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        draggable: true,
+                        title: results[0].formatted_address
+                    });
+                    google.maps.event.addListener(marker, 'dragend', function (evt) {
+                        document.getElementById('current');
+                        document.getElementById("lat").value = evt.latLng.lat();
+                        document.getElementById("lng").value = evt.latLng.lng();
+                    });
+                    google.maps.event.addListener(marker, 'dragstart', function (evt) {
+                        document.getElementById('current');
+                    });
+                    //display information window
+                    var infowindow = new google.maps.InfoWindow({ content: address });
+                    infowindow.open(map, marker);
+                    google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); });
+                }
+                else {
+                    alert("Problem with Address.");
+                }
+            });
+        }
+    </script>
+
+    <!-- ========================================================================================================= -->
+  <body class="text-center" onload="initialize()">
+
+    <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
+      <nav class="navbar navbar-expand-lg sticky-top index2-navbar bg-blue">
+    <a class="navbar-brand" href="index.html"><img class="rounded" src="wahana/images/logo-wahana.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link trun2 nav-mastlink hvr-sweep-to-right2" data-title="Wahana Prestasi Logistik" style="color:white;" href="index.html">Beranda</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Cek Tarif Pengiriman Wahana" href="index.html#tariff">Cek Tarif</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Lacak Pengiriman Paket Wahana" href="index.html#track">Lacak Pengiriman</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Agen terdekat Wahana" href="index.html#agentloc">Agen Terdekat</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" href="peluang_bisnis.html">Peluang Bisnis</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" href="contactus.html">Hubungi CS</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" href="cgi-bin/dw.cgi">Masuk</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+      <main role="main" class="inner main-container mx-auto cover pt-4">
+
+
+  <style>
+  .form-group label{
+    font-weight: bold;
+  }
+  </style>
+<div class="card bg-transparent">
+<div class="card-body">
+  <h2 class="mt-2 mb-4">Form Pengajuan Agen Wahana</h2>
+  <form enctype="multipart/form-data" action="javascript:void(0);" class="sky-form">
+
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <label  class="input">Nama <span class="text-red">*</span></label>
+        <input type="text" id="nama" name='nama' required="required" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+        <label class="label">No KTP <span class="text-red">*</span></label>
+        <input type="text" id="ktp" name='ktp' required="required" class="form-control">
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label class="label">Alamat <span class="text-red">*</span></label>
+      <input type="text" id="alamat" name="alamat" required="required" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label class="label">Alamat Agen <span class="text-red">*</span></label>
+      <input type="text" id="alamatagen" name="alamatAgen" class="form-control">
+    </div>
+
+      <div class="form-row">
+      <div class="form-group col-md-6">
+      <label class="label">Pilih Provinsi <span class="text-red">*</span></label>
+      <select type="text" name="provinsi" id="provinsi" class="form-control" class="round-track-right-select" placeholder="Pilih Provinsi" required onChange="myNewFunction(this);">
+            <option selected>Pilih Provinsi</option>
+            <option value="31">DKI Jakarta</option>
+            <option value="36">Banten</option>
+            <option value="32">Jawa Barat</option>
+            <option value="35">Jawa Timur</option>
+            <option value="33">Jawa Tengah</option>
+            <option value="34">DI Yogyakarta</option>
+            <option value="16">Sumatera Selatan</option>
+            <option value="18">Lampung</option>
+            <option value="51">Bali</option>
+            <option value="11">Aceh</option>
+            <option value="17">Bengkulu</option>
+            <option value="75">Gorontalo</option>
+            <option value="15">Jambi</option>
+            <option value="61">Kalimantan Barat</option>
+            <option value="63">Kalimantan Selatan</option>
+            <option value="62">Kalimantan Tengah</option>
+            <option value="64">Kalimantan Timur</option>
+            <option value="65">Kalimantan Utara</option>
+            <option value="19">Kepulauan Bangka Belitung</option>
+            <option value="21">Kepulauan Riau</option>
+            <option value="81">Maluku</option>
+            <option value="82">Maluku Utara</option>
+            <option value="52">Nusa Tenggara Barat</option>
+            <option value="53">Nusa Tenggara Timur</option>
+            <option value="94">Papua</option>
+            <option value="91">Papua Barat</option>
+            <option value="14">Riau</option>
+            <option value="76">Sulawesi Barat</option>
+            <option value="73">Sulawesi Selatan</option>
+            <option value="72">Sulawesi Tengah</option>
+            <option value="74">Sulawesi Tenggara</option>
+            <option value="71">Sulawesi Utara</option>
+            <option value="13">Sumatera Barat</option>
+            <option value="12">Sumatera Utara</option>
+      </select>
+      </div>
+
+
+      <div class="form-group col-md-6">
+      <label class="label">Kota <span class="text-red">*</span></label>
+      <select type="text" name="kabkot" id="kabkot" class="form-control" placeholder="Pilih Kota/Kabupaten" required >
+        <option value="">Pilih Kota/Kabupaten</option>
+      </select>
+      </div>
+
+
+      <div class="form-group col-md-6">
+      <label class="label">Kecamatan <span class="text-red">*</span></label>
+      <select type="text" name="kecamatan" id="kecamatan" class="form-control" placeholder="Pilih Kecamatan" required >
+        <option value="">Pilih Kecamatan</option>
+      </select>
+      </div>
+
+      <div class="form-group col-md-6">
+      <label class="label">kelurahan <span class="text-red">*</span></label>
+      <select type="text" name="kelurahan" id="kelurahan" class="form-control" placeholder="Pilih kelurahan" required >
+        <option value="">Pilih kelurahan</option>
+      </select>
+      </div>
+
+      <div class="form-group col-md-12">
+      <label class="label">Kode Pos <span class="text-red">*</span></label>
+      <input required="required" type="text" name="kodepos" id="kodepos" class="form-control">
+      </div>
+      <div class="form-group col-md-12">
+      <label class="label">No HP <span class="text-red">*</span></label>
+      <input required="required" id="hp" type="text" name="hp" class="form-control">
+      </div>
+      <div class="form-group col-md-12">
+      <label class="label">Email <span class="text-red">*</span></label>
+      <input required="required" id="email" type="email" name="email" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+      <label class="label">Latitude <span class="text-red">*</span></label>
+      <input required="required" id='lat' type="textbox"  name="latitude" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+      <label class="label">Longtitude <span class="text-red">*</span></label>
+      <input required="required" id='lng' type="textbox" name="longitude" class="form-control">
+      </div>
+
+      <div class="input-group mb-3">
+        <input id="address" type="textbox" class="form-control form-control-sm" placeholder="Masukkan Lokasi Anda" aria-label="Waybill Numbers" aria-describedby="basic-addon2">
+        <div class="input-group-append" id="agentloc">
+        <button class="btn btn-block btn-index" type="button" onclick="codeAddress()" required="required"><b>Lokasi Anda</b></button>
+        </div>
+      </div>
+
+      <div class="form-group col-md-12">
+          <div style="float:left;width:100%">
+              <div style="width:20%;float:left;">
+                  <div id="current">
+                  </div>
+              </div>
+              <section class="map-section-form">
+              <div id="map"></div>
+              </section>
+          </div>
+      </div>
+      <div class="form-group col-md-12">
+      <footer class="footer-detail">
+       <button id="sendComplain" onclick="sendAgen()" type="submit" class="btn-agen btn btn-primary mt-4 mb-4 bg-red" >Submit</button>
+      </footer>
+      </div>
+
+      </div>
+
+      <style type='text/css'>
+      .eventtext {width:100%; margin-top:20px; font:10pt Arial; text-align:left;
+        line-height:25px; background-color:#EDF4F8;padding:5px; border:1px dashed #C2DAE7;}
+      #map {width:100%; height:340px; border:2px solid #DEEBF2;}
+      </style>
+
+        </div>
+    </div>
+      </form>
+</div>
+</div>
+      </main>
+
+<div class="finx mt-5" style="background-color: #0202ff;color:white;" >
+<footer class=" mt-3 mb-2 mx-3">
+ <div class="inner">
+   <div class="row">
+     <div class="col-md-4 text-left" >
+     <b><p>Jl. Rempoa Raya No.88, Ciputat, Tangerang Selatan <br> Banten, Indonesia, 15412<br>
+       Tel : (+62) 21 7341688 <br>
+       Fax : (+62) 21 73886974</p></b>
+     </div>
+     <div class="col-md-4 mt-3">
+       <div class="row">
+         <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+       <a  href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
+       <img class="mbl-medsos" src="assets/img/fb_logo.png"  width="60" height="60"><span class="mr-5"></span>
+       </a>
+        </div>
+        <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+       <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
+       <img class="mbl-medsos" src="assets/img/insta_logo.png"  width="60" height="60"><span class="mr-5"></span>
+       </a>
+     </div>
+     <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+       <a href="https://www.youtube.com/channel/UCwm0TH_XgMbhDr3L67iTiIg?view_as=subscriber" target="_blank">
+         <img class="mbl-medsos" src="assets/img/yt_logo.png" width="60" height="60">
+       </a>
+     </div>
+       <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+       <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
+       <img class="mbl-medsos" src="assets/img/likedin_logo.png" width="60" height="60"><span class="mr-5"></span>
+       </a>
+     </div>
+     </div>
+     </div>
+     <div class="col-md-4 text-right">
+     <b><a href="faq.html" class="text-white">FAQ</a></b> &nbsp;|&nbsp;
+     <b><a href="syarat_ketentuan.html" class="text-white">Syarat & Ketentuan</a><b><br><br><br>
+     <p>© 2018 PT Wahana Prestasi Logistik</p>
+     </div>
+   </div>
+ </div>
+</footer>
+</div>
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/2e37f68334.js"></script>
+<script src="assets/js/jquery.autocomplete.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+  $("#provinsi").change(function(){
+    var provinsi = $("#provinsi").val();
+
+    var select_box = document.getElementById("provinsi");
+    var option_name = select_box[select_box.selectedIndex].name;
+
+    var as=$(this).find('option:selected').attr("name");
+
+    $.ajax({
+        url: "https://wahana.com/Home/getKabkot1",
+        type: "POST",
+        data: {"provinsi":provinsi},
+        dataType:"HTML",
+        success: function(msg){
+            $("#kabkot").html(msg);
+        }
+    });
+  });
+
+  $("#kabkot").change(function(){
+    var provinsi = $("#provinsi").val();
+    var kabkot = $("#kabkot").val();
+    $.ajax({
+        url: "https://wahana.com/Home/getKecamatan1",
+        type: "POST",
+        data: {"provinsi":provinsi,"kabkot":kabkot},
+        dataType:"HTML",
+        success: function(msg){
+            $("#kecamatan").html(msg);
+        }
+    });
+  });
+
+  $("#kecamatan").change(function(){
+    var provinsi = $("#provinsi").val();
+    var kabkot = $("#kabkot").val();
+    var kecamatan = $("#kecamatan").val();
+    $.ajax({
+        url: "https://wahana.com/Home/getKelurahan1",
+        type: "POST",
+        data: {"provinsi":provinsi,"kabkot":kabkot,"kecamatan":kecamatan},
+        dataType:"HTML",
+        success: function(msg){
+            $("#kelurahan").html(msg);
+        }
+    });
+  });
+
+  $("#kelurahan").change(function(){
+    var provinsi = $("#provinsi").val();
+    var kabkot = $("#kabkot").val();
+    var kecamatan = $("#kecamatan").val();
+    var kelurahan = $("#kelurahan").val();
+    $.ajax({
+        url: "https://wahana.com/Home/getKodepos1",
+        type: "POST",
+        data: {"provinsi":provinsi,"kabkot":kabkot,"kecamatan":kecamatan,"kelurahan":kelurahan},
+        dataType:"HTML",
+        success: function(msg){
+          var json = JSON.parse(msg);
+          $("#kodepos").val(json.ATRCPCODECD);
+        }
+    });
+  });
+
+});
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45015415-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <script src="https://wahana.com/assets/theme/assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+     <script src="https://wahana.com/assets/theme/assets/js/jquery.mobile.custom.min.js"></script>
+     <script src="https://wahana.com/assets/theme/assets/js/main.js"></script>
+  <!-- JS Implementing Plugins -->
+  <script src="https://wahana.com/assets/theme/assets/plugins/smoothScroll.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/jquery.easing.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/pace/pace.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/jquery.parallax.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/counter/waypoints.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/counter/jquery.counterup.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/owl-carousel/owl.carousel.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/modernizr.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/plugins/login-signup-modal-window/js/main.js"></script> <!-- Gem jQuery -->
+
+  <!-- JS Page Level-->
+  <script src="https://wahana.com/assets/theme/assets/js/one.app.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/forms/login.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/forms/contact.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/plugins/pace-loader.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/plugins/owl-carousel.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/plugins/style-switcher.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/plugins/revolution-slider.js"></script>
+  <script src="https://wahana.com/assets/theme/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      App.init();
+      App.initCounter();
+      App.initParallaxBg();
+      LoginForm.initLoginForm();
+      ContactForm.initContactForm();
+      OwlCarousel.initOwlCarousel();
+      StyleSwitcher.initStyleSwitcher();
+      RevolutionSlider.initRSfullScreen();
+    });
+
+
+  </script>
+    <script type="text/javascript">
+        $('.collapse').collapse();
+        function DropDown(el) {
+          this.dd = el;
+          this.placeholder = this.dd.children('span');
+          this.opts = this.dd.find('ul.dropdown > li');
+          this.val = '';
+          this.index = -1;
+          this.initEvents();
+      }
+      DropDown.prototype = {
+          initEvents : function() {
+              var obj = this;
+
+              obj.dd.on('click', function(event){
+                  $(this).toggleClass('active');
+                  return false;
+              });
+
+              obj.opts.on('click',function(){
+                  var opt = $(this);
+                  obj.val = opt.text();
+                  obj.index = opt.index();
+                  obj.placeholder.text(obj.val);
+              });
+          },
+          getValue : function() {
+              return this.val;
+          },
+          getIndex : function() {
+              return this.index;
+          }
+      }
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      $('#wahanaLogo').click(function() {
+        window.location.href= "https://wahana.com/";
+        return false; // prevent default
+    });
+      var segment= 'formAgenApply';
+    // change language to english
+    $('.changeLang').click(function() {
+      var lang = $(this).data('lang');
+      $.get("https://wahana.com/Ajaxx/changeLang", { segment:segment, lang:lang }, function(data) {
+                window.location.href = data;      });
+      return false; // prevent default
+    });
+
+
+
+
+  });
+
+        $('input#ttk').on('input', function() {
+            var ttk = $("#ttk").val();
+            $("#ttkNav").val(ttk);
+        });
+
+        $('input#ttkNav').on('input', function() {
+            var ttkNav  = $("#ttkNav").val();
+            $("#ttk").val(ttkNav);
+        });
+
+
+        $('input#ttk').keypress(function(e) {
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            if(e.which == 13) {
+                trackShiping();
+            }
+        });
+        $('input#ttkNav').keypress(function(e) {
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            if(e.which == 13) {
+                trackShiping();
+            }
+        });
+
+
+
+    <script type="text/javascript">
+      $("form").bind('submit',function(){
+       return false;
+    });
+
+
+    </script>
+
+
+    <!-- jQuery autocomplete -->
+<script src="https://wahana.com/assets/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+        function getDataOrigin(callback){
+            $.post("https://wahana.com/Ajaxx/getTariffNodeOriginNew", {}, function(data){
+                // console.log(data);
+                callback(data);
+            });
+        }
+
+
+      $('#provinsi').change(function(){
+        $('#kabkot').val(function () {
+          return $(this).find('option').filter(function () {
+              return $(this).prop('defaultSelected');
+          }).val();
+        });
+
+        $('#kabkot').val(function () {
+          return $(this).find('option').filter(function () {
+              return $(this).prop('defaultSelected');
+          }).val();
+        });
+
+        $('#kecamatan').val(function () {
+          return $(this).find('option').filter(function () {
+              return $(this).prop('defaultSelected');
+          }).val();
+        });
+
+        $('#kelurahan').val(function () {
+          return $(this).find('option').filter(function () {
+              return $(this).prop('defaultSelected');
+          }).val();
+        });
+
+        $('#kodepos').val(function () {
+          return $(this).find('option').filter(function () {
+              return $(this).prop('defaultSelected');
+          }).val();
+        });
+
+
+      });
+
+function sendAgen(){
+  var namas = $("#nama").val()
+  var ktps = $("#ktp").val()
+  var alamats = $("#alamat").val()
+  var alamatagens = $("#alamatagen").val()
+  var provinsis = $("#provinsi :selected").text()
+  var kabkots = $("#kabkot :selected").text()
+  var kecamatans = $("#kecamatan :selected").text()
+  var kelurahans = $("#kelurahan :selected").text()
+  var kodeposs = $("#kodepos").val()
+  var hps = $("#hp").val()
+  var emails = $("#email").val()
+  var lats = $("#lat").val()
+  var lngs = $("#lng").val()
+
+  $.ajax({
+    url : "https://wahana.com/formAgenUpload",
+    type: "post",
+    data: {nama : namas, ktp : ktps, alamat : alamats, alamatAgen : alamatagens, provinsi : provinsis, kabkot : kabkots, kecamatan : kecamatans, kelurahan : kelurahans, kodepos : kodeposs, hp : hps, email : emails, latitude : lats, longitude : lngs },
+    success : function(data){
+      alert("berhasil")
+    },
+    error : function(xhr ,status, error){
+      alert(error)
+    }
+  })
+}
+
+
+
+</script>
+
+
+    </body>
+  </html>

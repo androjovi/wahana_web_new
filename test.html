@@ -1,157 +1,461 @@
+
+<?php if ($data->ttklstnm != "INVALID" ) { ?>
+  <?php
+    switch ($data->ttklstcd) {
+      case '5':
+        $headerT = 'header-isi-ribbon-bt';
+        $statusT = 'Cancelled';
+        break;
+      case '4':
+        $headerT = 'header-isi-ribbon-retur';
+        $statusT = 'Return';
+        break;
+      case '3':
+        $headerT = 'header-isi-ribbon-deliv';
+        $statusT = 'Delivered';
+        break;
+      case '2':
+        $headerT = 'header-isi-ribbon-bt';
+        $statusT = 'In Progress';
+        break;
+      case '1':
+        $headerT = 'header-isi-ribbon-bt';
+        $statusT = 'New';
+        break;
+
+      default:
+        $headerT = '';
+        $statusT = '';
+        break;
+    }
+    $senderName = isset($data->root->data->ttkPengirimNama) ? urldecode($data->root->data->ttkPengirimNama) : '-';
+    $receivedBy = isset($data->ttklstrcvd) ? $data->ttklstrcvd : '-';
+    $ttk = isset($input['ttk']) ? strtoupper($input['ttk']) : ' ';
+  ?>
+
+  <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+   <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 isi-tracking">
+      <div class="header-isi-tracking">Hasil Tracking</div>
+       <div class="<?=$headerT?>">
+              <span class="icon-ribbon">
+
+                  <div  class="text-ribbon" ><span></span><text id="statusIsi"><?=$statusT?></text></div>
+                  <?php
+                      if($statusT == "Delivered")
+                      {
+                  ?>
+                          <img class="img-responsive logo-ribbon" src="<?=base_url('assets/theme/assets/img/wahana/deliv.png')?>" alt="logo_wahana" />
+                  <?php
+                      }
+                      else if($statusT == "In Progress" || $statusT == "Cancelled")
+                      {
+                  ?>
+                          <img class="img-responsive logo-ribbon" src="<?=base_url('assets/theme/assets/img/wahana/pros.png')?>" alt="logo_wahana" />
+                  <?php
+                      }
+                      else if($statusT == "Return")
+                      {
+                  ?>
+                          <img class="img-responsive logo-ribbon" src="<?=base_url('assets/theme/assets/img/wahana/retur.png')?>" alt="logo_wahana" />
+                  <?php
+                      }
+                  ?>
+
+              </span>
+
+       </div>
+       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 main-info-tracking">
+
+          <div class="row background-received metro">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 font-hasil-received">Received by </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 font-hasil-received metro">: </div>
+                <div class="col-lg-7 col-md-7 col-sm-5 col-xs-5  font-hasil-received metro"><?=$receivedBy?></div>
+           </div>
+
+            <div class=" metro">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  font-hasil">No TTK </div>
+                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 font-hasil metro">: </div>
+              <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7  font-hasil metro"><?=$ttk?></div>
+           </div>
+            <div class=" metro">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  font-hasil">Date </div>
+                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 font-hasil metro">: </div>
+              <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7  font-hasil metro">
+                  <?php
+                      if($data->ttklstcd=='1')
+                      {
+                  ?>
+                      New
+                  <?php
+                      }
+                      else
+                      {
+                  ?>
+                     <?=$this->Fungsi->TampilFormat($data->ttklstdt, 'tangbultah')?>
+                  <?php
+                      }
+                  ?>
+              </div>
+           </div>
+           <?php
+            if (isset($senderName)) { ?>
+             <div class=" metro">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  font-hasil">From </div>
+                   <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 font-hasil metro">: </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 font-hasil metro"><?=$this->Fungsi->changeSecondUntilEndChar($senderName)?></div>
+             </div>
+           <?php } ?>
+
+           <div class=" metro">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  font-hasil">To </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 font-hasil metro">: </div>
+              <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7  font-hasil metro">
+                <?=$this->Fungsi->changeSecondUntilEndChar(urldecode($data->root->data->ttkPenerimaNama))?>
+                <?=$data->root->data->ttkPenerimaTelepon?>
+                <br> <?=urldecode($data->root->data->ttkPenerimaAlamat)?>
+              </div>
+           </div>
+       </div>
+
+       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+           <div class="font-hasil-header"></div>
+           <div class="">
+                <?php
+                      if($data->ttklstcd=='1')
+                      {
+                  ?>
+                      <ul class="timeline-v2 timeline-hasil">
+                           <li class="equal-height-columns timeline-hasil-list">
+                            <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+                            <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;">1</span></i>
+                            <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+                               <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <!-- Progress Bar Text -->
+                                        <div class="progress-bar-text">
+                                          <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-bottom:2px;">New</p>
+                                        </div>
+                                        <!-- End Progress Bar Text -->
+
+                                    </div>
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <!-- Progress Bar Text -->
+                                        <div class="progress-bar-text">
+                                            <p class="text-left">Diterima di sales counter</p>
+                                        </div>
+                                        <!-- End Progress Bar Text -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                      </ul>
+                  <?php
+                      }
+                      elseif($data->ttklstcd=='5')
+                      {
+
+                      }else
+                      {
+                  ?>
+                      <ul class="timeline-v2 timeline-hasil">
+                          <?php
+                          // if (isset($data['trackingHistory'][0])) {
+                          $aa = 1;
+                          foreach ($data->root->data as $value) {
+                              $statusT=$value->ttkTrackStatusNama; ?>
+                           <li class="equal-height-columns timeline-hasil-list">
+                            <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+                            <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;"><?=$aa?></span></i>
+                            <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+                               <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <!-- Progress Bar Text -->
+                                        <div class="progress-bar-text">
+                                          <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-bottom:2px;"><?=$this->Fungsi->TampilFormat($value->ttkTrackRecDateTime, 'editTampil')?></p>
+                                          <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-top:2px;"><?=$this->Fungsi->TampilFormat($value->ttkTrackRecDateTime, 'editWaktu')?></p>
+                                        </div>
+                                        <!-- End Progress Bar Text -->
+
+                                    </div>
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <!-- Progress Bar Text -->
+                                        <div class="progress-bar-text">
+                                            <p class="text-left"><?=$value->ttkTrackStatusNama?></p>
+                                        </div>
+                                        <!-- End Progress Bar Text -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <script type="text/javascript">
+                          // $(document).ready(function(){
+                          //   $('#statusIsi').text("aaa");
+                          // });
+                        </script>
+                        <?php $aa++; }
+                        // }
+                        // else if (isset($data['trackingHistory']['dateTime'])) {?>
+                          <!-- <li class="equal-height-columns timeline-hasil-list">
+                            <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+                            <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;"><?=$key+1?></span></i>
+                            <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+                               <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="progress-bar-text">
+                                            <p class="text-left"><?=$this->Fungsi->TampilFormat($data['trackingHistory']['dateTime'], 'editTampil')?></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="progress-bar-text">
+                                            <p class="text-left"><?=$data['trackingHistory']['statusName']?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> -->
+                        <?php //} ?>
+                      </ul>
+                  <?php
+                      }
+                  ?>
+
+           </div>
+      </div>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+<?php }else{
+  echo $input;
+} ?>
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="assets/css/shortcode_timeline2.css" rel="stylesheet">
+
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="test.css" rel="stylesheet">
+    <link href="assets/css/shortcode_timeline20.css" rel="stylesheet">
+    <link href="test.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <style>
-.modal-content .row{
-  position: relative;
-  width: 100%
-}
-.modal-content .col-md-12, .modal-content  .col-md-4{
-  max-width: none;
-  display: inline-grid;
-}
-.text-button, .btn-btn-primary{
-  display: none;
-}
-label .from-rate-result{
-  padding-top: none;
-}
+  .header-isi-ribbon-deliv {
+    background-color: green;
+  }
+
+  .mk-center {
+    text-align: center;
+  }
 </style>
-
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header-rate-result">Cek Tarif</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 from-rate-result">
-    <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="row" style="margin-left:5%;margin-right:5%;">
+  <div class="col-md-12 mx-auto" style="text-align:center;color:white;">
+    <h2 class="header-isi-ribbon-deliv">Terkirim</h2>
+  </div>
+  <div class="col-md-4 mx-auto" style="text-align:center;color:white;">
+    <div class="col-md-6 mx-auto" style="text-align:center;color:black;">
+    <div class="row mx-1" style="background-color:blue;color:white;font-size:15px;border-radius:10px;">
+      <div class="col-md-4 col-4">Diterima</div>
+      <div class="col-md-4 col-4">Oleh</div>
+      <div class="col-md-4 col-4">test</div>
     </div>
-     <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
-           <form id="search-form" class="search-rate-result">
-            <div class="search-rate-result">
-              <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12 label-form">Kota Asal</label>
-              <input type="text" name="search" readonly="readonly" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 round-rate-calculate" Value="JAKARTA"/>
+    </div>
+    <div class="col-md-6 mx-auto" style="text-align:center;color:white;">
+      <div class="row no-gutters pull-left mx-1" style="color:black;font-size:12px;font-weight:bold;">
+        <div class="col-md-3 col-4">No resi</div>
+        <div class="col-md-2 col-4">:</div>
+        <div class="col-md-7 col-4 text-left">test</div>
+      </div>
+    </div>
+    <div class="col-md-6 mx-auto" style="text-align:center;color:white;">
+      <div class="row no-gutters pull-left mx-1" style="color:black;font-size:12px;font-weight:bold;">
+        <div class="col-md-3 col-4">Tanggal</div>
+        <div class="col-md-2 col-4">:</div>
+        <div class="col-md-7 col-4 text-left">                                  Kamis, 7 mei 2018                              </div>
+      </div>
+    </div>
+    <div class="col-md-6 mx-auto" style="text-align:center;color:white;">
+      <div class="row no-gutters pull-left mx-1" style="color:black;font-size:12px;font-weight:bold;">
+        <div class="col-md-3 col-4">Dari</div>
+        <div class="col-md-2 col-4">:</div>
+        <div class="col-md-7 col-4 text-left">test</div>
+      </div>
+    </div>
+    <div class="col-md-6 mx-auto" style="text-align:center;color:white;">
+      <div class="row no-gutters pull-left mx-1" style="color:black;font-size:12px;font-weight:bold;">
+        <div class="col-md-3 col-4">Ke</div>
+        <div class="col-md-2 col-4">:</div>
+        <div class="col-md-7 col-4 text-left">kjsgdshhhhhhhhhhhhhhhhh<br>sadasdasdas<br>asdsadsa</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 mx-auto" style="text-align:center;color:white;">
+    <div class="col-md-6 mx-auto" style="text-align:center;color:white;">
+      <ul class="timeline-v2 timeline-hasil">
+          <?php
+          // if (isset($data['trackingHistory'][0])) {
+          $aa = 1;
+          foreach ($data->root->data as $value) {
+              $statusT=$value->ttkTrackStatusNama; ?>
+           <li class="equal-height-columns timeline-hasil-list">
+            <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+            <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;">237236523645</span></i>
+            <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+               <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <!-- Progress Bar Text -->
+                        <div class="progress-bar-text">
+                          <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-bottom:2px;">iusdfhsadsdfsfdsufdshodosfh</p>
+                          <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-top:2px;">jasgdhhga</p>
+                        </div>
+                        <!-- End Progress Bar Text -->
+
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12">
+                        <!-- Progress Bar Text -->
+                        <div class="progress-bar-text">
+                            <p class="text-left">Diterima oleh counter</p>
+                        </div>
+                        <!-- End Progress Bar Text -->
+
+                    </div>
+                </div>
             </div>
-        </form>
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
+        </li>
+        <li class="equal-height-columns timeline-hasil-list">
+         <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+         <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;">237236523645</span></i>
+         <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+            <div class="row">
+                 <div class="col-sm-6 col-xs-12">
+                     <!-- Progress Bar Text -->
+                     <div class="progress-bar-text">
+                       <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-bottom:2px;">iusdfhdsufdshodosfh</p>
+                       <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-top:2px;">jasgdhhga</p>
+                     </div>
+                     <!-- End Progress Bar Text -->
 
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 to-rate-result">
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
-        <form id="search-form" class="search-rate-result">
-            <div class="search-rate-result">
-              <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12 label-to">Kota Tujuan</label>
-                <textarea rows="3" type="text" name="search" readonly="readonly" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 round-rate-textarea" >Sumatera Utara, Kab. Batu Bara, Limapuluh, Gunung Bandung, 21255</textarea>
+                 </div>
+
+                 <div class="col-sm-6 col-xs-12">
+                     <!-- Progress Bar Text -->
+                     <div class="progress-bar-text">
+                         <p class="text-left">Diterima oleh counter</p>
+                     </div>
+                     <!-- End Progress Bar Text -->
+
+                 </div>
+             </div>
+         </div>
+     </li>
+     <li class="equal-height-columns timeline-hasil-list">
+      <div class="cbp_tmtime equal-height-column" ></div>
+      <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;">237236523645</span></i>
+      <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+         <div class="row">
+              <div class="col-sm-6 col-xs-12">
+                  <!-- Progress Bar Text -->
+                  <div class="progress-bar-text">
+                    <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-bottom:2px;">iusdfhdsufdshodosfh</p>
+                    <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-top:2px;">jasgdhhga</p>
+                  </div>
+                  <!-- End Progress Bar Text -->
+
+              </div>
+
+              <div class="col-sm-6 col-xs-12">
+                  <!-- Progress Bar Text -->
+                  <div class="progress-bar-text">
+                      <p class="text-left">Diterima oleh counter</p>
+                  </div>
+                  <!-- End Progress Bar Text -->
+
+              </div>
+          </div>
+      </div>
+  </li>
+  <li class="equal-height-columns timeline-hasil-list">
+   <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+   <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;">237236523645</span></i>
+   <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+      <div class="row">
+           <div class="col-sm-6 col-xs-12">
+               <!-- Progress Bar Text -->
+               <div class="progress-bar-text">
+                 <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-bottom:2px;">iusdfhdsufdshodosfh</p>
+                 <p class="col-md-12 col-xs-12 col-lg-12 col-sm-12 text-left" style="margin-top:2px;">jasgdhhga</p>
+               </div>
+               <!-- End Progress Bar Text -->
+
+           </div>
+
+           <div class="col-sm-6 col-xs-12">
+               <!-- Progress Bar Text -->
+               <div class="progress-bar-text">
+                   <p class="text-left">Diterima oleh counter</p>
+               </div>
+               <!-- End Progress Bar Text -->
+
+           </div>
+       </div>
+   </div>
+</li>
+        <script type="text/javascript">
+          // $(document).ready(function(){
+          //   $('#statusIsi').text("aaa");
+          // });
+        </script>
+        <?php $aa++; }
+        // }
+        // else if (isset($data['trackingHistory']['dateTime'])) {?>
+          <!-- <li class="equal-height-columns timeline-hasil-list">
+            <div class="cbp_tmtime equal-height-column" ><span></span><span></span></div>
+            <i class="cbp_tmicon rounded-x hidden-xs"><span style="margin-left:5px;"><?=$key+1?></span></i>
+            <div class="cbp_tmlabel equal-height-column custom-wahana-timeline" >
+               <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="progress-bar-text">
+                            <p class="text-left"><?=$this->Fungsi->TampilFormat($data['trackingHistory']['dateTime'], 'editTampil')?></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="progress-bar-text">
+                            <p class="text-left"><?=$data['trackingHistory']['statusName']?></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
+        </li> -->
+        <?php //} ?>
+      </ul>
     </div>
-     <!-- <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div> -->
-</div>
-
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 from-rate-result">
-    <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
-           <form id="search-form" class="search-rate-result">
-            <div class="search-rate-result">
-              <label class="col-lg-12 col-md-12 col-sm-12 col-xs-12 label-form">Service</label>
-              <input type="text" name="search" readonly="readonly" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 round-rate-calculate" Value="Normal"/>
-            </div>
-        </form>
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-
-</div>
-
-
-
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dimension-rate-result">
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                 <label class="label-weight-result">Berat</label>
-                <form id="search-form">
-                <div class="search-dimension-result ">
-
-                  <input type="text" name="search-dimension" class="round-dimension-result" readonly="readonly" value="1"/>
-                  <a href="#" type="submit" class="corner-dimension-result" value="">
-                     <span class="icon-search">
-                       <div class="satuan-dimension">Kg</div>
-                      </span>
-                </a>
-                </div>
-        </form>
-
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-             <label class="label-cost-result">Harga / Kg</label>
-                <form id="search-form" class="">
-                <div class="search-dimension-result ">
-
-                  <input type="text" name="search-dimension" class="round-dimension-result-even" readonly="readonly" value="50,000"/>
-                  <a href="#" type="submit" class="corner-dimension-result-even" value="">
-                     <span class="icon-search">
-                        <div class="satuan-dimension-result">Rp</div>
-                    </span>
-                </a>
-                </div>
-            </form>
-        </div>
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 dimension-rate-result">
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                 <label class="label-total-result">Jumlah Harga</label>
-                <form id="search-form">
-                <div class="search-dimension-result">
-
-                  <input type="text" name="search-dimension" class="round-dimension-result-even" readonly="readonly" value="50,000"/>
-                  <a href="#" type="submit" class="corner-dimension-result-even" value="">
-                     <span class="icon-search">
-                       <div class="satuan-dimension-result">Rp</div>
-                      </span>
-                </a>
-                </div>
-        </form>
-
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-             <label class="label-time-result">Perkiraan Waktu</label>
-                <form id="search-form" class="">
-                <div class="search-dimension-result ">
-
-                  <input type="text" name="search-dimension" class="round-dimension-result" readonly="readonly" value="10"/>
-                  <a href="#" type="submit" class="corner-dimension-result" value="">
-                     <span class="icon-search">
-                        <div class="satuan-dimension-result-days">Hari</div>
-                    </span>
-                </a>
-                </div>
-            </form>
-        </div>
-    </div>
-     <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
-    </div>
-
-</div>
- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 calculate-button-result">
-     <button onClick="resetCalculate()" id="rcorners-calculate-result" class="btn btn-primary" style="background:yellow;">
-         <span class="icon-button">
-<!--           <img class="logo-button" src="" alt="logo_wahana" />-->
-            <div class="text-button yellow" >Kembali</div>
-        </span>
-
-    </button>
+  </div>
 </div>
 </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#exampleModal").modal('show')
+})
+</script>

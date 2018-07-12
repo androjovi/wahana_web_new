@@ -13,7 +13,6 @@
 -->
   <link rel="icon" href="favicon.ico">
   <title>Wahana Prestasi Logistik</title>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -23,8 +22,9 @@
   <link href="assets/css/cover.css" rel="stylesheet">
   <link href="assets/css/hover-min.css" rel="stylesheet">
   <link href="assets/css/shortcode_timeline2.css" rel="stylesheet">
-  <script src="assets/js/html2canvas.min.js"></script>
-
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
   <!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
 </head>
 <style>
@@ -72,6 +72,7 @@
   font-size: 10px;
 }
 */
+.html2canvas-container { width: 3000px !important; height: 3000px !important; }
 </style>
 <body class="text-center">
   <div id="fb-root"></div>
@@ -118,46 +119,6 @@
           <li data-target="#wahanaCarousel" data-slide-to="4"></li>
           <li data-target="#wahanaCarousel" data-slide-to="5"></li>
         </ol>
-        <div class="carousel-inner rounded">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="wahana/banners/Ultah-021.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/Banner_libur-01.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/web_banner_ramadhan-04.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/3000_new-01.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/TOKPED-021.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/New_Template-06.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/Web_Banner_BUKALAPAK_REV_1-021.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/banner_web_prioritas-01-01-01.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/wahana_untuk_dari_indonesia_opsi_1_buat_web-01-01.jpg">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="wahana/banners/JASA_PENGIRIMAN_BARANG-01.jpg">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#wahanaCarousel" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-        <a class="carousel-control-next" href="#wahanaCarousel" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a>
       </div>
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
 
@@ -193,20 +154,7 @@
 
     </main>
     <style>
-      .tab-content {
-        position: relative;
-        width: 100%;
-        left: 20%;
-      }
 
-      .col-md-5,
-      .col-md-7 {
-        max-width: none;
-      }
-
-      .metro {
-        display: -webkit-box;
-      }
     </style>
     <div class="modal fade bd-example-modal-lg" id="modalTracking" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -217,25 +165,59 @@
       <span aria-hidden="true">&times;</span>
     </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" >
             <nav>
-              <div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-              </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
+              <div id="err_resi"></div>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist" >
 
             </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+
+          </div>
           </div>
           <div class="modal-footer">
             <!-- Sharingbutton Facebook -->
-            <button onclick="PostImageToFacebook(window.authToken)">Share</button>
+            <button id="btnDownloadLacakResi">Download</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <style>
+  .modal-big {
+    width: 1000px;
+    margin-left: -10px;
+}
+
+@media (max-width: 767px) {
+    .modal-big {
+        width: auto;
+        margin-left: auto;
+    }
+}
+  </style>
+  <div class="modal fade bd-example-modal-lg" id="modalTrackingtest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document" style="width:1000px;">
+      <div class="modal-content" style="width:140vmin;">
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel">Status pengiriman</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+        </div>
+        <div class="modal-body" >
+
+        <div class="modal-footer">
+          <!-- Sharingbutton Facebook -->
+          <button id="btnDownloadLacakResi">Download</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Bootstrap core JavaScript
       ================================================== -->
@@ -243,102 +225,151 @@
 
   <script src="https://use.fontawesome.com/2e37f68334.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
-
   <script src="assets/js/jquery.autocomplete.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
   <script>
     window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')
   </script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
 
+  <script>
+  $(document).ready(function(){
+    //$("#modalTrackingtest").modal("show")
+  })
+  var htmlSource = $('#nav-tabContent')[0];
+
+$("#btnDownloadLacakResi").mouseup(function(){
+  $(".timeline-hasil").removeClass("timeline-hasil")
+  htmlSource.scrollIntoView()
+  html2canvas(htmlSource, {
+   onrendered: function(canvas) {
+
+     // document.body.appendChild(canvas);
+     return Canvas2Image.saveAsPNG(canvas);
+   }
+ });
+})
+$( "#modalTracking" ).mouseover(function() {
+  $(".timeline-v2").addClass("timeline-hasil")
+});
+
+
+  </script>
   <script type="text/javascript">
     // ajax lacak pengiriman
-    function trackShiping() {
+    function trackShiping(){
+          var ttk   = $("#ttk").val();
+          var t;
+          if(ttk.length == 0){
+           alert('data anda belum lengkap!');
+           return false;
+          }
+          t = ttk
+          regexnya = new RegExp('^[a-zA-Z0-9 ,.-]+$')
+          if (!regexnya.test(t)){
+            swal({
+              type: 'error',
+              title: 'Oops...',
+              html: '<b>Masukkan Resi Yang Valid Dan Dipisah Dengan Spasi</b>',
+            })
+            return false
+          }
+          var chara_split
+          chara_split = t.split(/\.|-|,|=|~|\s/)
+          var i;
+          var data;
+    var b = 0
+          var stat_resi = false
+          var err_resi = []
+          for (i=0; i < chara_split.length; i++){
+          if (chara_split.length > 10){
+            swal({
+              type: 'error',
+              title: 'Oops...',
+              html: 'Nomor Resi Tidak Boleh Dari 10',
+            })
+            return false;
+          }
+          $.ajax({
+            url : "https://wahana.com/index.php/Ajaxx/getTtkNew2",
+            type: "post",
+            data : 'ttk='+ ttk,
+            success: function(data){
 
+              $("#modalTrackingtest").modal({
+                show: true,
 
-      var ttk   = $("#ttk").val();
-      var t;
-      if(ttk.length == 0){
+              }).addClass('modal-big');
+              $('#tab-tracking').tab("show");
+              $(".modal-body").html(data)
+              $("#nav-tab #tab0").addClass("active show")
+              $(".tab-content #tab0").addClass("active show")
+              $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                e.preventDefault();
 
-       alert('data anda belum lengkap!');
-       return false;
-      }
-      t = ttk
-      regexnya = new RegExp('^[a-zA-Z0-9 ,.-]+$')
-      if (!regexnya.test(t)){
-        alert("Masukkan Nomer Resi yang valid dan dipisah dengan spasi")
-        return false
-      }
-      var chara_split = t.split(/\.|-|,|=|~|\s/)
-      var i;
-      var data;
-      var a = 0
-      var b = a++
-      var res_error = []
-      for (i=0; i < chara_split.length; i++){
-      if (chara_split.length > 10){
-        alert("Nomor Resi Tidak Boleh Lebih Dari 10")
-        return false;
-      }
-       $.post( "https://wahana.com/index.php/Ajaxx/getTtkNew",
-           {'ttk':chara_split[i] },
-               function() {}).done(function(data){
-                 if (data != 0) {
-                          var mapObj = {
-                             "Delivered":"Terkirim",
-                             "Cancelled" : "Dikembalikan",
-                             'No TTK':"No Resi",
-                             "Date":"Tanggal",
-                             "Received by" : "Diterima Oleh",
-                             "From":"Dari",
-                             "To":"Ke",
-                             //Replace day
-                             "Monday": "Senin",
-                             "Tuesday": "Selasa",
-                             "Wednesday": "Rabu",
-                             "Thursday":"Kamis",
-                             "Friday": "Jumat",
-                             "Saturday": "Sabtu",
-                             "Sunday": "Minggu",
-                             "January" : "Januari",
-                             "Febuary" : "Februari",
-                             "March" : "Maret",
-                             "April" : "April",
-                             "May" : "Mei",
-                             "June" : "Juni",
-                             "July" : "Juli",
-                             "August" : "Agustus",
-                             "September" : "September",
-                             "October" : "Oktober",
-                             "November" : "November",
-                             "Desember" : "Desember",
-                          };
-                          str = data.replace(/^ |Delivered|No TTK|Date|From|To|Received by|Thursday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|January|February|March|April|May|June|July|August|September|October|Desember|November|Cancelled/gi, function(matched){
-                            return mapObj[matched];
-                          });
-                   $("#modalTracking").modal("show");
-                   ups = '<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav'+b+'" role="tab" aria-controls="nav-home" aria-selected="true">'+chara_split[b]+'</a>'
-                   cont = '<div class="tab-pane fade" id="nav'+b+'" role="tabpanel" aria-labelledby="nav-profile-tab">'+str+'</div>'
-                   $("#nav-tab").append(ups)
-                   $("#nav-tabContent").append(cont)
-                   $('a[href="#nav0"]').addClass('active show');
-                   $('div[id="nav0"]').addClass('active show');
-                   b++
-                   console.log(data)
-                 }
-                 else {
-                   var yz = res_error.push(chara_split)
-                   console.log(yz)
-                 }
-       }).fail(function(){
-         console.log("gagal")
-       })
-      }
-      $("#nav-tab").empty()
-      $("#nav-tabContent").empty()
+                var ref = $(this).attr('href').replace('#', '');
 
+                $(".tab-content #"+ref).toggleClass('active show').siblings().removeClass('active show');
+
+            });
+              $('.modal-body .nav').tab("show");
+            },
+            beforeSend: function(){
+              $("#spinnertrack").removeClass("hidden")
+              $("#track").addClass("disabled")
+            }
+          })
+          /*
+           $.post( "https://wahana.com/index.php/Ajaxx/getTtkNew",
+               {'ttk':chara_split[i] },
+                   function() {}).done(function(data){
+                     if (data != 0) {
+
+                                var mapObj = {
+                                 "Delivered":"Terkirim",
+                                 'No TTK':"No Resi",
+                                 "Date":"Tanggal",
+                                 "Received by" : "Diterima Oleh",
+                                 "From":"Dari",
+                                 "To":"Ke",
+                                 //Replace day
+                                 "Monday": "Senin",
+                                 "Tuesday": "Selasa",
+                                 "Wednesday": "Rabu",
+                                 "Thursday":"Kamis",
+                                 "Friday": "Jumat",
+                                 "Saturday": "Sabtu",
+                                 "Sunday": "Minggu",
+                              };
+                              str = data.replace(/Delivered|No TTK|Date|From|To|Received by|Thursday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday/gi, function(matched){
+                                return mapObj[matched];
+                              });
+                       $("#modalTracking").modal("show");
+                       ups = '<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav'+b+'" role="tab" aria-controls="nav-home" aria-selected="true">'+chara_split[b]+'</a>'
+                       cont = '<div class="tab-pane fade" id="nav'+b+'" role="tabpanel" aria-labelledby="nav-profile-tab">'+str+'</div>'
+                       $("#nav-tab").append(ups)
+                       $("#nav-tabContent").append(cont)
+
+                       $('a[href="#nav0"]').addClass('active show');
+                       $('div[id="nav0"]').addClass('active show');
+                       b++
+                     }
+                     else {
+
+                      alert("Resi Tidak Valid")
+                     }
+           })
+           */
+          }
+          $("#nav-tab").empty()
+          $("#nav-tabContent").empty()
+
+          if (stat_resi == true){
+            alert("Nomo resi anda salah")
+          }
     }
+
   </script>
 </body>
 

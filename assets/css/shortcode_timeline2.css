@@ -6,7 +6,12 @@
 	position: relative;
 	overflow: auto;
 }
-
+.timeline-hasil
+{
+		overflow-y:visible;
+		height: 290px;
+		padding:5px;
+}
 /* The line */
 .timeline-v2 > li{
 	position: relative;
@@ -21,6 +26,7 @@
 	background: #f3f3f3;
 	position: absolute;
 	margin-left: -14px;
+	height: 100%;
 }
 
 /* The date/time */
@@ -32,7 +38,7 @@
 }
 
 .timeline-v2 > li .cbp_tmtime span {
-	top: 9px;
+	top: 9px
 	display: block;
 	text-align: right;
 	position: relative;

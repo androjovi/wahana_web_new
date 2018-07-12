@@ -25,8 +25,34 @@ label{
   color: #fff;
   background-color: #0202FF;
   border-radius: 0 5px 5px 0;
+
 }
 
 #rcorners-calculate-result{
   display: none;
+}
+
+.search-from{
+  display: inline-block;
+  margin: auto;
+}
+
+.dimension-rate-result{
+  display: inline-block;
+  width:100%;
+}
+ input{
+  width: 100px;
+}
+.label-time-result, .label-weight-result, .label-cost-result, .label-total-result{
+  width:200px;
+}
+.icon-search{
+  position: relative;
+}
+.satuan-dimension-result-days{
+
+}
+.dimension-rate-result + .dimension-rate-result{
+
 }
