@@ -1,6 +1,12 @@
+
+
 @font-face {
     font-family: 'swanse';
     src: url(../.././wahana/fonts/swans.ttf);
+}
+@font-face {
+    font-family: 'agencyfb';
+    src: url(../.././wahana/fonts/AgencyFB.ttf);
 }
 /*
  * Globals
