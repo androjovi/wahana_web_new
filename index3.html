@@ -102,56 +102,65 @@ select.form-control:not([size]):not([multiple]){
         <div data-spy="scroll"  data-target="#navbar-example2" data-offset="0" >
         <div class="card bg-transparent mt-2">
         <div class="card-body">
-        			<h4 class="text-center">Cek Tarif</h4>
+        			<h4 class="text-center"><img src="wahana/images/icon_cektarif.png" style="bottom:2px;position:relative;">&nbsp;Cek Tarif</h4>
         			<form class="" action="JavaScript:void(0)">
-        			<div class="form-row">
-                <!--
-        				<div class="form-group col-sm-3">
-        					<label class="sr-only" for="serviceId">Service</label>
+                <div class="form-row">
                   <!--
-        					<select class="form-control form-control-sm" id="service" data-toggle="tooltip" data-html="true" title="Pilih Layanan">
-        						<option disabled>Layanan</option>
-        						<option value="7">Express Normal</option>
-        						<option value="5">Express Prioritas</option>
-        						<!-- <option value="8994">Tujuan Khusus</option>
-                    <optgroup label="Tujuan Khusus">
-                      <option value="volvo">Tujuan Khusus Apatermen</option>
-                      <option value="saab">Tujuan Khusus Gedung Perkantoran</option>
-                    </optgroup>
-        					</select>
-        				</div>
-              -->
-        				<div class="form-group col-sm-4">
-        					<label class="sr-only">Kota Asal</label>
-                  <select id="calculateFrom" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
-                    <option value="000000" data-id=")">Kota Asal</option>
-            </select>
-        				</div>
-        				<div class="form-group col-sm-2">
-        					<label class="sr-only">Propinsi</label>
-                  <select id="getProp" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
-                    <option value="000000" data-id=")">Propinsi</option>
-            </select>
-        				</div>
-                <div class="form-group col-sm-2">
-        					<label class="sr-only">Kabupaten</label>
-                    <select id="getKab" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
-                      <option value="000000" data-id=")">Kabupaten / Kota</option>
+                  <div class="form-group col-sm-3">
+                    <label class="sr-only" for="serviceId">Service</label>
+                    <!--
+                    <select class="form-control form-control-sm" id="service" data-toggle="tooltip" data-html="true" title="Pilih Layanan">
+                      <option disabled>Layanan</option>
+                      <option value="7">Express Normal</option>
+                      <option value="5">Express Prioritas</option>
+                      <!-- <option value="8994">Tujuan Khusus</option>
+                      <optgroup label="Tujuan Khusus">
+                        <option value="volvo">Tujuan Khusus Apatermen</option>
+                        <option value="saab">Tujuan Khusus Gedung Perkantoran</option>
+                      </optgroup>
                     </select>
-        				</div>
-                <div class="form-group col-sm-2">
-        					<label class="sr-only">Kecamatan</label>
-                  <select id="getKec" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
-                    <option value="000000" data-id=")">Kecamatan</option>
-                  </select>
-        				</div>
-                <div class="form-group col-sm-2">
-        					<label class="sr-only">Kelurahan</label>
-                  <select id="getKel" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
-                    <option value="000000" data-id=")">Kelurahan</option>
-                  </select>
-        				</div>
-        			</div>
+                  </div>
+                -->
+
+                  <div class="form-group col-sm-3">
+                    <label class="sr-only">Kota Asal</label>
+                    <select id="calculateFrom" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
+                      <option value="000000" data-id=")">Kota Asal</option>
+              </select>
+                  </div>
+                  <div class="form-group col-sm-3">
+                    <label class="sr-only">Propinsi</label>
+                    <select id="getProp" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Propinsil">
+                      <option value="000000" data-id=")">Propinsi</option>
+              </select>
+                  </div>
+                  <div class="form-group col-sm-3" id="s1">
+                    <label class="sr-only">Kabupaten</label>
+                      <select id="getKab" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kabupaten">
+                        <option value="000000" data-id=")">Kabupaten / Kota</option>
+                      </select>
+                  </div>
+                  <div class="form-group col-sm-3"  id="s2">
+                    <label class="sr-only">Kecamatan</label>
+                    <select id="getKec" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kecamatan">
+                      <option value="000000" data-id=")">Kecamatan</option>
+                    </select>
+                  </div>
+                  <!--
+                  <div class="form-group col-sm-2"  id="s3">
+                    <label class="sr-only">Kelurahan</label>
+                    <select id="getKel" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kelurahan">
+                      <option value="000000" data-id=")">Kelurahan</option>
+                    </select>
+                  </div>
+                -->
+                  <div class="form-group col-sm-6" style="display: none" id="singapore">
+                    <label class="sr-only">Singapore</label>
+                    <select id="getSingapore" disabled="true" class="form-control" data-toggle="tooltip" data-html="true" title="Pilih Kota Asal">
+                      <option value="000000" data-id=")">Pilih Tujuan</option>
+                    </select>
+                  </div>
+                </div>
         			<div class="form-row">
         				<div class="form-group col-sm-2">
         					<label class="sr-only">Weight</label>
@@ -190,15 +199,16 @@ select.form-control:not([size]):not([multiple]){
         						</div>
         					</div>
 
-                      <input type="hidden" data-name="" id="propID" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
-                      <input type="hidden" data-name="" id="kabID" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
-                      <input type="hidden" data-name="" id="kecID" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
-        							<input type="hidden" data-name="" id="dataAsalId" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
 
-        							<input type="hidden" data-name="" id="dataTujuanId" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
+                  <input type="hidden" data-name="" id="propID" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
+                  <input type="hidden" data-name="" id="kabID" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
+                  <input type="hidden" data-name="" id="kecID" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
+                  <input type="hidden" data-name="" id="dataAsalId" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
+
+                  <input type="hidden" data-name="" id="dataTujuanId" placeholder="Tinggi" class="form-control form-control-sm" type="text" value="">
 
         				<div class="form-group col-sm-4" id="track" >
-        					<button  onClick="calculate()" id="cek" data-toggle="tooltip" data-html="true" title="Cek Sekarang!" class="btn btn-block btn-index"><b>Cek</b><i id="spinnercek" class="hidden fa fa-cog fa-spin fa-fw"></i></button>
+        					<button  onClick="calculate()" id="cek" data-toggle="tooltip" data-html="true" title="Cek Sekarang!" style="height:34px;color:white;" class="btn btn-block bg-blue"><b><span style="font-size: 20px;font-family: agency;letter-spacing:1px; position:relative; bottom:5px;">HITUNG</b><i id="spinnercek" class="hidden fa fa-cog fa-spin fa-fw"></i></span></button>
         				</div>
         			</div>
               </div>
@@ -262,6 +272,12 @@ $('#btnDownload').on("click", function() {
   })
 </script>
 <script>
+$(document).ready(function(){
+$("#getKab").prop("disabled", false);
+})
+</script>
+
+<script>
 
 //Tampilkan Propinsi
 function formatState (state) {
@@ -294,6 +310,7 @@ async: true,
 url: "https://weblib.wahana.com/Ajaxx/getProp",
 success: function (data) {
   //console.log(data)
+
     makeSelect2prop(data);
 }
 });
@@ -303,59 +320,219 @@ var data = e.params.data;
 $("#propID").val(data.id)
 $("#propID").attr("data-name",data.text)
 
+if ($("#propID").val() == "9471049272"){
+  $("#singapore").removeAttr("style")
+  $("#s1").css("display", "none")
+  $("#s2").css("display", "none")
+  $("#s3").css("display", "none")
+  //$("#getProp").change(function(){
+  function formatState (state) {
+  if (!state.id) {
+  return state.text;
+  }
+  var state1 = state.text;
+  return state1;
+  };
+  function selection(state) {
+  return state.text;
+  }
+  function makeSelect2sing(data) {
+  $('#getSingapore').select2({
+    data: data,
+    allowClear:true,
+    placeholder : "Masukkan Kota Singapore",
+    width: '100%',
+    templateSelection: selection,
+    templateResult: formatState,
+    escapeMarkup: function (state) {
+        return state;
+    },
+  });
+  }
+  $(document).ready(function(){
+  $.ajax({
+  type: "get",
+  dataType: "json",
+  async: true,
+  //data : "idKec="+$("#kabID").val(),
+  url: "https://weblib.wahana.com/Ajaxx/getKotaSingapore",
+  success: function (data) {
+    //console.log(data)
+      makeSelect2sing(data);
+  }
+  });
+  //})
+  $('#getSingapore').on('select2:select', function (e) {
+  var data = e.params.data;
+  $("#dataTujuanId").val(data.id)
+  $("#dataTujuanId").attr("data-name",data.text)
+  });
+  })
+}else{
+  $("#singapore").css("display", "none")
+  $("#s1").removeAttr("style")
+  $("#s2").removeAttr("style")
+  $("#s3").removeAttr("style")
+}
+
 });
 </script>
 
 <script>
-//Tampilkan Kabupaten
-$("#getProp").change(function(){
-function formatState (state) {
-if (!state.id) {
-return state.text;
-}
-var state1 = state.text;
-return state1;
-};
-function selection(state) {
-return state.text;
-}
-function makeSelect2kab(data) {
-$('#getKab').select2({
-  data: data,
-  placeholder : "Masukkan Kota Propinsi",
-  width: '100%',
-  templateSelection: selection,
-  templateResult: formatState,
-  escapeMarkup: function (state) {
-      return state;
-  },
-});
-}
-$(document).ready(function(){
-$.ajax({
-type: "post",
-dataType: "json",
-async: true,
-data : "idKab="+$("#propID").val(),
-url: "https://weblib.wahana.com/Ajaxx/getKab",
-success: function (data) {
-  //console.log(data)
-  console.log(data)
-    makeSelect2kab(data);
-}
-});
-})
-$('#getKab').on('select2:select', function (e) {
-var data = e.params.data;
-$("#kabID").val(data.id)
-$("#kabID").attr("data-name",data.text)
-});
-})
+  $("#getProp").change(function(){
+    $(document).ready(function(){
+      $("#getKab").empty()
+    if ($("#propID").val() == "2222"){
+      function formatState (state) {
+      if (!state.id) {
+      return state.text;
+      }
+      var state1 = state.text;
+      return state1;
+      };
+      function selection(state) {
+      return state.text;
+      }
+      function makeSelect2kab(data) {
+      $('#getKab').select2({
+        data: data,
+        allowClear: true,
+        placeholder : "Masukkan Kabupaten",
+        width: '100%',
+        templateSelection: selection,
+        templateResult: formatState,
+        escapeMarkup: function (state) {
+            return state;
+        },
+      });
+      }
+      $(document).ready(function(){
+      $.ajax({
+      type: "post",
+      dataType: "json",
+      async: true,
+      url: "https://weblib.wahana.com/Ajaxx/getKotaJabodetabek",
+      success: function (data) {
+        //console.log(data)
+          makeSelect2kab(data);
+      }
+      });
+      })
+      $('#getKab').on('select2:select', function (e) {
+      var data = e.params.data;
+      $("#kabID").val(data.id)
+      $("#kabID").attr("data-name",data.text)
+      });
+    }else{
+      function formatState (state) {
+      if (!state.id) {
+      return state.text;
+      }
+      var state1 = state.text;
+      return state1;
+      };
+      function selection(state) {
+      return state.text;
+      }
+      function makeSelect2kab(data) {
+      $('#getKab').select2({
+        data: data,
+        allowClear: true,
+        placeholder : "Masukkan Kabupaten",
+        width: '100%',
+        templateSelection: selection,
+        templateResult: formatState,
+        escapeMarkup: function (state) {
+            return state;
+        },
+      });
+      }
+      $(document).ready(function(){
+      $.ajax({
+      type: "post",
+      dataType: "json",
+      async: true,
+      data : "idKab="+$("#propID").val(),
+      url: "https://weblib.wahana.com/Ajaxx/getKab",
+      success: function (data) {
+        //console.log(data)
+          makeSelect2kab(data);
+      }
+      });
+      })
+      $('#getKab').on('select2:select', function (e) {
+      var data = e.params.data;
+      $("#kabID").val(data.id)
+      $("#kabID").attr("data-name",data.text)
+      });
+    }
+  })
+  })
+
 </script>
 
 <script>
+//Function select2
+function select2dropdown(id,placeHolder,typeAjax,dataTypeAjax,dataSend,url,tampungan){
+  try{
+  function formatState (state) {
+  if (!state.id) {
+  return state.text;
+  }
+  var state1 = state.text;
+  return state1;
+  };
+  function selection(state) {
+  return state.text;
+  }
+  function makeSelect2(data) {
+  $(id).select2({
+    data: data,
+    allowClear:true,
+    placeholder : placeHolder,
+    width: '100%',
+    templateSelection: selection,
+    templateResult: formatState,
+    escapeMarkup: function (state) {
+        return state;
+    },
+  });
+  }
+  $(document).ready(function(){
+  $.ajax({
+  type: typeAjax,
+  dataType: dataTypeAjax,
+  allowClear:true,
+  async: true,
+  data : dataSend,
+  url: url,
+  success: function (data) {
+    //console.log(data)
+    console.log(data)
+      makeSelect2(data);
+  }
+  });
+  })
+  $(id).on('select2:select', function (e) {
+  var data = e.params.data;
+  $(tampungan).val(data.id)
+  $(tampungan).attr("data-name",data.text)
+  });
+}catch(err){
+  console.log(err)
+}
+}
+
+
 //Tampilkan Kec
 $("#getKab").change(function(){
+  //var t = select2dropdown("#getKec","Masukkan Kecamatan","post","json","idKec="+$("#kabID").val(),"https://weblib.wahana.com/Ajaxx/getKec","#kecID")
+  $("#getKec").empty()
+  $("#getProp").change(function(){
+    $("#getKec").empty()
+  })
+
+$(document).ready(function(){
 function formatState (state) {
 if (!state.id) {
 return state.text;
@@ -369,7 +546,8 @@ return state.text;
 function makeSelect2kec(data) {
 $('#getKec').select2({
   data: data,
-  placeholder : "Masukkan Kota Propinsi",
+  allowClear:true,
+  placeholder : "Masukkan Kecamatan",
   width: '100%',
   templateSelection: selection,
   templateResult: formatState,
@@ -382,6 +560,7 @@ $(document).ready(function(){
 $.ajax({
 type: "post",
 dataType: "json",
+allowClear:true,
 async: true,
 data : "idKec="+$("#kabID").val(),
 url: "https://weblib.wahana.com/Ajaxx/getKec",
@@ -394,13 +573,16 @@ success: function (data) {
 })
 $('#getKec').on('select2:select', function (e) {
 var data = e.params.data;
-$("#kecID").val(data.id)
-$("#kecID").attr("data-name",data.text)
+$("#dataTujuanId").val(data.id)
+$("#dataTujuanId").attr("data-name",data.text)
 });
+
+})
 })
 </script>
 
 <script>
+/*
 //Tampilkan Kel
 $("#getKec").change(function(){
 function formatState (state) {
@@ -416,6 +598,7 @@ return state.text;
 function makeSelect2kel(data) {
 $('#getKel').select2({
   data: data,
+  allowClear:true,
   placeholder : "Masukkan Kota Propinsi",
   width: '100%',
   templateSelection: selection,
@@ -445,6 +628,7 @@ $("#dataTujuanId").val(data.id)
 $("#dataTujuanId").attr("data-name",data.text)
 });
 })
+*/
 </script>
 
 <script type="text/javascript">
@@ -489,7 +673,41 @@ $("#dataAsalId").attr("data-id",data.id)
 $("#dataAsalId").val(data.text)
 
 });
+</script>
+<script>
+//Reset Cek tarif
 
+$(document).ready(function(){
+  $(".makke").click(function(){
+  $("#propID").val("")
+  $("#kabID").val("")
+  $("#kecID").val("")
+  $("#kelID").val("")
+
+  $("#kabID").attr("data-name","")
+  $("#kecID").attr("data-name","")
+  $("#kelID").attr("data-name","")
+
+  //is gone
+  $("#getKab").empty()
+  $("#getKec").empty()
+  $("#getKel").empty()
+  })
+
+  $("#getProp").change(function(){
+    //$("#getKab").empty()
+    //$("#getKec").empty()
+  })
+  /*
+  $("#getProp").change(function(){
+    $("#getKab").empty()
+    $("#getKec").empty()
+    $("#getKel").empty()
+  })
+  */
+})
+</script>
+<script>
 function remove_duplicates_safe(arr) {
 var seen = {};
 var ret_arr = [];
@@ -639,7 +857,8 @@ if ($("#dataAsalId").val().length == 0){
         var weight 	= $("#calculateWeight").val();
         var length 	= $("#calculateLength").val();
         var dataAsal 	= $("#dataAsalId").val();
-        var dataTujuan 	= $("#propID").attr("data-name")+", "+$("#kabID").attr("data-name")+", "+$("#kecID").attr("data-name")+", "+$("#dataTujuanId").attr("data-name")
+        var kecID = $("#dataTujuanId").val()
+        var dataTujuan 	= $("#propID").attr("data-name")+" "+$("#kabID").attr("data-name")+" "+$("#dataTujuanId").attr("data-name")
         var service =$("#service").val();
 
         if(service=='7'){
@@ -685,7 +904,7 @@ if ($("#dataAsalId").val().length == 0){
 $.ajax({
   url: "https://weblib.wahana.com/Ajaxx/getTarifHomeNew2",
   type: "post",
-  data :   {'from':from, 'to':to,'height':height,'weight':weight,'length':length,'dataAsal':dataAsal,'dataTujuan':dataTujuan, 'wide':wide,'service':service },
+  data :   {'from':from, 'to':to,'height':height,'weight':weight,'length':length,'dataAsal':dataAsal,'dataTujuan':dataTujuan, 'wide':wide,'service':service, 'kecID':kecID },
   beforeSend : function(){
     $("#spinnercek").removeClass("hidden")
     $("#cek").addClass("disabled")
@@ -761,16 +980,10 @@ $.ajax({
         });
         }
 
-// ajax lacak pengiriman
-// ajax lacak pengiriman
-$(document).ready(function(){
-  $(".nav-mastlink").click(function(){
-    r = $(this).attr("data-title")
-    $("title").html(r)
-  })
-})
 </script>
+<script>
 
+</script>
 
     </body>
   </html>

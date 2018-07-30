@@ -1,0 +1,98 @@
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto;text-align: left;}
+/*.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }*/
+.autocomplete-suggestion { padding: 2px 5px; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+.ui-autocomplete-loading { background:url('https://dummyimage.com/50x50/000/000000&text=watermark') no-repeat right center }
+@media only screen and (max-width: 600px){
+  .finx{
+    margin-top: 700px;
+  }
+  .bann{
+    height: 100% !important;
+  }
+}
+.masssku{
+  style="height:350px;overflow:auto;"
+}
+.dropdown-caret{
+  position: relative;
+}
+.dropdown-caret::before{
+  position: absolute;
+  font-family: FontAwesome;
+			content: " \f0d7";
+      color: #444;
+			top: 5px;
+			height: 20px;
+      left: calc(100% - 5%);
+}
+.modal-header{
+  border-radius: 0px ;
+  border: 1px solid #0202ff;
+}
+/*
+.img-logo{
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 250px;
+  width: 250px;
+  padding-top: 250px;
+  overflow: hidden;
+  background: #333 url('wahana/images/logo-wahana.png') no-repeat;
+
+
+}
+*/
+#h2canvas{
+  /*display: none;*/
+}
+select.form-control:not([size]):not([multiple]){
+  height: calc(1.85rem + 2.1px) !important;
+}
+element.style {
+    border-radius: 0px;
+    padding-right: -10% !important;
+    display: block;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: none !important;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+.select2-container--default .select2-selection--single .select2-selection__clear{
+  float: left !important;
+  padding-right: 5px;
+}
+.close{
+  opacity: 10 !important; /* change color with opacity */
+  color:white !important;
+}
+.fa-cog{
+  bottom: 6px;
+  position: relative;
+  left: 2px;
+}
+.buka{
+  border: 1px solid green;
+  color: green;
+  font-size: 10px;
+  padding: 0 3px 0 3px;
+  font-weight: 500;
+}
+.tutup{
+  border: 1px solid red;
+  color: red;
+  font-size: 10px;
+  padding: 0 3px 0 3px;
+  font-weight: 500;
+}
+input#ttk{
+text-transform: uppercase;
+}
+input#ttk::placeholder{
+text-transform: capitalize;
+}

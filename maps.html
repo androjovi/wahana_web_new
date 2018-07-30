@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<!--
+    <link rel="icon" href="lib/3rdParty/bootstrap/favicon.ico">
+    <title>Cover Template for Bootstrap</title>
+-->
+    <link rel="icon" href="favicon.ico">
+    <title>Wahana Prestasi Logistik</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+     <link href="assets/css/one.style.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/cover.css" rel="stylesheet">
+    <link href="assets/css/hover-min.css" rel="stylesheet">
+    <link href="assets/css/shortcode_timeline2.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/pace-theme-flash.min.css" />
+    <script src="assets/js/pace.min.js"></script>
+    <link href="assets/css/select2.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+
+    </script>
+<!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
+  </head>
+<style>
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto;text-align: left;}
+/*.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }*/
+.autocomplete-suggestion { padding: 2px 5px; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+.ui-autocomplete-loading { background:url('https://dummyimage.com/50x50/000/000000&text=watermark') no-repeat right center }
+@media only screen and (max-width: 600px){
+  .finx{
+    margin-top: 700px;
+  }
+  .bann{
+    height: 100% !important;
+  }
+}
+.dropdown-caret{
+  position: relative;
+}
+.dropdown-caret::before{
+  position: absolute;
+  font-family: FontAwesome;
+			content: " \f0d7";
+      color: #444;
+			top: 5px;
+			height: 20px;
+      left: calc(100% - 5%);
+}
+.modal-header{
+  border-radius: 0px ;
+  border: 1px solid #0202ff;
+}
+/*
+.img-logo{
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 250px;
+  width: 250px;
+  padding-top: 250px;
+  overflow: hidden;
+  background: #333 url('wahana/images/logo-wahana.png') no-repeat;
+
+
+}
+*/
+#h2canvas{
+  /*display: none;*/
+}
+select.form-control:not([size]):not([multiple]){
+  height: calc(1.85rem + 2.1px) !important;
+}
+element.style {
+    border-radius: 0px;
+    padding-right: -10% !important;
+    display: block;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: none !important;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+.select2-container--default .select2-selection--single .select2-selection__clear{
+  float: left !important;
+  padding-right: 5px;
+}
+.close{
+  opacity: 10 !important; /* change color with opacity */
+  color:white !important;
+}
+.fa-cog{
+  bottom: 6px;
+  position: relative;
+  left: 2px;
+}
+.buka{
+
+  border: 1px solid green;
+  color: green;
+  font-size: 10px;
+  padding: 0 3px 0 3px;
+}
+.tutup{
+  border: 1px solid red;
+  color: red;
+  font-size: 10px;
+  padding: 0 3px 0 3px;
+}
+</style>
+
+  <body class="text-center">
+
+    <main role="main" class="inner cover pt-4 main-container mx-auto">
+
+
+
+</main>
+<div class="bmaps mb-0">
+<div class="w-100" style="">
+	<h4 class="text-center mb-3"><img src="wahana/images/icon_lokasi_agen.png" style="bottom:2px;position:relative;">&nbsp;Agen Terdekat</h4>
+  <section class="map-section" style="height:400px;">
+    <div class="row no-padding" style="height: 100%;">
+      <div class="col-12 col-md-8 no-padding" style="height:100%;">
+        <div  id="map"></div>
+      </div>
+      <div class="col-12 col-md-4 no-padding" style="height:100%;">
+        <div class="map-container">
+          <div class="map-content">
+
+              <div class=" find-agent" style="height: 100%;width:100%;">
+
+                <div><button id="moreMaps" class="btn btn-danger btn-sm" style="float:left;">More..</button><b><span id="cnt">5&nbsp;</span>AGEN TERDEKAT</b></div>
+                <!-- <div class="find-representative-label ">Temukan Agen Wahana Terdekat Di Lokasi Anda</div> -->
+                <div class="no-padding-side">
+                    <ul class="list-alamat" style="height: 350px;">
+                    </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+</div>
+</div>
+
+
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/jquery.autocomplete.min.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="assets/js/sweetalert2.all.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/numeral.min.js"></script>
+<script>window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyBIRnkXzJ07J0atmmDK9gqUv45_Fxq0ZEQ&language=id" type="text/javascript"></script>
+
+<span id="startCounting">10</span>
+<script>
+
+$(document).ajaxStart(function() { Pace.restart(); });
+$(document).ready(function(){
+
+  paceOptions = {
+ajax: true, //
+document: true, //
+eventLag: true, //
+};
+})
+</script>
+<script type="text/javascript" id="scriptMaps">
+var myLat;
+var myLng;
+var markers = [];
+$(document).ready(function(){
+startGeolocation();
+/*
+$("#moreMaps").click(function(){
+  document.getElementById("counter").stepUp(5)
+  console.log($("#counter").val())
+})
+*/
+});
+
+function startGeolocation()
+{
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition, showError);
+} else {
+// Browser doesn't support Geolocation
+$('#alertModal #myModalLabel').html('Error');
+$('#alertModal .modal-body').html('Your browser not support maps geolocation!');
+$('#alertModal').modal('show');
+}
+}
+
+function showError(error) {
+// alert("Error Mengambil Data Map");
+console.log(error);
+}
+
+function showPosition(position) {
+myLat = position.coords.latitude;
+myLng = position.coords.longitude;
+ console.log(myLat+" "+myLng);
+getLocation(myLat, myLng, 5);
+}
+
+function getLocation(myLat, myLng, radius){
+  if (parseInt($("#startCounting").text()) == 10){
+
+  //if ($("#counter").val() == 5){
+  $.post( "https://weblib.wahana.com/Ajaxx/getLokasiAgenNew",
+  {'radius':5, 'lat':myLat, 'long':myLng, 'limit': 5},
+  function() {}).done(function(data){
+  // console.log(data);
+
+  setMarker(JSON.parse(data), myLat, myLng);
+  });
+}else{
+  return false;
+}
+  //}
+  //var czount= 10
+
+}
+$(document).ready(function(){
+  $("#moreMaps").click(function(){
+    var happyCount = parseInt($("#startCounting").text())
+    happyCount += 5
+    //happyCount++
+    $("#startCounting").text(parseInt(happyCount))
+    $.ajax({
+      url : "https://weblib.wahana.com/Ajaxx/getLokasiAgenNew",
+      data: {'radius':5, 'lat':myLat, 'long':myLng, 'limit': happyCount},
+      type: "post",
+      success: function(data){
+        $(".list-alamat").empty()
+        setMarker(JSON.parse(data), myLat, myLng);
+
+      },
+      beforeSend : function(){
+        console.log(happyCount)
+      }
+    })
+  //alert(happyCount)
+//document.getElementById("counter").stepUp(5)
+//var rcr =  parseInt($("#counter").val())
+//czount += 5
+//$("#cnt").html(rcr-5 +"&nbsp;")
+/*
+if (happyCount == 100){
+  alert("Maksimal 100")
+  return false
+}
+*/
+/*
+$.post( "https://weblib.wahana.com/Ajaxx/getLokasiAgenNew",
+//console.log(rcr)
+{'radius':5, 'lat':myLat, 'long':myLng, 'limit': happyCount},
+function() {}).done(function(data){
+// console.log(data);
+console.log(happyCount)
+setMarker(JSON.parse(data), myLat, myLng);
+});
+*/
+//console.log(happyCount)
+})
+})
+
+function setMarker(location , lat, lng){
+var map = new google.maps.Map(document.getElementById('map'), {
+zoom: 13,
+center: new google.maps.LatLng(lat,lng),
+mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+        position: google.maps.ControlPosition.TOP_CENTER
+    },
+});
+
+var markerPusat = {
+url: 'https://weblib.wahana.com/assets/images/wahana/pusat2.png', // url
+scaledSize: new google.maps.Size(40, 40), // scaled size
+};
+
+var beachMarker = new google.maps.Marker({
+position: {lat: -6.282506, lng: 106.760984},
+map: map,
+icon: markerPusat
+});
+
+
+var infowindow = new google.maps.InfoWindow();
+
+beachMarker.addListener('mouseup', function() {
+infowindow.setContent('Kantor Pusat PT. Wahana Prestasi Logistik');
+infowindow.open(map, beachMarker);
+});
+
+var markerHere = {
+url: 'https://weblib.wahana.com/assets/images/wahana/marker.png', // url
+scaledSize: new google.maps.Size(40, 40), // scaled size
+};
+
+var hereMarker = new google.maps.Marker({
+position: {lat: lat, lng: lng},
+map: map,
+icon: markerHere
+});
+
+
+var infowindow2 = new google.maps.InfoWindow();
+
+hereMarker.addListener('mouseup', function() {
+infowindow2.setContent('You Are Here');
+infowindow2.open(map, hereMarker);
+});
+
+var i;
+for (i = 0; i < location.length; i++) {
+setMarkers(i, location[i], lat, lng, map, infowindow2);
+// console.log(location[0]);
+}
+}
+
+function setMarkers(item, location, lat, lng, map, infowindow)
+{
+var marker;
+var markerAgen = {
+url: 'https://weblib.wahana.com/assets/images/wahana/agen2.png', // url
+scaledSize: new google.maps.Size(40, 40), // scaled size
+};
+
+var mylat = parseFloat(location.Latitude);
+var mylng = parseFloat(location.Longitude);
+
+marker = new google.maps.Marker({
+position: new google.maps.LatLng(mylat, mylng),
+icon: markerAgen
+});
+
+markers.push(marker);
+markers[item].setMap(map);
+marker.addListener('mouseup', function() {
+toggleBounce(this);
+});
+/*
+jam_buka = new Date()
+jam_tutup = new Date()
+current_jam = new Date()
+jam_buka.setHours(09,0,0)
+jam_tutup.setHours(18,0,0)
+current_jam.setHours(location.Jam[0]+location.Jam[1],location.Jam[3]+location.Jam[4],0)
+*/
+//console.log(current_jam)
+//current_jam.setHours(07,0,0)
+//console.log(location.Jam)
+var hour = location.Jam
+var staT
+if (hour >= 9 && hour <= 18){
+  staT = "<span class='buka'>Buka</span>"
+}else{
+  staT = "<span class='tutup'>Tutup</span>"
+}
+marker.addListener('mouseup', function() {
+infowindow.setContent(location.Nama+"<br>"+location.ATRBEP02+"<br>"+staT+" &nbsp;09:00 - 18:00");
+infowindow.open(map, marker);
+});
+
+var distance;
+// $.post( "https://weblib.wahana.com/Ajaxx/getDistance",
+//   {'lat':lat, 'long':lng,
+//     'lat1':mylat, 'long1':mylng},
+//       function() {}).done(function(dist){
+//         distance = dist;
+var string = "<li onmouseover='toggleHover("+item+")' data-location='"+item+"' class='list-item-alamat' style='padding:0px;'> \
+    <div class=' nama-tempat'>"+location.Nama+"</div> \
+    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 directions-tempat'> \
+    <div data-lng1='"+mylng+"' data-lat1='"+mylat+"' data-lat='"+lat+"' data-lng='"+lng+"' onClick='getDirection(this)' class='divDirect'> \
+    <img class='img-responsive img-arah' src='https://weblib.wahana.com/assets/theme/assets/img/wahana/find-10.png' alt='direction'/>  \
+    <div class='direction-label'>PETUNJUK ARAH</div> \
+    <div class=' alamat-tempat'>"+location.ATRBEP02+"</div> \
+    <div class=' email-tempat'>"+location.ATRBEP04+"</div> \
+    <div class=' telepon-tempat'>"+location.ATRBEP03+"</div> \
+    <div class=' jarak-tempat'>"+location.distance_in_km+" Km</div> \
+    </div> </div> </li><br> ";
+$('ul.list-alamat').append(string);
+// });
+}
+
+function toggleHover(key){
+toggleBounce(markers[key]);
+}
+
+function toggleBounce(mark) {
+mark.setAnimation(google.maps.Animation.BOUNCE);
+setTimeout(function(){ mark.setAnimation(null); }, 2250);
+}
+function getDirection(t){
+var lat = $(t).data("lat");
+var lng = $(t).data("lng");
+var lat1 = $(t).data("lat1");
+var lng1 = $(t).data("lng1");
+var from = '';
+var to = '';
+from+=lat+','+lng;
+to+=lat1+','+lng1;
+Direction(from.toString(), to.toString());
+}
+
+function Direction(from, to) {
+var directionsService = new google.maps.DirectionsService;
+var directionsDisplay = new google.maps.DirectionsRenderer;
+var map = new google.maps.Map(document.getElementById('map'), {
+zoom: 7,
+center: {lat: -6.282506, lng: 106.760984}
+});
+directionsDisplay.setMap(map);
+
+calculateAndDisplayRoute(directionsService, directionsDisplay, from, to);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, from, to) {
+directionsService.route({
+  origin: from,
+  destination: to,
+travelMode: google.maps.TravelMode.DRIVING
+}, function(response, status) {
+if (status === google.maps.DirectionsStatus.OK) {
+  // change routes
+  var far = response.routes[0].legs[0].distance.value;
+  var duration = response.routes[0].legs[0].duration.text;
+  far = (far/1000).toFixed(1);
+  var result = "<div class='btn btn-primary btn-sm' style='background-color:red;border-radius:0px;border: 1px solid red;' onClick='startGeolocation1()'>BACK</div><br><br>";
+  var ui ="<div class='btn btn-primary btn-sm' style='background-color:red;border-radius:0px;border: 1px solid red;' onClick='startGeolocation1()'>BACK</div><br>";
+  var result = result + "" + far + " Km - " + duration +"<br>";
+
+  for (var i =0; i < response.routes[0].legs[0].steps.length; i++){
+      result+=response.routes[0].legs[0].steps[i].instructions+"<br>"
+  }
+
+  $('ul.list-alamat').html(result+"<br>"+ui);
+  directionsDisplay.setDirections(response);
+} else {
+  $('#alertModal #myModalLabel').html('Error');
+  $('#alertModal .modal-body').html('Directions request failed due to ' + status);
+  $('#alertModal').modal('show');
+}
+});
+}
+
+function startGeolocation1()
+{
+$('ul.list-alamat').html("");
+startGeolocation();
+}
+
+</script>

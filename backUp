@@ -19,6 +19,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/cover.css" rel="stylesheet">
     <link href="assets/css/hover-min.css" rel="stylesheet">
+	 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <!--    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet"> -->
   </head>
 <style>
@@ -38,7 +39,7 @@ td a:hover{
 
     <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
       <nav class="navbar navbar-expand-lg sticky-top index2-navbar bg-blue">
-    <a class="navbar-brand" href=""><img class="rounded" src="wahana/images/logo-wahana.png"></a>
+    <a class="navbar-brand" href="index.html"><img class="rounded" src="wahana/images/logo-wahana.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
@@ -51,7 +52,7 @@ td a:hover{
           <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Cek Tarif Pengiriman Wahana" href="index.html#tariff">Cek Tarif</a><span style="color:white;" >&nbsp;|&nbsp;</span>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Lacak Pengiriman Paket Wahana" href="index.html#track">Lacak Pengiriman</a><span style="color:white;" >&nbsp;|&nbsp;</span>
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Lacak Pengiriman Paket Wahana" href="index.html#track">Tracking</a><span style="color:white;" >&nbsp;|&nbsp;</span>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" data-title="Agen terdekat Wahana" href="index.html#agentloc">Agen Terdekat</a><span style="color:white;" >&nbsp;|&nbsp;</span>
@@ -63,7 +64,7 @@ td a:hover{
           <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" href="contactus.html">Hubungi CS</a><span style="color:white;" >&nbsp;|&nbsp;</span>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" href="cgi-bin/dw.cgi">Masuk</a>
+          <a class="nav-link nav-mastlink hvr-sweep-to-right2 text-white" href="cgi-bin/dw.cgi">Login Agen</a>
         </li>
       </ul>
     </div>
@@ -79,7 +80,7 @@ td a:hover{
       }
       </style>
   <div class="nav nav-tabs" id="nav-tab" role="tablist" style="background-color: rgba(0,0,0,0.0);">
-    <a class="nav-item nav-link active text-black" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Hubungi Email Customer Service</a>
+    <a class="nav-item nav-link active text-black" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Email Customer Service</a>
     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Daftar Nomor Customer Service</a>
   </div>
 </nav>
@@ -87,47 +88,65 @@ td a:hover{
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
     <div class="mt-4 mb-4 p-1" style="background-color: #0202FF;"><h4 style="color:#ffffff">CUSTOMER SERVICE WAHANA</h4></div>
     <div class="col-md-12 col-sm-12 col-lg-12">
-      <form>
+      <form id='formComplain' action="https://wahana.com/Home/proses/TambahComplain" method="post" class="sky-form">
         <div class="form-group">
           <b><label for="exampleFormControlSelect1">Kategori</label><span class="text-red">&nbsp;*</span></b>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Pilih Kategori</option>
-            <option>Keluhan Barang</option>
-            <option>Informasi Barang</option>
-            <option>Klaim Asuransi</option>
-            <option>Informasi Keagenan</option>
-            <option>Lainnya</option>
+          <section>
+          <select name="idCategory" class="form-control" id="exampleFormControlSelect1">
+            <option value="1">Keluhan Barang</option>
+            <option value="2">Informasi Barang</option>
+            <option value="3">Klaim Asuransi</option>
+            <option value="4">Informasi Keagenan</option>
+            <option value="5">Lainnya</option>
           </select>
+          </section>
         </div>
+         
         <div class="form-group">
-          <b><label for="exampleResi">No. Resi</label><span class="text-red">&nbsp;*</span></b>
-          <input type="text" class="form-control" id="exampleResi" placeholder="Masukkan Nomor Resi">
+          <b><label for="exampleResi" >No. Resi</label><span class="text-red">&nbsp;*</span></b>
+          <input type="text" name="ttk_no" class="form-control" id="exampleResi" placeholder="Masukkan Nomor Resi" required="required">
         </div>
 
         <div class="form-group">
           <b><label for="exampleNama">Nama</label><span class="text-red">&nbsp;*</span></b>
-          <input type="text" class="form-control" id="exampleNama" placeholder="Masukkan Nama Anda">
+          <input type="text" name="nama" class="form-control" id="exampleNama" placeholder="Masukkan Nama Anda" required="required">
+        </div>
+
+        <div class="form-group">
+          <b><label for="exampleNama">No Telepon</label><span class="text-red">&nbsp;*</span></b>
+          <input type="text" name="telepon" class="form-control" id="exampleTelepon" placeholder="Masukkan No Telepon Anda" required="required">
         </div>
 
         <div class="form-group">
           <b><label for="exampleEmail">Email</label><span class="text-red">&nbsp;*</span></b>
-          <input type="text" class="form-control" id="exampleEmail" placeholder="Masukkan Email Anda">
+          <input type="text" name="email" class="form-control" id="exampleEmail" placeholder="Masukkan Email Anda" required="required">
         </div>
 
         <div class="form-group">
           <b><label for="exampleFormControlTextarea1">Keterangan</label><span class="text-red">&nbsp;*</span></b>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Detail Keterangan"></textarea>
+          <textarea class="form-control" name="keluhan" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Detail Keterangan" required="required"> </textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="background-color: #0202FF;">Submit</button>
+        <button onclick="konfirmasiDulu()" type="submit" id="sendComplain" class="btn-agen btn btn-primary mt-4 mb-4 bg-red">Submit</button>
+        <p id="hasil"></p>
       </form>
     </div>
   </div>
   <style>
-
-
-
   </style>
+
+<script>
+      function konfirmasiDulu(){
+        var konfirmasi = confirm("Apakah data Anda Sudah Benar ?");
+
+        if(konfirmasi === true) {
+          alert("Terimakasih telah menghubungi kami");
+        }else{
+           alert("silahkan isi kembali");
+        }
+
+      }
+</script>
 
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div class="col-md-12 col-sm-12 col-lg-12">
@@ -142,8 +161,7 @@ td a:hover{
         </thead>
         <tbody>
           <div class="mb-4 mt-4 p-1 bg-blue"><h4 class="text-white">CS WAHANA (WHATSAPP ONLY)</h4></div>
-      <tr>
-        <th scope="row">1</th> <td> Jakarta Barat</td> <td><a href="https://api.whatsapp.com/send?phone=6281282982906&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">081282982906</a></td>
+      <tr> <th scope="row">1</th> <td> Jakarta Barat</td> <td><a href="https://api.whatsapp.com/send?phone=6281282982906&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">081282982906</a></td>
       <td><a href="https://api.whatsapp.com/send?phone=6287889037920&text=Hi, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">087889037920</a></td> </tr>
 
       <tr> <th scope="row">2</th> <td> Jakarta Utara</td> <td><a href="https://api.whatsapp.com/send?phone=628970263120&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">08970263120</a></td>
@@ -366,9 +384,9 @@ td a:hover{
 
       <tr> <th scope="row">99</th> <td> Maluku</td> <td><a href="https://api.whatsapp.com/send?phone=6281586633293&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">081586633293 </a></td> <td> <a href="https://api.whatsapp.com/send?phone=628978343018&text=Hi, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">08978343018</a></td> </tr>
 
-      <tr> <th scope="row">100</th> <td> Papua</td> <td><a href="https://api.whatsapp.com/send?phone=6281586633293&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">081586633293</a> </td>  <td><a class="warr" href="https://api.whatsapp.com/send?phone=62978343018&text=Hi, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">08978343018</a></td> </tr>
+      <tr> <th scope="row">100</th> <td> Papua</td> <td><a href="https://api.whatsapp.com/send?phone=6281586633293&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">081586633293</a> </td>  <td><a href="https://api.whatsapp.com/send?phone=62978343018&text=Hi, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">08978343018</a></td> </tr>
 
-      <tr> <th scope="row">101</th> <td> Singapore</td> <td><a href="https://api.whatsapp.com/send?phone=6289691291289&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">089691291289</a></td> </th><td><a class="warr" href="https://api.whatsapp.com/send?phone=6289691291289&text=Hi, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank"> 089691291289</a></td> </tr></tbody>
+      <tr> <th scope="row">101</th> <td> Singapore</td> <td><a href="https://api.whatsapp.com/send?phone=6289691291289&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank">089691291289</a></td> </th><td><a href="https://api.whatsapp.com/send?phone=6289691291289&text=Hi, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih" target="_blank"> 089691291289</a></td> </tr></tbody>
       </table>
     </div>
   </div>
@@ -376,93 +394,160 @@ td a:hover{
 
 </main>
 
-<div class="finx mt-5" style="background-color: #0202ff;color:white;" >
-<footer class=" mt-3 mb-2 mx-3">
- <div class="inner">
-   <div class="row">
-     <div class="col-md-4 text-left" >
-     <b><p>Jl. Rempoa Raya No.88, Ciputat, Tangerang Selatan <br> Banten, Indonesia, 15412<br>
-       Tel : (+62) 21 7341688 <br>
-       Fax : (+62) 21 73886974</p></b>
-     </div>
-     <div class="col-md-4 mt-3">
-       <div class="row">
-         <div class="col-3 col-sm-3 col-md-3 col-xl-3">
-       <a  href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
-       <img class="mbl-medsos" src="assets/img/fb_logo.png"  width="60" height="60"><span class="mr-5"></span>
-       </a>
-        </div>
-        <div class="col-3 col-sm-3 col-md-3 col-xl-3">
-       <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
-       <img class="mbl-medsos" src="assets/img/insta_logo.png"  width="60" height="60"><span class="mr-5"></span>
-       </a>
-     </div>
-     <div class="col-3 col-sm-3 col-md-3 col-xl-3">
-       <a href="https://www.youtube.com/channel/UCwm0TH_XgMbhDr3L67iTiIg?view_as=subscriber" target="_blank">
-         <img class="mbl-medsos" src="assets/img/yt_logo.png" width="60" height="60">
-       </a>
-     </div>
-       <div class="col-3 col-sm-3 col-md-3 col-xl-3">
-       <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
-       <img class="mbl-medsos" src="assets/img/likedin_logo.png" width="60" height="60"><span class="mr-5"></span>
-       </a>
-     </div>
-     </div>
-     </div>
-     <div class="col-md-4 text-right">
-     <b><a href="faq.html" class="text-white">FAQ</a></b> &nbsp;|&nbsp;
-     <b><a href="syarat_ketentuan.html" class="text-white">Syarat & Ketentuan</a><b><br><br><br>
-     <p>© 2018 PT Wahana Prestasi Logistik</p>
-     </div>
-   </div>
- </div>
-</footer>
-</div>
+<div class="finx" style="background-color: #0202ff;color:white;" >
+      <footer class=" mt-3 mb-2 mx-3">
+       <div class="inner">
+         <div class="row">
+           <div class="col-md-4 text-left" >
+           <b><p><a href="javascript:void(0)" style="color: white;" data-toggle="modal" data-target="#mapsjs">Jl. Rempoa Raya No.88, Ciputat &nbsp;<i class="fa fa-send"></i><br>
+             Tangerang Selatan, Banten, 15412</a><br>
+             Tel : (+62) 21 7341688 <br>
+             Fax : (+62) 21 73886974</p></b>
+           </div>
+           <div class="col-md-4 mt-3">
+             <div class="row">
+               <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+             <a  href="https://www.facebook.com/WahanaPrestasiLogistik" target="_blank">
+             <img class="mbl-medsos" src="assets/img/fb_logo.png"  width="60" height="60"><span class="mr-5"></span>
+             </a>
+              </div>
+              <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+             <a href="https://www.instagram.com/wahana.logistik/" target="_blank">
+             <img class="mbl-medsos" src="assets/img/insta_logo.png"  width="60" height="60"><span class="mr-5"></span>
+             </a>
+           </div>
+           <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+             <a href="https://www.youtube.com/channel/UCwm0TH_XgMbhDr3L67iTiIg?view_as=subscriber" target="_blank">
+               <img class="mbl-medsos" src="assets/img/yt_logo.png" width="60" height="60">
+             </a>
+           </div>
+             <div class="col-3 col-sm-3 col-md-3 col-xl-3">
+             <a href="https://www.linkedin.com/company/wahana-prestasi-logistik" target="_blank">
+             <img class="mbl-medsos" src="assets/img/likedin_logo.png" width="60" height="60"><span class="mr-5"></span>
+             </a>
+           </div>
+           </div>
+           </div>
+           <div class="col-md-4 text-right">
+           <b><a href="faq.html" class="text-white">FAQ</a></b> &nbsp;|&nbsp;
+           <b><a href="syarat_ketentuan.html" class="text-white">Syarat & Ketentuan</a><b><br><br><br>
+           <p>© 2018 PT Wahana Prestasi Logistik</p>
+           </div>
+         </div>
+       </div>
+     </footer>
+    </div>
 
+<div class="modal fade bd-example-modal-lg" id="mapsjs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Lokasi Wahana Kantor Pusat</h5>
+      <button id="cloze" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div id="mapss" style="height: 400px;width:100%;">
+      </div>
+      <br>
+      <a id="getDir" target="_blank" class="btn btn-primary" style="color: white;">Petunjuk Arah</a>
+    </div>
+    <div class="modal-footer">
+
+      <button id="cloze" type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+    </div>
+  </div>
+  </div>
+  </div>
       <!-- Bootstrap core JavaScript
       ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="assets/js/main.js"></script>
-      <script src="https://use.fontawesome.com/2e37f68334.js"></script>
       <script>window.jQuery || document.write('<script src="lib/3rdParty/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="assets/js/popper.min.js"></script>
       <script src="assets/js/bootstrap.min.js"></script>
-
+		<script src="https://maps.google.com/maps/api/js?key=AIzaSyBIRnkXzJ07J0atmmDK9gqUv45_Fxq0ZEQ&language=id" type="text/javascript"></script>
   <script>
-  $(document).ready(function(){
-      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $("table td a").each(function() {
-            var oldVal = $( this ).attr( "href" );
-            var text = +62+$(this).text().substr(1)
-            $( this ).attr( "href" , "https://api.whatsapp.com/send?phone="+text+"&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih");
-        });
-      }else{
-        $("table td a").each(function() {
-            var oldVal = $( this ).attr( "href" );
-            var text = +62+$(this).text().substr(1)
-
-            $( this ).attr( "href" , "https://web.whatsapp.com/send?phone="+text+"&text=Hi, Saya ingin menanyakan status pengiriman paket saya dengan nomor resi [....] Mohon dibantu untuk update paket saya. Terima Kasih");
-        });
-      }
-
-      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      $(".warr").each(function() {
-          var oldVal = $( this ).attr( "href" );
-          var text = +62+$(this).text().substr(1)
-
-          $( this ).attr( "href" , "https://api.whatsapp.com/send?phone="+text+"&text=Hai, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih");
+    function initMap() {
+      var sidup = {lat: -6.2824251969584335, lng: 106.7608966747968};
+      var agentMap = new google.maps.Map(document.getElementById('agentloc-map-container'), {
+        zoom: 17,
+        center: sidup
       });
-    }else{
-      $(".warr").each(function() {
-          var oldVal = $( this ).attr( "href" );
-          var text = +62+$(this).text().substr(1)
-
-          $( this ).attr( "href" , "https://web.whatsapp.com/send?phone="+text+"&text=Hai, Status pengiriman paket saya dengan nomor resi [....] adalah retur. Mohon dibantu untuk update paket saya. Terima Kasih");
+      var agentMarker = new google.maps.Marker({
+        position: sidup,
+        map: agentMap
       });
     }
-      })
-</script>
+  </script>
+  
 
+<script src="https://wahana.com/assets/vendors/validator/validator.js"></script>
+    <script type="text/javascript">
+      // initialize the validator function
+    validator.message.date = 'not a real date';
+
+     function changeImage(bobo) 
+    {
+        var value=bobo.id;
+       
+        if (document.getElementById('logo-contact-'+value).src == 'https://wahana.com/assets/theme/assets/img/wahana/min.png') 
+        {
+            document.getElementById('logo-contact-'+value).src = 'https://wahana.com/assets/theme/assets/img/wahana/expd.png';
+        }
+        else 
+        {
+            document.getElementById('logo-contact-'+value).src = 'https://wahana.com/assets/theme/assets/img/wahana/min.png';
+        }
+    }
+    // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+    $('form')
+      .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+      .on('change', 'select.required', validator.checkField)
+      .on('keypress', 'input[required][pattern]', validator.keypress);
+
+    $('form').submit(function(e) {
+      e.preventDefault();
+      var submit = true;
+      // evaluate the form using generic validaing
+      if (!validator.checkAll($(this))) {
+        submit = false;
+      }
+      if (submit)
+        this.submit();
+      return false;
+
+    });
+      
+  </script>
+<script>
+var myLatLng = {lat: -6.282462,lng: 106.761225}
+function renderMap() {
+
+  var map = new google.maps.Map(document.getElementById('mapss'), {
+zoom: 15,
+center: myLatLng
+});
+var markerPusat = {
+url: 'https://wahana.com/assets/images/wahana/pusat2.png', // url
+scaledSize: new google.maps.Size(40, 40), // scaled size
+};
+var marker = new google.maps.Marker({
+position: myLatLng,
+map: map,
+icon : markerPusat
+});
+    }
+
+ google.maps.event.addDomListener(window, 'load', renderMap);
+
+ $(document).ready(function(){
+   $("#getDir").attr("href","https://www.google.com/maps?saddr=Current+Location&daddr="+myLatLng['lat']+','+myLatLng['lng'])
+
+ })
+
+</script>
     </body>
   </html>
